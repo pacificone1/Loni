@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loni · powered by Second Look · Mockup v0.26</title>
+<title>Loni · powered by Second Look · Mockup v0.27</title>
 <style>
 :root{
   --ink:#311847; --ink2:#4A3E4F; --muted:#6E5E6B; --line:#ECE2E6; --bg:#FBF7F5; --card:#fff;
@@ -960,6 +960,88 @@ body.dark .stepbar .step.done .dot{background:var(--sc);color:#fff}
 body.dark .stepbar .step.current{background:var(--sc);color:#fff}
 body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep{--sc:#8E4FB8;--sn:#8E4FB8}
 
+
+/* ===== v0.27: responsive / mobile ===== */
+.mtabs,.mclose{display:none}
+@media (max-width:1024px){
+  .pgrid,.kpis{grid-template-columns:repeat(2,1fr)!important}
+  .sc{grid-template-columns:repeat(3,1fr)!important}
+  .facts,.cost{grid-template-columns:repeat(2,1fr)!important}
+  .wf2 ol{grid-template-columns:repeat(4,1fr)!important}.wf2 ol::before{display:none}
+  .org{display:none}
+}
+@media (max-width:760px){
+  html,body{overflow-x:hidden}
+  .app{height:100dvh;grid-template-rows:auto 1fr}
+  /* top bar */
+  .top{flex-wrap:wrap;gap:8px;padding:8px 12px;row-gap:6px}
+  .brandblk img{height:24px}.brandblk .pw{font-size:8.5px}
+  .file-chip{order:5;flex:1 1 100%;max-width:100%;font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  body.not-file .file-chip{display:none}
+  .viewtitle{display:none!important}
+  .top-actions{gap:6px}
+  #idsBtn{display:none}
+  .top-actions .ghost{padding:6px 8px;font-size:12px}
+  #modeBtn,#helpBtn,#adminBtn{font-size:0}
+  #modeBtn::before{content:'☾';font-size:15px}body.dark #modeBtn::before{content:'☀'}
+  #helpBtn::before{content:'?';font-size:14px;font-weight:700}
+  #adminBtn::before{content:'⚙';font-size:15px}
+  .avatar{width:32px;height:32px;font-size:12px}
+  #adminMenu,#userMenu{left:8px!important;right:8px!important;width:auto!important}
+  /* two panes -> canvas + Loni overlay */
+  .main{grid-template-columns:minmax(0,1fr)!important}
+  .rsz{display:none}
+  .loni{position:fixed;inset:0;z-index:110;display:none;border:0;padding-bottom:env(safe-area-inset-bottom)}
+  body.loni-open .loni{display:flex}
+  .mclose{display:inline-block;margin-left:auto}
+  .loni .dock{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.loni .dock::-webkit-scrollbar{display:none}
+  .loni .dock button{flex:none}
+  .canvas{padding:12px 12px 84px}
+  .stepbar{margin:-12px -12px 10px;padding:6px 12px;top:-12px;gap:8px}
+  .stepbar .sbl{display:none}
+  .stepbar .step:not(.current) .lbl{display:none!important}
+  .stepbar .sep{min-width:4px;max-width:12px}
+  .stepbar .step{padding:3px 3px}.stepbar .step.current{padding:3px 10px 3px 3px}.stepbar .ribbon{justify-content:space-between}
+  /* bottom tabs */
+  .mtabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:4px 4px calc(4px + env(safe-area-inset-bottom));justify-content:space-around}
+  .mtabs button{flex:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:10.5px;color:var(--muted);padding:4px 0;position:relative}
+  .mtabs button i{font-style:normal;font-size:17px;line-height:1.1}
+  .mtabs button.on{color:#7E1463;font-weight:700}
+  .mtabs .mloni .mav{width:34px;height:34px;border-radius:50%;margin-top:-16px;border:3px solid #fff;box-shadow:0 4px 12px rgba(49,24,71,.3);background:var(--avimg,#A01A7D) center/cover}
+  .mtabs .mdot{position:absolute;top:-4px;right:calc(50% - 22px);width:10px;height:10px;border-radius:50%;background:#EC4067;border:2px solid #fff;display:none}
+  .mtabs .mdot.on{display:block}
+  body.loni-open .mtabs{display:none}
+  /* content */
+  .canvas-head{flex-wrap:wrap;padding:12px 14px!important;gap:8px}
+  .canvas-head h1{font-size:17px}
+  .canvas-head .sp{display:none}
+  .hero h1{font-size:21px}
+  .resume{flex-direction:column;align-items:flex-start}
+  .g2,.choices,.lc-top,.dd,.opts,.dl,.hstep,.hgrid,.bal,.packs,.rvw,.pgrid,.kpis{grid-template-columns:1fr!important}
+  .sc,.facts,.cost{grid-template-columns:repeat(2,1fr)!important}
+  .since{gap:8px}
+  .card{padding:12px}
+  table{display:block;overflow-x:auto;white-space:normal;-webkit-overflow-scrolling:touch}
+  table td,table th{min-width:84px}
+  .wf2 ol{grid-template-columns:1fr!important}.wf2 li{flex-direction:row;text-align:left;align-items:flex-start;gap:10px}.wf2 li em{display:none}
+  .wft .mini{display:none}
+  .funnel2{gap:4px}.funnel2 .fbar b{font-size:15px}.funnel2 .fl{font-size:10.5px}.funnel2 .fr{display:none}
+  .stages{overflow-x:auto;padding-bottom:4px}.stages .sg{min-width:84px}
+  .filt,.pbf,.tabs2,.tabs{overflow-x:auto;flex-wrap:nowrap!important;scrollbar-width:none}
+  .filt button,.pbf button,.tabs2 button,.tabs .tab{flex:none}
+  .srch input,.srch select{flex:1 1 100%}
+  .fcards{grid-template-columns:1fr!important}
+  .path .ph{gap:6px}
+  .paper{padding:28px 20px 40px;font-size:13px}.paper .ft{left:20px;right:20px}
+  .dvbar{flex-wrap:wrap}
+  .hcard{padding:14px}
+  #helpView{padding-top:20px}
+  .lcard{padding:28px 22px}
+  .toast{bottom:76px!important}
+  body.dark .mtabs{background:rgba(27,15,40,.97);border-color:#3B2850}
+  body.dark .mtabs .mloni .mav{border-color:#1B0F28}
+}
+
 @media print{
   @page{size:letter;margin:14mm}
   body{background:#fff}
@@ -1027,6 +1109,13 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
    <div><h4>Your data</h4><ul><li>Borrower documents always come through ARIVE.</li><li>Your Playbook belongs to your brokerage and is never shared with others.</li><li>Lender-portal passwords are never stored.</li></ul></div>
    <div><h4>Need a person?</h4><ul><li>Chat with support: weekdays 7 AM – 6 PM PT</li><li>support@secondlook.example</li><li><a href="#" data-act="helpTour">Replay the 2-minute tour</a></li></ul></div>
   </div></div></div>
+<nav class="mtabs" id="mtabs" aria-label="Main">
+  <button data-act="home" data-v="home"><i>⌂</i>Home</button>
+  <button data-act="files" data-v="files"><i>▤</i>Files</button>
+  <button class="mloni" data-act="mLoni"><span class="mav"></span>Loni<b class="mdot" id="mDot"></b></button>
+  <button data-act="brief" data-v="brief"><i>☀</i>Briefing</button>
+  <button data-act="activity" data-v="activity"><i>✉</i>Outbox</button>
+</nav>
 <div class="app">
   <!-- TOP BAR -->
   <div class="top">
@@ -1070,6 +1159,7 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
         <div class="loni-av" role="img" aria-label="Loni avatar"></div>
         <div><div class="t">Loni</div><div class="s" id="loniSub">Your AI loan assistant · Marquez file</div></div>
         <span class="inline-ids">SL-I-119 · 138</span>
+        <button class="ghost mclose" data-act="mLoniClose" aria-label="Close Loni">✕</button>
       </div>
       <nav class="dock" aria-label="Go to"><button data-act="home">⌂ Home</button><button data-act="brief">☀ Briefing <span class="n">3</span></button><button data-act="files">▤ Files</button><button data-act="lenders">▦ Lenders</button><button data-act="playbook">✎ Playbook</button><button data-act="activity">✉ Outbox <span class="n" id="obBadge">5</span></button><button data-act="intel">◔ Intelligence</button></nav>
       <div class="thread" id="thread">
@@ -2898,6 +2988,15 @@ $('#helpBtn').addEventListener('click',()=>{$('#helpView').hidden=false;$('#admi
   function obMarkSent(re){const i=OB.findIndex(m=>re.test(m.sub)&&!m.sup);if(i<0)return;const m=OB.splice(i,1)[0];SENT.unshift({f:m.f,to:m.to,sub:m.sub,when:'Today '+new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}),wait:'',rep:''});paintOB()}
   const _mqSent=acts.mqSent;acts.mqSent=()=>{_mqSent();obMarkSent(/New submission · Elena Marquez/)};
   const _mqRS=acts.mqRespSent;acts.mqRespSent=()=>{_mqRS();obMarkSent(/Condition 1 · source of Oct 14/)};
+
+  // ---- v0.27: mobile ----
+  const isM=()=>window.matchMedia('(max-width:760px)').matches;
+  {const av=getComputedStyle(document.querySelector('.loni-av')).backgroundImage;if(av&&av!=='none')document.documentElement.style.setProperty('--avimg',av)}
+  acts.mLoni=()=>{document.body.classList.add('loni-open');$('#mDot').classList.remove('on');setTimeout(()=>{thread.scrollTop=thread.scrollHeight},30)};
+  acts.mLoniClose=()=>document.body.classList.remove('loni-open');
+  {const _sv=showView;showView=function(v){_sv(v);if(isM())document.body.classList.remove('loni-open');$$('#mtabs [data-v]').forEach(b=>b.classList.toggle('on',b.dataset.v===v||(v==='file'&&false)));$('#canvas').scrollTop=0;const c=document.querySelector('.stepbar .step.current');const r=document.querySelector('.stepbar .ribbon');if(c&&r)r.scrollLeft=c.offsetLeft-r.offsetLeft-(r.clientWidth-c.offsetWidth)/2}}
+  {const _say=say;say=function(h,w){const r=_say(h,w);if(isM()&&!document.body.classList.contains('loni-open')&&w!=='me')$('#mDot').classList.add('on');return r}}
+
   // ---- v0.3 navigation ----
   const FILES=[["Marquez","Purchase · $680,000 · bank statement","04 Pre-underwrite","Ready: review the Crestview route",true],["Chen","DSCR refinance · $512,000","03 Pre-select","Waiting on: borrower (lease agreements)"],["Patel","P&L purchase · $930,000","06 Package & submit","Cover letter ready for your review"],["Okafor","Asset depletion · $1.2M","07 Close","Rate lock expires in 6 days"],["Haddad","Cash-out refinance · $610,000","05 Solve for yes","No lender fits as is: choose a fix"],["Brooks","Bank statement purchase · $720,000","02 Integrity check","2 flags to review"],["Nguyen","1099 purchase · $455,000","01 Import","New from ARIVE today"]];
   const fm=$('#fileMenu'),fl=$('#fileList'),fs=$('#fileSearch');
@@ -2935,6 +3034,6 @@ $('#helpBtn').addEventListener('click',()=>{$('#helpView').hidden=false;$('#admi
 })();
 </script>
 <!-- Release banner (added by Release Manager to the published copy only) -->
-<div id="sl-release-banner" aria-label="Release label" style="position:fixed;right:12px;bottom:8px;z-index:2147483647;pointer-events:none;font:500 11px/1.4 Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:#5b3a63;background:rgba(255,255,255,.82);border:1px solid rgba(91,58,99,.18);border-radius:999px;padding:2px 9px;letter-spacing:.01em">v0.26 · Prototype — fictional data</div>
+<div id="sl-release-banner" aria-label="Release label" style="position:fixed;right:12px;bottom:8px;z-index:2147483647;pointer-events:none;font:500 11px/1.4 Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:#5b3a63;background:rgba(255,255,255,.82);border:1px solid rgba(91,58,99,.18);border-radius:999px;padding:2px 9px;letter-spacing:.01em">v0.27 · Prototype — fictional data</div>
 </body>
 </html>
