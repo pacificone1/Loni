@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loni · powered by Second Look · Mockup v0.23</title>
+<title>Loni · powered by Second Look · Mockup v0.26</title>
 <style>
 :root{
   --ink:#311847; --ink2:#4A3E4F; --muted:#6E5E6B; --line:#ECE2E6; --bg:#FBF7F5; --card:#fff;
@@ -459,7 +459,7 @@ details.full summary{color:var(--plum-deep);font-weight:600}
 .fc-legend .fc-note{margin-left:auto;font-size:11px;color:var(--muted)}
 .fc-svg{display:block;width:100%;max-width:none;height:auto;margin:0 auto}
 .fc-grid line{stroke:#ECE2E6;stroke-dasharray:2 4}
-.fc-ax text{font-size:10px;fill:#6E5E6B}
+.fc-ax text{font-size:7.5px;fill:#6E5E6B}
 .fc-guide{stroke:#EC4067;stroke-dasharray:2 3;opacity:.5}
 .fc-svg .ln{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:opacity .2s,stroke-width .2s}
 .fc-svg path[fill^="url"]{stroke:none}
@@ -882,6 +882,84 @@ body.dark .bal .x.bmain{background:radial-gradient(360px 160px at 100% 0,rgba(23
 body.dark .pack.cur{background:linear-gradient(#231432,#231432) padding-box,var(--core) border-box}
 body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
 
+/* ===== v0.24 ===== */
+.org{font-size:12px;font-weight:600;color:var(--muted);white-space:nowrap;margin-left:4px}.umorg{font-size:11.5px;color:var(--muted);padding:0 10px 6px}
+@media (max-width:1250px){.org{display:none}}
+#helpView{position:fixed;inset:0;z-index:95;background:rgba(49,24,71,.45);backdrop-filter:blur(3px);display:flex;align-items:flex-start;justify-content:center;padding-top:70px}
+#helpView[hidden]{display:none}
+.hcard{width:min(820px,92vw);background:#fff;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.25);padding:18px 22px;color:var(--ink)}
+.hh{display:flex;align-items:center;gap:8px;font-size:16px;border-bottom:2px solid transparent;border-image:var(--core) 1;padding-bottom:10px;margin-bottom:12px}.hh .sp{flex:1}
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px}.hgrid h4{margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#7E1463}
+.hgrid ul{margin:0;padding-left:18px;font-size:13px;line-height:1.55}kbd{font-family:inherit;font-size:11px;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:#fff}
+body.dark .hcard{background:#231432}body.dark .hgrid h4{color:#F09ACD}body.dark kbd{background:#1B0F28;border-color:#4A3460}
+.soc2{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:18px;font-size:11px;color:#8A7A88;opacity:.85}.soc2 b{font-weight:600;color:#6E5E6B}body.dark .soc2,body.dark .soc2 b{color:#A994AC}
+.perf{margin-top:16px;padding:16px 18px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+.perfh{display:flex;align-items:flex-end;gap:10px;margin-bottom:12px}.perfh .sp{flex:1}
+.perf .ey,.wft .ey{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#7E1463}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pk{border-radius:12px;padding:12px 14px;background:linear-gradient(160deg,#fff,#F6EEF5);border:1px solid #EADBE6}
+.pk .k{font-size:11.5px;color:var(--muted)}.pk .v{font-size:24px;font-weight:800;letter-spacing:-.4px;background:linear-gradient(90deg,#A01A7D,#311847);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pk .d{font-size:11.5px;color:var(--muted)}.pk .d.up{color:#2E7A57;font-weight:600}
+.pk .cmp{margin-top:8px;font-size:11.5px;color:var(--ink2)}.pk .bar{height:6px;border-radius:99px;background:#ECE2E6;overflow:hidden;margin-bottom:4px}.pk .bar i{display:block;height:100%;background:linear-gradient(90deg,#A01A7D,#EC4067)}
+.pk .avg{font-size:11px;color:var(--muted);margin-top:4px}
+.wft{margin-top:12px;display:flex;align-items:center;gap:16px;padding:12px 16px;border-radius:14px;background:#fff;border:1px solid var(--line);cursor:pointer;box-shadow:var(--shadow)}
+.wft:hover{border-color:#A01A7D}.wftl{flex:1}
+.wft .mini{display:flex;align-items:center;gap:0}.wft .mini i{width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 3px rgba(49,24,71,.25);margin-left:-3px}
+.wft .chev{font-size:14px;color:#7E1463;transition:transform .2s}.wft.open .chev{transform:rotate(180deg)}
+#wfFull .wf2{margin-top:10px}#wfFull .wf2h{display:none}#wfFull .wf2 ol{margin-top:4px}
+.wf2 li b small{font-weight:500;color:var(--muted);font-size:10.5px}
+body.dark .perf,body.dark .wft{background:#231432;border-color:#3B2850}body.dark .pk{background:linear-gradient(160deg,#231432,#2C1A3E);border-color:#3E2A52}
+body.dark .perf .ey,body.dark .wft .ey{color:#F09ACD}body.dark .pk .v{background:linear-gradient(90deg,#F7B7A3,#EC4067);-webkit-background-clip:text;background-clip:text}
+body.dark .pk .bar{background:#3B2850}body.dark .pk .d.up{color:#8FE0B5}body.dark .wft .mini i{border-color:#231432}
+@media (max-width:1250px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+.srch{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.srch input,.srch select{font:inherit;font-size:13px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+.srch input{flex:1;min-width:160px}
+body.dark .srch input,body.dark .srch select{background:#1B0F28;border-color:#4A3460}
+.decrec{margin-top:10px;padding:10px 12px;border-radius:10px;background:#F6EEF5;border:1px dashed #A01A7D;font-size:12.5px}.decrec ul{margin:6px 0 0;padding-left:18px}body.dark .decrec{background:#2C1A3E}
+.recon td{padding:6px 8px}.recon .tot td{border-top:2px solid #A01A7D}
+/* ===== v0.25 ===== */
+.stepbar{position:sticky;top:-18px;z-index:20;margin:-18px -22px 14px;padding:8px 22px;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px}
+body.not-file .stepbar{display:none}
+.stepbar .sbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#7E1463;white-space:nowrap}
+.stepbar .ribbon{display:flex!important;align-items:center;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+.stepbar .ribbon::-webkit-scrollbar{display:none}
+.stepbar .step .lbl{display:inline!important}
+.stepbar .sep{flex:1;min-width:8px;max-width:40px;height:2px;background:var(--line);border-radius:2px}
+.stepbar .step.done+.sep{background:linear-gradient(90deg,#A01A7D,#7E1463)}
+@media (max-width:1440px){.stepbar .step:not(.current):not(.viewing) .lbl{display:none!important}}
+body.dark .stepbar{background:rgba(27,15,40,.94);border-color:#3B2850}body.dark .stepbar .sbl{color:#F09ACD}
+.brsel{font:inherit;font-size:13px;padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff}.brsel option{color:#311847}
+.pastnote{font-size:12.5px;padding:10px 14px;border-radius:10px;background:#F6EEF5;border:1px dashed #A01A7D;margin-bottom:12px}body.dark .pastnote{background:#2C1A3E}
+.ready.ok{background:#E4F1EA;color:#2E7A57}
+tr.sup td{opacity:.5}tr.sup td:nth-child(3){text-decoration:line-through}tr.sup .acts{opacity:1}
+/* ===== v0.26 ===== */
+.top-actions{margin-left:auto}
+.stepbar .step[data-s='01']{--sc:#E09F7D}.stepbar .step[data-s='01']+.sep{--sc:#E09F7D;--sn:#EF5D60}
+.stepbar .step[data-s='02']{--sc:#EF5D60}.stepbar .step[data-s='02']+.sep{--sc:#EF5D60;--sn:#EC4067}
+.stepbar .step[data-s='03']{--sc:#EC4067}.stepbar .step[data-s='03']+.sep{--sc:#EC4067;--sn:#C42A8E}
+.stepbar .step[data-s='04']{--sc:#C42A8E}.stepbar .step[data-s='04']+.sep{--sc:#C42A8E;--sn:#A01A7D}
+.stepbar .step[data-s='05']{--sc:#A01A7D}.stepbar .step[data-s='05']+.sep{--sc:#A01A7D;--sn:#7E1463}
+.stepbar .step[data-s='06']{--sc:#7E1463}.stepbar .step[data-s='06']+.sep{--sc:#7E1463;--sn:#311847}
+.stepbar .step[data-s='07']{--sc:#311847}.stepbar .step[data-s='07']+.sep{--sc:#311847;--sn:#311847}
+.stepbar .step .dot{border:2px solid var(--sc);color:var(--sc);background:#fff}
+.stepbar .step.done .dot{background:var(--sc);border-color:var(--sc);color:#fff;box-shadow:0 2px 6px rgba(49,24,71,.18)}
+.stepbar .step.skipped .dot{border-style:dashed;background:#fff;color:var(--sc);opacity:.75}
+.stepbar .step.done{color:var(--ink2)}
+.stepbar .step.current{background:var(--sc);color:#fff;font-weight:700;box-shadow:0 4px 12px rgba(49,24,71,.22)}
+.stepbar .step.current .dot{background:#fff;border-color:#fff;color:var(--sc)}
+.stepbar .step.viewing:not(.current){box-shadow:inset 0 0 0 2px var(--sc);color:var(--ink)}
+.stepbar .sep{height:3px;background:#ECE2E6}
+.stepbar .step.done+.sep{background:linear-gradient(90deg,var(--sc),var(--sn))}
+.stepbar .step[data-s='01'].current,.stepbar .step[data-s='01'].current .dot{color:#311847}
+.stepbar .step[data-s='01'].current .dot{color:#E09F7D}
+body.dark .stepbar .step .dot,body.dark .stepbar .step.skipped .dot{background:#231432}
+body.dark .stepbar .step.current .dot{background:#fff}
+body.dark .stepbar .sep{background:#3B2850}
+body.dark .stepbar .step.done .dot{background:var(--sc);color:#fff}
+body.dark .stepbar .step.current{background:var(--sc);color:#fff}
+body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep{--sc:#8E4FB8;--sn:#8E4FB8}
+
 @media print{
   @page{size:letter;margin:14mm}
   body{background:#fff}
@@ -907,13 +985,14 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
     <label for="fname">First name</label>
     <input id="fname" type="text" placeholder="e.g. Mary">
     <button class="go" type="submit">Continue</button>
+    <div class="soc2"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>SOC 2 Type II</b> · data encrypted in transit and at rest</span></div>
   </form>
 </div>
 
 <div id="docView" hidden>
-  <div class="dvbar"><span class="t">Cover letter · Patel · Summit Ridge Capital</span><span class="ro">Read only</span><span class="sp"></span><button data-act="dvPdf">⇩ Download PDF</button><button data-act="dvClose">✕ Close</button></div>
+  <div class="dvbar"><span class="t">Cover letter · Patel · Summit Ridge Capital</span><span class="ro">Read only</span><span class="sp"></span><button data-act="dvRev" id="dvRev">✓ Mark as reviewed</button><button data-act="dvPdf">⇩ Download PDF</button><button data-act="dvClose">✕ Close</button></div>
   <div class="paper">
-    <div class="lh"><div><div class="nm"><span class="uname-sig"></span> · Loan officer</div><div style="font-size:11.5px;color:#6E5E6B">NMLS #000000 · [Brokerage name] · San Diego, CA</div></div><div class="meta">November 25, 2026<br>Page 1 of 2</div></div>
+    <div class="lh"><div><div class="nm"><span class="uname-sig"></span> · Loan officer</div><div style="font-size:11.5px;color:#6E5E6B">NMLS #000000 · Pacific Brokerage · San Diego, CA</div></div><div class="meta">November 25, 2026<br>Page 1 of 2</div></div>
     <p>Summit Ridge Capital · Underwriting<br>Re: <strong>Ravi Patel</strong> · Flex P&amp;L 24 · purchase, primary residence · loan amount $930,000</p>
     <p>Dear Underwriter,</p>
     <p>Please find enclosed the package for Ravi Patel. This letter summarizes the file and how the figures were calculated; each figure refers to an exhibit and page in the package.</p>
@@ -940,28 +1019,28 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
     <div class="ft"><span>Figures are the broker's estimates for underwriting review. The lender makes the credit decision.</span><span>Page 2 of 2</span></div>
   </div>
 </div>
+<div id="helpView" hidden><div class="hcard">
+  <div class="hh"><strong>Help</strong><span class="sp"></span><button class="ghost" data-act="helpClose">✕ Close</button></div>
+  <div class="hgrid">
+   <div><h4>Getting around</h4><ul><li><b>Home</b>: your day, your numbers, where to start</li><li><b>Files</b>: open files and the history of closed files</li><li><b>Loni</b> (left): ask anything or tell her what to do</li><li><b>Steps bar</b> (top): click any finished step to see what happened</li><li>Quick search: press <kbd>⌘</kbd> <kbd>K</kbd></li></ul></div>
+   <div><h4>How Loni works</h4><ul><li>Loni prepares; <b>you decide and you send</b>. Nothing goes out on its own.</li><li>Every result shows its source: published rule, written clarification, past outcome or Loni's inference.</li><li>Eligibility comes from lender rules, never from past outcomes alone.</li></ul></div>
+   <div><h4>Your data</h4><ul><li>Borrower documents always come through ARIVE.</li><li>Your Playbook belongs to your brokerage and is never shared with others.</li><li>Lender-portal passwords are never stored.</li></ul></div>
+   <div><h4>Need a person?</h4><ul><li>Chat with support: weekdays 7 AM – 6 PM PT</li><li>support@secondlook.example</li><li><a href="#" data-act="helpTour">Replay the 2-minute tour</a></li></ul></div>
+  </div></div></div>
 <div class="app">
   <!-- TOP BAR -->
   <div class="top">
     <div class="brandblk" title="Loni, by Second Look"><img alt="Loni" src="data:image/png;base64,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"><div class="pw">powered by <b>Second Look</b></div><span class="badge" id="needBadge" title="3 items need you today">3</span></div>
     <button class="file-chip" id="fileChip" title="Switch file"><span id="chipTxt"><strong>Marquez</strong> · Purchase · $680,000 · San Diego, CA</span> <span class="car">▼</span></button>
     <div class="viewtitle" id="viewTitle"></div>
-    <nav class="ribbon" aria-label="Loan file progress">
-      <button class="step done" data-s="01" title="01 Import"><span class="dot">✓</span><span class="lbl">Import</span></button><span class="sep"></span>
-      <button class="step skipped" data-s="02" title="02 File integrity check (off for this file)"><span class="dot">02</span><span class="lbl">Integrity (off)</span></button><span class="sep"></span>
-      <button class="step done" data-s="03" title="03 Pre-select lenders"><span class="dot">✓</span><span class="lbl">Pre-select</span></button><span class="sep"></span>
-      <button class="step current" data-s="04"><span class="dot">04</span><span class="lbl">Pre-underwrite</span></button><span class="sep"></span>
-      <button class="step" data-s="05" title="05 Solve for yes"><span class="dot">05</span><span class="lbl">Solve for yes</span></button><span class="sep"></span>
-      <button class="step" data-s="06" title="06 Package & submit"><span class="dot">06</span><span class="lbl">Package &amp; submit</span></button><span class="sep"></span>
-      <button class="step" data-s="07" title="07 Close"><span class="dot">07</span><span class="lbl">Close</span></button>
-    </nav>
+    
     <div class="top-actions">
-      <button class="ghost" id="cmdBtn" title="Command bar">⌘K</button>
-      <button class="ghost" id="idsBtn" title="Show or hide internal evidence: idea, assumption and decision IDs (for Jean and the team, not for design partners)">Evidence: off</button>
+      <button class="ghost" id="idsBtn" title="Show or hide our internal review annotations (idea, assumption and decision IDs). For Jean and the team, not for design partners">Review annotations: off</button>
       <button class="ghost" id="modeBtn" title="Switch between light and dark background">☾ Dark</button>
+      <button class="ghost" id="helpBtn" title="Help">? Help</button>
       <button class="ghost" id="adminBtn" aria-haspopup="true">⚙ Admin</button>
-      <div class="avatar" id="avatar" title="Your account">JB</div>
-      <div id="userMenu" hidden><div class="who" id="umWho"></div><div class="umcred"><b>730</b> credits left</div><button data-act="billing" id="umBilling">Billing &amp; credits</button><button id="signOut">Sign out</button></div>
+      <span class="org" id="orgName">Pacific Brokerage</span><div class="avatar" id="avatar" title="Your account">JB</div>
+      <div id="userMenu" hidden><div class="who" id="umWho"></div><div class="umorg">Pacific Brokerage · NMLS #000000</div><div class="umcred"><b>730</b> credits left</div><button data-act="billing" id="umBilling">Billing &amp; credits</button><button id="signOut">Sign out</button></div>
     </div>
     <div class="fmenu" id="fileMenu" role="menu">
       <input id="fileSearch" placeholder="Search files (name, lender, status…)">
@@ -1010,14 +1089,15 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
           I also found a lender you didn't select that may fit better: <strong>Northgate Capital</strong>.
         </div></div>
         <div class="msg"><div class="who">Loni</div><div class="b">
-          Before anything goes out, 3 transactions decide this file. Want to review them? My recommendation is on the right: Crestview.
+          <strong>Crestview is ready for your review</strong>: it meets every checked rule as is. Three deposits decide the alternatives; you can look at them first if you want.
           <div class="chips">
-            <button class="chip rec" data-act="review">★ Review the 3 deciding deposits</button>
+            <button class="chip rec" data-act="toPackage">★ Take Crestview to Package &amp; submit</button>
+            <button class="chip" data-act="review">Review the 3 deciding deposits</button>
             <button class="chip" data-act="solve">Solve for yes on Harborline</button>
-            <button class="chip" data-act="loe">Request the letter of explanation</button>
+            <button class="chip" data-act="loe">Optional: letter for Summit Ridge</button>
             <button class="chip" data-act="pdf">Download PDF</button>
           </div>
-          <div class="why">Why I recommend this: the Oct 14 deposit moves Summit Ridge across its DTI limit. <a data-act="evidence">Show evidence</a><span class="inline-ids">SL-I-124 · SL-I-129 · SL-I-037</span></div>
+          <div class="why">Why Crestview: no exception needed, and it fits Elena's firm close date. Summit Ridge and Harborline stay optional alternatives. <a data-act="evidence">Show evidence</a><span class="inline-ids">SL-I-124 · SL-I-129 · SL-I-037</span></div>
         </div></div>
       </template>
       <div class="sugg" id="sugg"></div>
@@ -1031,6 +1111,15 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
     <!-- CANVAS -->
     <div class="rsz" id="rsz" title="Drag to resize · double-click to reset"></div>
     <main class="canvas" id="canvas">
+     <div class="stepbar" id="stepbar"><span class="sbl" id="sbFile">Marquez</span><nav class="ribbon" aria-label="Loan file progress">
+      <button class="step done" data-s="01" title="01 Import"><span class="dot">✓</span><span class="lbl">Import</span></button><span class="sep"></span>
+      <button class="step skipped" data-s="02" title="02 File integrity check (off for this file)"><span class="dot">02</span><span class="lbl">Integrity (off)</span></button><span class="sep"></span>
+      <button class="step done" data-s="03" title="03 Pre-select lenders"><span class="dot">✓</span><span class="lbl">Pre-select</span></button><span class="sep"></span>
+      <button class="step current" data-s="04"><span class="dot">04</span><span class="lbl">Pre-underwrite</span></button><span class="sep"></span>
+      <button class="step" data-s="05" title="05 Solve for yes"><span class="dot">05</span><span class="lbl">Solve for yes</span></button><span class="sep"></span>
+      <button class="step" data-s="06" title="06 Package & submit"><span class="dot">06</span><span class="lbl">Package &amp; submit</span></button><span class="sep"></span>
+      <button class="step" data-s="07" title="07 Close"><span class="dot">07</span><span class="lbl">Manage to closing</span></button>
+    </nav></div>
      <div class="view" id="v-file">
       <div class="print-only" style="margin-bottom:10px">
         <div style="font-weight:700;letter-spacing:.14em;font-size:12px;color:#A01A7D">LONI · powered by Second Look</div>
@@ -1050,7 +1139,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
         <div class="ids"><span>SL-I-044</span><span>SL-I-048</span></div>
         <div class="ey">Recommended route · your call</div>
         <h3>Proceed with Crestview</h3>
-        <div class="small">Meets every checked rule with no exception, which fits Elena's priority: a firm close by Jan 15. Harborline is cheaper (7.125% vs 7.375%) but depends on a FICO exception. <span class="src inf">Loni's inference</span></div>
+        <div class="small">Meets every checked rule with no exception, which fits Elena's priority: a firm close by Jan 15. Harborline has a lower indicative rate (7.125% vs 7.375%); total cost not yet compared, and it depends on a FICO exception. <span class="src inf">Loni's inference</span></div>
         <div class="row"><button class="btn" data-act="toPackage">Take Crestview to Package &amp; submit</button><button class="btn sec" data-act="solve">Try Harborline in Solve for yes</button><button class="btn sec" data-act="evidence">Show evidence</button></div>
       </section>
       <section class="card" id="changed">
@@ -1090,8 +1179,8 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
           </div>
           <div>
             <div class="small muted" style="margin-bottom:4px">Readiness</div>
-            <span class="ready">◆ Needs documents</span>
-            <div class="small muted" style="margin-top:6px">1 letter of explanation (Summit Ridge). Crestview needs nothing more.</div>
+            <span class="ready ok">✓ Route ready</span>
+            <div class="small muted" style="margin-top:6px">Crestview needs nothing more. Summit Ridge would need a letter (optional alternative).</div>
             <div class="story"><strong>Borrower story.</strong> Elena has run her design studio for seven years; deposits are steady at about $29,600 a month with one large client payment in October. She is buying her first home in San Diego and must close by mid-January to meet her lease end.</div>
           </div>
         </div>
@@ -1147,9 +1236,22 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
             <path d="M440.0,102.5 L725.0,102.5" class="ln ln-pa" stroke="#311847" stroke-dasharray="4 5" opacity=".55"/>
             <circle cx="430.5" cy="100.0" r="16" fill="url(#fcHalo)"/>
             <circle cx="430.5" cy="100.0" r="5" fill="#EC4067" stroke="#fff" stroke-width="2.5"/>
-            <g transform="translate(296.5,64.0)"><rect width="120" height="22" rx="11" fill="#311847"/><text x="60" y="15" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">This file · 698 / 80%</text></g>
+            <g transform="translate(296.5,64.0)"><rect width="96" height="17" rx="8.5" fill="#311847"/><text x="48" y="11.5" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="600">This file · 698 / 80%</text></g>
           </svg>
         </div></details>
+      </section>
+
+      <!-- FUNDS TO CLOSE (v0.24) -->
+      <section class="card">
+        <h2>Funds to close · reconciled</h2>
+        <table class="hist recon">
+          <tr><td>Verified funds <span class="small muted">· savings $75,723 + brokerage $182,400, Oct–Nov statements</span></td><td class="num">$258,123</td></tr>
+          <tr><td>+ Earnest money already paid <span class="small muted">· receipt in the file, cleared Nov 3</span></td><td class="num">$4,277</td></tr>
+          <tr><td>− Down payment <span class="small muted">· $850,000 − $680,000</span></td><td class="num">−$170,000</td></tr>
+          <tr><td>− Estimated closing costs <span class="small muted">· from the fee worksheet in ARIVE</span></td><td class="num">−$16,677</td></tr>
+          <tr class="tot"><td><strong>= Eligible reserves after closing</strong></td><td class="num"><strong>$75,723</strong></td></tr>
+        </table>
+        <div class="small muted" style="margin-top:6px">Reserves are what is left after the down payment and closing costs, not total assets. If funds don't reconcile, Loni asks a question instead of calling a route ready.</div>
       </section>
 
       <!-- RATE SHEETS / TABS -->
@@ -1300,7 +1402,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
           <tr><td>Monthly income</td><td>$15,000</td><td>$14,796 <span class="sm">12-month average deposits $29,592 × 50% expense factor. Varies by lender (step 04).</span></td><td><span class="st exc">◆ Close · −1.4%</span></td></tr>
           <tr><td>Self-employed since</td><td>2019</td><td>Business license issued Mar 2019</td><td><span class="st ok">✓ Documented</span></td></tr>
           <tr><td>Business ownership</td><td>100%</td><td>Business license names Elena as sole owner <span class="sm">CPA letter not received. Some lenders require it.</span></td><td><span class="st exc">◆ Partly</span></td></tr>
-          <tr id="rowAssets"><td>Assets</td><td>$80,000</td><td>$75,723 <span class="sm">Oct and Nov personal statements. $4,277 lower than reported.</span></td><td data-live="assetsSt"><span class="st exc">◆ Gap · $4,277</span></td></tr>
+          <tr id="rowAssets"><td>Assets</td><td>$262,400</td><td>$258,123 <span class="sm">Savings $75,723 + brokerage $182,400. The $4,277 difference is the earnest money deposit: receipt in the file, cleared Nov 3.</span></td><td data-live="assetsSt"><span class="st ok">✓ Explained</span></td></tr>
           <tr><td>Monthly debts</td><td>$600</td><td>Credit report: auto $410, cards $190</td><td><span class="st ok">✓ Documented</span></td></tr>
           <tr><td>Credit score</td><td>Not stated</td><td>Middle score 698 (701 / 698 / 690)</td><td><span class="st ok">✓ Documented</span></td></tr>
           <tr><td>Purchase price</td><td>$850,000</td><td>Purchase contract signed Nov 10, 2026</td><td><span class="st ok">✓ Documented</span></td></tr>
@@ -1319,7 +1421,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
             <li><span class="i ok">✓</span>12 consecutive months of statements, no missing pages</li>
             <li><span class="i ok">✓</span>Property address matches the purchase contract</li>
             <li><span class="i ok">✓</span>Declarations consistent with the credit report</li>
-            <li id="chkAssets"><span class="i exc">◆</span>Assets: application says $80,000, statements show $75,723</li>
+            <li id="chkAssets"><span class="i ok">✓</span>Assets: $4,277 difference explained by the earnest money receipt</li>
           </ul>
           <div class="small muted" style="margin-top:8px">Basic checks always run. Deeper document checks are step 02, off for this file.</div>
           <div class="ids"><span>SL-I-012</span><span>SL-I-016</span><span>D-014</span></div>
@@ -1360,7 +1462,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
         <table class="hist">
           <tr><th>Snapshot</th><th>When</th><th>What changed</th><th>Effect</th></tr>
           <tr><td>v3</td><td>Nov 25, 8:58 AM</td><td>Oct and Nov business statements, invoice SN-104 (uploaded by Elena in ARIVE)</td><td>Step 04 rerun: Crestview DTI 44.0% → 42.2%; Summit Ridge now needs a letter of explanation</td></tr>
-          <tr><td>v2</td><td>Nov 24, 4:38 PM</td><td>Assets updated in the application ($72,000 → $80,000)</td><td>Reserves recalculated</td></tr>
+          <tr><td>v2</td><td>Nov 24, 4:38 PM</td><td>Assets updated in the application ($254,000 → $262,400)</td><td>Reserves recalculated</td></tr>
           <tr><td>v1</td><td>Nov 18, 2:15 PM</td><td>First import: application and 14 documents</td><td>File created</td></tr>
         </table>
         <div class="small muted" style="margin-top:8px">ARIVE is checked automatically. Nothing is written back to ARIVE.</div>
@@ -1377,7 +1479,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
         <div class="ey">Imported · what next?</div>
         <div class="opts">
           <div class="opt"><div class="t">Run the file integrity check</div><div class="d">Off by default for you. Checks the documents for signs of editing, reconciles the statements and looks up the business. About 2 minutes.</div><button class="ghost" data-act="ngRun">Run the check</button></div>
-          <div class="opt rec"><span class="rbadge">Recommended</span><div class="t">Go to pre-select lenders</div><div class="d">Nothing in the import calls for deeper checks: both years of 1099s match the deposits, and every document came straight from ARIVE.</div><button class="btn" data-act="ngPre">Go to pre-select →</button></div>
+          <div class="opt rec"><span class="rbadge">Recommended</span><div class="t">Go to pre-select lenders</div><div class="d">Nothing in the import calls for deeper checks: both years of 1099s match the deposits; nothing in the documents calls for a deeper check.</div><button class="btn" data-act="ngPre">Go to pre-select →</button></div>
         </div>
         <div class="ids"><span>SL-I-022</span><span>D-014</span><span>D-015</span></div>
       </div>
@@ -1394,14 +1496,15 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
           <tr><th>Item</th><th>Reported in the application</th><th>Supported by the documents</th><th>Status</th></tr>
           <tr><td>Monthly income</td><td>$9,800</td><td>$9,138 <span class="sm">Average of 2024 ($106,900) and 2025 ($112,400) 1099s, before any lender expense factor</span></td><td><span class="st exc">◆ Close · −6.8%</span></td></tr>
           <tr><td>Paid on 1099s since</td><td>2021</td><td>1099s for 2024 and 2025</td><td><span class="st ok">✓ Documented</span></td></tr>
-          <tr><td>Assets</td><td>$62,000</td><td>$61,480 in 2 months of statements</td><td><span class="st ok">✓ Documented</span></td></tr>
+          <tr><td>Assets</td><td>$128,000 <span class="sm">incl. a $66,000 gift from his parents</span></td><td>$61,480 in 2 months of statements <span class="sm">Gift not documented yet: no gift letter or donor statement</span></td><td><span class="st exc">◆ Gap · $66,520</span></td></tr>
+          <tr><td>Funds to close</td><td>—</td><td>Needed $124,250: down payment $113,750 + estimated costs $10,500 <span class="sm">Documented $61,480: short $62,770 unless the gift is documented</span></td><td><span class="st no">✕ Not reconciled</span></td></tr>
           <tr><td>Monthly debts</td><td>$1,150</td><td>Credit report: student loan $640, auto $510</td><td><span class="st ok">✓ Documented</span></td></tr>
           <tr><td>Credit score</td><td>Not stated</td><td>Middle score 724</td><td><span class="st ok">✓ Documented</span></td></tr>
           <tr><td>Purchase price</td><td>$568,750</td><td>Purchase contract signed Nov 21, 2026 · LTV 80%</td><td><span class="st ok">✓ Documented</span></td></tr>
         </table>
       </div>
       <div class="g2">
-        <div class="card"><h2>Ready for pre-selection</h2><ul class="chk"><li><span class="i ok">✓</span>Two years of 1099s</li><li><span class="i ok">✓</span>Credit report and ID</li><li><span class="i ok">✓</span>2 months of asset statements</li><li><span class="i need">○</span>Year-to-date earnings statement <span class="muted">· some lenders ask for it, known after step 03</span></li></ul></div>
+        <div class="card"><h2>Ready for pre-selection</h2><ul class="chk"><li><span class="i ok">✓</span>Two years of 1099s</li><li><span class="i ok">✓</span>Credit report and ID</li><li><span class="i ok">✓</span>2 months of asset statements</li><li><span class="i need">○</span>Year-to-date earnings statement <span class="muted">· some lenders ask for it, known after step 03</span></li><li><span class="i exc">◆</span>Gift letter and donor's bank statement <span class="muted">· needed before pre-underwriting</span></li></ul></div>
         <div class="card"><h2>Objective and deadline</h2><div class="kv"><div class="k">What matters most to Minh</div><div class="v">Lowest rate</div></div><div class="kv" style="margin-top:8px"><div class="k">Target closing</div><div class="v">Feb 27, 2027 <span class="tag" style="background:var(--slate-soft);color:var(--slate)">Stated</span></div></div></div>
       </div>
      </div>
@@ -1415,7 +1518,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
       <div class="banner"><strong>Flags are questions, not findings.</strong> Each one lists likely innocent explanations. This check is not a fraud determination; the lender runs its own.</div>
       <div class="card">
         <h2>Result</h2>
-        <div class="stats"><div><div class="n">41</div><div class="l">documents checked</div></div><div><div class="n">9</div><div class="l">checks run</div></div><div><div class="n" id="brOpen" style="color:var(--amber)">2</div><div class="l">flags to review</div></div><div><div class="n" style="color:var(--green)">0</div><div class="l">blocking</div></div></div>
+        <div class="stats"><div><div class="n">41</div><div class="l">documents checked</div></div><div><div class="n">9</div><div class="l">checks run</div></div><div><div class="n" id="brOpen" style="color:var(--amber)">2</div><div class="l">flags without an outcome</div></div><div><div class="n" style="color:var(--green)">0</div><div class="l">blocking</div></div></div>
         <div class="small muted">Flags don't stop the file. You decide what to do with each one.</div>
         <div class="ids"><span>SL-I-015</span><span>SL-I-016</span><span>D-010</span></div>
       </div>
@@ -1428,7 +1531,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
           <ul><li>Daniel combined or rotated pages before uploading</li><li>He downloaded them from the bank, then re-saved them to rename the files</li></ul>
           <div class="lab">Suggested</div>
           <ul><li>Ask Daniel to upload both months again, downloaded straight from his bank, through ARIVE</li></ul>
-          <div class="acts"><button class="btn" data-act="brOrig">Draft the request</button><button class="ghost" data-act="brRev1">Mark as reviewed</button></div>
+          <div class="acts"><button class="btn" data-act="brOrig">Draft the request</button><button class="ghost" data-act="brRev1">Record an outcome</button></div>
         </div>
         <div class="flag" id="flag2">
           <div class="fh"><span style="color:var(--amber)">◆</span>Business name differs on 5 statements<span class="sp"></span><span class="st exc" data-live="f2">◆ To review</span></div>
@@ -1437,7 +1540,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
           <ul><li>The business became an LLC or was renamed in mid-2025</li></ul>
           <div class="lab">Suggested</div>
           <ul><li>Ask for the LLC formation or name-change filing, or a one-line letter of explanation</li></ul>
-          <div class="acts"><button class="btn" data-act="brLoe">Draft the request</button><button class="ghost" data-act="brRev2">Mark as reviewed</button></div>
+          <div class="acts"><button class="btn" data-act="brLoe">Draft the request</button><button class="ghost" data-act="brRev2">Record an outcome</button></div>
         </div>
         <div class="ids"><span>SL-I-018</span></div>
       </div>
@@ -1488,14 +1591,14 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
       </div>
       <div class="card">
         <h2>Pre-selection</h2>
-        <div class="budget"><span><strong id="chCount">4</strong> of 6 DSCR programs on your panel go to pre-underwriting</span><span class="bar"><i id="chBar" style="width:100%"></i></span><span class="muted small">Your budget: 4 per file · <a href="#" data-act="chBudget">change</a></span></div>
+        <div class="budget"><span><strong id="chCount">4</strong> of 6 DSCR programs on your panel go to pre-underwriting</span><span class="bar"><i id="chBar" style="width:100%"></i></span><span class="muted small">Your usual shortlist: 4 per file · <a href="#" data-act="chBudget">change</a></span></div>
         <table class="psel">
           <tr><th>Lender · program</th><th>Status</th><th>Why</th><th>Indicative rate</th><th>Your history</th><th></th></tr>
           <tr class="grp"><td colspan="6">Selected for step 04</td></tr>
           <tr data-row="ng"><td class="ln">Northgate Capital<small>DSCR Select</small></td><td><span class="st sel">● Selected</span></td><td><p class="why">Your first choice for DSCR refinances. Within every hard limit.</p></td><td>6.875–7.250%</td><td class="small">5 funded · avg 24 days</td><td class="act"><button class="ghost" data-drop="ng">Drop</button></td></tr>
-          <tr data-row="hb"><td class="ln">Harborline Mortgage<small>DSCR 1.0</small></td><td><span class="st exc">◆ Time-sensitive</span></td><td><p class="why">Within limits today. Minimum DSCR rises to 1.10 on <strong>Dec 1</strong>; Chen is at 1.06. Lock before Dec 1 or it drops out.</p></td><td>6.990–7.375%</td><td class="small">2 funded · avg 31 days</td><td class="act"><button class="ghost" data-drop="hb">Drop</button></td></tr>
+          <tr data-row="hb"><td class="ln">Harborline Mortgage<small>DSCR 1.0</small></td><td><span class="st exc">◆ Time-sensitive</span></td><td><p class="why">Within limits today. Minimum DSCR rises to 1.10 on <strong>Dec 1</strong>; Chen is at 1.06. Harborline bulletin 26-11 (Nov 14, written by the lender): files <strong>locked</strong> before Dec 1 keep the 1.00 minimum.</p></td><td>6.990–7.375%</td><td class="small">2 funded · avg 31 days</td><td class="act"><button class="ghost" data-drop="hb">Drop</button></td></tr>
           <tr data-row="cv"><td class="ln">Crestview Lending<small>Investor DSCR</small></td><td><span class="st need">… Data needed</span></td><td><p class="why">Requires a current lease on both units. Unit B is month-to-month.</p></td><td>7.000–7.375%</td><td class="small">3 funded · avg 27 days</td><td class="act"><button class="ghost" data-drop="cv">Drop</button></td></tr>
-          <tr data-row="sr"><td class="ln">Summit Ridge Capital<small>Rental Plus</small></td><td><span class="st exc">◆ Near miss</span></td><td><p class="why">Maximum LTV 70% on 2-unit properties; Chen is at 70.1% ($730 over). Exception candidate, or lower the loan by $730 in step 05.</p></td><td>7.125–7.500%</td><td class="small">1 funded</td><td class="act"><button class="ghost" data-drop="sr">Drop</button></td></tr>
+          <tr data-row="sr"><td class="ln">Summit Ridge Capital<small>Rental Plus</small></td><td><span class="st exc">◆ Near miss</span></td><td><p class="why">Maximum LTV 70% on 2-unit properties; Chen is at 70.1% ($1,000 over: 70% of $730,000 is $511,000). Exception candidate, or lower the loan by $1,000 in step 05.</p></td><td>7.125–7.500%</td><td class="small">1 funded</td><td class="act"><button class="ghost" data-drop="sr">Drop</button></td></tr>
           <tr class="grp"><td colspan="6">Not selected</td></tr>
           <tr data-row="nl"><td class="ln">Northgate Capital<small>DSCR Lite</small></td><td><span class="st out">○ Not needed</span></td><td><p class="why">Fits, but the same lender's DSCR Select prices about 0.40% lower for this file.</p></td><td>7.375–7.750%</td><td class="small">—</td><td class="act"><button class="ghost" data-add="nl">Add</button></td></tr>
           <tr data-row="pa"><td class="ln">Pacific Arch<small>DSCR Prime</small></td><td><span class="st no">✕ Excluded</span></td><td><p class="why">Minimum DSCR 1.20; Chen is at 1.06. <span class="tag" style="background:var(--slate-soft);color:var(--slate)">Published rule</span> <span class="small muted">DSCR guide v4.2, §3.1, Oct 2026</span></p></td><td>—</td><td class="small">—</td><td class="act"><button class="ghost" data-add="pa">Add anyway</button></td></tr>
@@ -1546,7 +1649,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
 
       <div class="card">
         <h2>Paths to yes · ranked for Samir</h2>
-        <div class="path rec" id="pB">
+        <div class="path rec chosen" id="pB">
           <div class="ph"><span class="rbadge2">★ Recommended</span><span class="t">Ask Northgate for an exception at 80%</span><span class="lever">Exception</span><span class="sp"></span><span class="st exc">◆ Exception possible</span></div>
           <div class="cost"><div><div class="k">Cash to Samir</div><div class="v">$145,000</div></div><div><div class="k">Rate</div><div class="v">7.875% <span class="small muted">(+0.25%)</span></div></div><div><div class="k">Payment</div><div class="v">$4,423/mo</div></div><div><div class="k">Time</div><div class="v">+3–5 days for the answer</div></div></div>
           <p><strong>Evidence:</strong> Northgate granted 80% on 1 of 2 similar files of yours (last in Aug 2026, 78% LTV). Strong compensating factors: 14 months of reserves after closing, 9 years in business, no late mortgage payment in 4 years.</p>
@@ -1566,6 +1669,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
         </div>
         <div class="small muted">Combine: ask Northgate now, and agree with Samir upfront that the lower loan is the fallback. Both fit his Jan 31 deadline.</div>
         <div class="ids"><span>SL-I-044</span><span>SL-I-045</span><span>SL-I-029</span><span>D-018</span></div>
+        <div class="decrec" id="hdDec"><strong>Decision</strong> · Ask Northgate for an exception at 80% · chosen by you, Nov 24, 4:35 PM<ul><li>Exception request sent to Lisa Park (Nov 24, marked sent by you) · no reply captured yet</li><li>Confirm the plan and the fallback with Samir (draft in the outbox)</li><li>If declined: switch to the lower loan, no new documents needed</li></ul></div>
       </div>
 
       <div class="exb" id="exBuilder" hidden>
@@ -1624,7 +1728,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
         <h2>Before it goes out · your review</h2>
         <div class="prog"><strong id="ptCount">0 of 3</strong> reviewed</div>
         <div class="rvw">
-          <div class="it" data-rv="1"><div class="n">1 · Cover letter</div><div class="t">Read the underwriting rationale</div><div class="d">Ravi's story, the income method, compensating factors. Every figure points to a page in the package.</div><button class="ghost" data-act="ptRv1">Mark as reviewed</button></div>
+          <div class="it" data-rv="1"><div class="n">1 · Cover letter</div><div class="t">Read the underwriting rationale</div><div class="d">Ravi's story, the income method, compensating factors. Every figure points to a page in the package.</div><button class="ghost" data-act="ptRv1">Open the cover letter</button></div>
           <div class="it" data-rv="2"><div class="n">2 · Package</div><div class="t">23 of 23 items on Summit Ridge's checklist</div><div class="d">Named and ordered the way Summit Ridge asks. Nothing missing.</div><button class="ghost" data-act="ptRv2">Mark as reviewed</button></div>
           <div class="it" data-rv="3"><div class="n">3 · What gets shared</div><div class="t">Ravi's data going to Summit Ridge</div><div class="d">Exactly what leaves Second Look, and what stays with you.</div><button class="ghost" data-act="ptRv3">Mark as reviewed</button></div>
         </div>
@@ -1710,7 +1814,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
 
      <!-- VIEW: OKAFOR · STEP 07 CLOSE -->
      <div class="view" id="v-okafor" hidden>
-      <div class="canvas-head"><div><h1>07 · Close</h1><div class="sub">Okafor · asset depletion purchase · $1,200,000 · Crestview Asset Utilization · locked at 6.875% until Dec 1</div></div><div class="sp"></div><button class="btn" data-act="okLock">Ask for a lock extension</button></div>
+      <div class="canvas-head"><div><h1>07 · Manage to closing</h1><div class="sub">Okafor · asset depletion purchase · $1,200,000 · Crestview Asset Utilization · locked at 6.875% until Dec 1</div></div><div class="sp"></div><button class="btn" data-act="okLock">Ask for a lock extension</button></div>
       <div class="banner"><strong>Conditionally approved is not final approval.</strong> Crestview can still add conditions until it issues clear to close. Second Look tracks; the lender decides.</div>
       <div class="card">
         <h2>Where the loan is</h2>
@@ -1780,9 +1884,9 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
      <div class="view" id="v-lcard" hidden><div id="lcBody"></div></div>
      <!-- VIEW: PLAYBOOK -->
      <div class="view" id="v-playbook" hidden>
-      <div class="canvas-head"><div><h1>Your Playbook</h1><div class="sub">[Brokerage name] · shared by the loan officers of the brokerage, with personal notes per loan officer · 42 entries</div></div><div class="sp"></div><button class="ghost" data-act="pbExport">⇩ Export</button><button class="btn" data-act="pbSeed">Add what you know · 2-minute interview</button></div>
-      <div class="pb-alert" id="pbCon"><div class="t">✕ Contradiction · Harborline · FICO exception</div><div class="small" style="margin-top:4px;color:var(--ink2)">Your rule says Harborline grants a 2-point score exception with strong reserves: it did twice, both with 12+ months. On Nov 10 it declined one on the Ruiz file, which had 8 months of reserves. What should the Playbook say now?</div>
-        <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><button class="btn" data-act="pbNarrow">Narrow it: only with 12+ months of reserves</button><button class="ghost" data-act="pbKeep">Keep it: Ruiz was a one-off</button><button class="ghost" data-act="pbRetire">Retire the rule</button></div></div>
+      <div class="canvas-head"><div><h1>Your Playbook</h1><div class="sub">Pacific Brokerage · shared by the loan officers of the brokerage, with personal notes per loan officer · 42 entries</div></div><div class="sp"></div><button class="ghost" data-act="pbExport">⇩ Export</button><button class="btn" data-act="pbSeed">Add what you know · 2-minute interview</button></div>
+      <div class="pb-alert" id="pbCon"><div class="t">◆ Mixed outcomes · Harborline · 2-point score exception</div><div class="small" style="margin-top:4px;color:var(--ink2)">Harborline granted it twice (both files had 12+ months of reserves) and declined it on Ruiz on Nov 10 (8 months). Reserves may be the reason, or something else may be: the outcomes alone don't show it. All three outcomes stay recorded.</div>
+        <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><button class="btn" data-act="pbClar">Request lender clarification</button><button class="ghost" data-act="pbOpen">Keep unresolved</button></div></div>
       <div class="sc" style="margin-bottom:14px">
         <div class="x"><div class="n">42</div><div class="l">entries</div></div><div class="x"><div class="n">17</div><div class="l">exception outcomes</div></div><div class="x"><div class="n">12</div><div class="l">execution facts</div></div><div class="x"><div class="n">7</div><div class="l">interpretations</div></div><div class="x"><div class="n">4</div><div class="l">account executive notes</div></div><div class="x"><div class="n">2</div><div class="l">rejected documents</div></div>
       </div>
@@ -1790,8 +1894,17 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
         <h2>Entries</h2>
         <div class="pbf" id="pbf"><button class="on" data-f="all">All</button><button data-f="les">Lessons to confirm · 2</button><button data-f="ex">Exception outcomes</button><button data-f="fa">Execution facts</button><button data-f="in">Interpretations</button><button data-f="ae">Account executive notes</button><button data-f="rj">Rejected documents</button></div>
         <table id="pbTable"></table>
-        <div class="small muted" style="margin-top:8px">Evidence is shown as counts on your own files, never as percentages. Older evidence weighs less. A one-file lesson becomes a rule only when you confirm it.</div>
+        <div class="small muted" style="margin-top:8px">Evidence is shown as counts on your own files, never as percentages. Older evidence weighs less. A one-file lesson becomes a brokerage observation only when you confirm it. Observations support a question to the lender; they never decide eligibility.</div>
         <div class="ids"><span>SL-I-087</span><span>SL-I-088</span><span>SL-I-089</span><span>SL-I-090</span><span>SL-I-091</span><span>SL-I-092</span><span>D-023</span></div>
+      </div>
+      <div class="card">
+        <h2>How Loni uses what it knows</h2>
+        <table class="hist"><tr><th>Kind of knowledge</th><th>What Loni does with it</th></tr>
+          <tr><td><strong>Published guideline</strong></td><td>Decides eligibility, within its program and effective dates</td></tr>
+          <tr><td><strong>Written lender clarification</strong></td><td>Applies within the program and case scope written by the lender</td></tr>
+          <tr><td><strong>Historical outcome</strong></td><td>Supports a question to the lender or an exception request; never makes a file eligible</td></tr>
+          <tr><td><strong>Broker preference</strong></td><td>Changes ranking and workflow (which lenders first, what to send)</td></tr>
+          <tr><td><strong>Open question</strong></td><td>Suggests something to ask or check</td></tr></table>
       </div>
       <div class="g2">
         <div class="card"><h2>Grow the Playbook</h2><ul class="chk"><li><span class="i ok">✓</span>Learns from every file you close or that gets declined (step 07)</li><li><span class="i ok">✓</span>Learns when you drop a lender in pre-selection and say why (step 03)</li><li><span class="i need">○</span><span>Train from your past files: 1003, documents and lender decisions. <a href="#" data-act="pbTrain">Start</a></span></li><li><span class="i need">○</span><span>2-minute interview per lender: what you already know about its flexibility. <a href="#" data-act="pbSeed">Start</a></span></li></ul><div class="ids"><span>SL-I-054</span><span>SL-I-056</span><span>SL-I-055</span></div></div>
@@ -1802,16 +1915,17 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
      <!-- VIEW: ACTIVITY & OUTBOX -->
      <div class="view" id="v-activity" hidden>
       <div class="canvas-head"><div><h1>Activity &amp; outbox</h1><div class="sub">Everything Loni prepared and did, across your files · Loni drafts, you send</div></div><div class="sp"></div><button class="ghost" data-act="obSettings">Message settings</button></div>
-      <div class="banner" style="background:#F6EEF5;border-left-color:#A01A7D;color:#311847"><strong>Loni never sends anything.</strong> Drafts open in your own email with your Second Look address in copy, so replies are tracked without access to your mailbox.</div>
+      <div class="banner" style="background:#F6EEF5;border-left-color:#A01A7D;color:#311847"><strong>Loni never sends anything.</strong> Drafts open in your own email with your Second Look address in copy. Replies are captured only while that address stays on the thread, so Loni tells you when it can't see a reply.</div>
       <div class="card">
         <div class="tabs2" id="obTabs"><button class="on" data-t="out">Outbox<span class="c" id="obC">5</span></button><button data-t="sent">Sent &amp; replies</button><button data-t="log">Activity log</button></div>
+        <div class="small muted" style="margin:-4px 0 10px">Statuses: Draft prepared · Marked sent by you · Send confirmed · Reply captured · Reply reported by you · Tracking incomplete</div>
         <div data-p="out"><table class="ob" id="obTable"></table><div class="small muted" style="margin-top:8px">Sorted by what is most urgent. "I sent it" moves the message to Sent; Loni then watches for the reply.</div></div>
         <div data-p="sent" hidden><table class="ob" id="sentTable"></table></div>
         <div data-p="log" hidden><div class="pbf" id="logF"><button class="on" data-w="all">All</button><button data-w="lo">Loni</button><button data-w="yo">You</button><button data-w="ex">Lenders &amp; ARIVE</button></div><ul class="log" id="logList"></ul></div>
         <div class="ids"><span>SL-I-095</span><span>SL-I-096</span><span>SL-I-097</span><span>D-019</span><span>D-024</span></div>
       </div>
       <div class="g2">
-        <div class="card"><h2>Gone quiet</h2>
+        <div class="card"><h2>Gone quiet</h2><div class="small muted" style="margin:-4px 0 4px">Based on what Second Look captured. Check your inbox before nudging anyone.</div>
           <div class="nudge"><span class="party b">Borrower</span><span style="flex:1"><strong>Grace Okafor</strong> · no upload for 4 days (November statement)</span><button class="ghost" data-act="okRem">Draft a nudge</button></div>
           <div class="nudge"><span class="party l">Lender</span><span style="flex:1"><strong>Lisa Park, Northgate</strong> · no answer for 1 day on the Haddad exception</span><button class="ghost" data-act="obNudgeLisa">Draft a nudge</button></div>
           <div class="nudge"><span class="party t">Title</span><span style="flex:1"><strong>Coastline Title</strong> · HOA certificate, 4 days</span><button class="ghost" data-act="okHoa">Draft a nudge</button></div>
@@ -1828,7 +1942,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
 
      <!-- VIEW: BILLING -->
      <div class="view" id="v-billing" hidden>
-      <div class="canvas-head"><div><h1>Billing &amp; credits</h1><div class="sub">[Brokerage name] · November 2026 · 1 credit = $1</div></div><div class="sp"></div><span class="illus">Illustrative</span><button class="btn" data-act="buyCredits">Buy credits</button></div>
+      <div class="canvas-head"><div><h1>Billing &amp; credits</h1><div class="sub">Pacific Brokerage · November 2026 · 1 credit = $1</div></div><div class="sp"></div><span class="illus">Illustrative</span><button class="btn" data-act="buyCredits">Buy credits</button></div>
       <div class="bal">
         <div class="x bmain"><div class="k">Credits left</div><div class="v">730</div>
           <div class="ubar"><i style="width:31.8%;background:#F7B7A3"></i><i style="width:1.8%;background:#EC4067"></i></div>
@@ -1875,6 +1989,37 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
       </div>
      </div>
 
+     <!-- VIEW: MARQUEZ · 06 PACKAGE (Crestview) -->
+     <div class="view" id="v-mqpack" hidden>
+      <div class="canvas-head"><div><h1>06 · Package &amp; submit</h1><div class="sub">Marquez · Crestview Lending · Bank Statement Select · built from ARIVE snapshot v3 · today</div></div><div class="sp"></div><button class="btn" id="mqApprove" data-act="mqApprove" disabled>Approve the package →</button></div>
+      <div class="banner"><strong>Prepared by Loni for your review. You approve and you send.</strong> Figures are Second Look estimates; Crestview underwrites the file and decides.</div>
+      <div class="card"><h2>Before it goes out · your review</h2><div class="prog"><strong id="mqCount">0 of 3</strong> reviewed</div>
+        <div class="rvw">
+          <div class="it" data-mq="1"><div class="n">1 · Cover letter</div><div class="t">Underwriting rationale, 2 pages</div><div class="d">Income method, the 3 deciding deposits and why they count or not, reserves reconciled. Every figure points to a page.</div><button class="ghost" data-act="mqRv1">Mark as reviewed</button></div>
+          <div class="it" data-mq="2"><div class="n">2 · Package</div><div class="t">21 of 21 items on Crestview's checklist</div><div class="d">From 12 exhibits. Asset statements listed first, as your Playbook notes for Crestview.</div><button class="ghost" data-act="mqRv2">Mark as reviewed</button></div>
+          <div class="it" data-mq="3"><div class="n">3 · What gets shared</div><div class="t">Elena's data going to Crestview</div><div class="d">Identity, income, assets, credit, property and the exhibits. Other lenders' results and your Playbook stay with you.</div><button class="ghost" data-act="mqRv3">Mark as reviewed</button></div>
+        </div></div>
+      <div class="card"><h2>1 · Cover letter · excerpt</h2><div class="letter">
+        <h4>Income · method</h4>12 months of business statements<span class="ex">E3 p.1–36</span>. Average deposits $29,592 a month; 50% expense factor per Crestview's matrix; qualifying income $14,796.
+        <h4>Deposits reviewed</h4>Oct 14 wire $46,200 from Studio Nine LLC counted as business income: matches invoice SN-104<span class="ex">E6 p.1</span>. Transfer $3,800 and Zelle $2,150 between Elena's own accounts excluded<span class="ex">E3 p.22, 31</span>.
+        <h4>Funds to close</h4>Verified $258,123<span class="ex">E4 p.1–8</span> + earnest money $4,277<span class="ex">E7 p.1</span> − down payment $170,000 − costs $16,677 = reserves $75,723, 13.4 months.
+        <h4>Exceptions requested</h4>None.</div></div>
+      <div class="g2">
+        <div class="card"><h2>How it goes out</h2><div class="small" style="color:var(--ink2)">Email to Maria Lopez, your account executive at Crestview, with the package as a secure link. You send it.</div>
+          <table class="hist" style="margin-top:10px"><tr><th>Version</th><th>Lender</th><th>Status</th></tr><tr><td>v1</td><td>Crestview</td><td id="mqTrack"><span class="st need">○ Not sent</span></td></tr></table></div>
+        <div class="card"><h2>Pre-flight</h2><ul class="chk"><li><span class="i ok">✓</span>CPA letter not required by Crestview for this program</li><li><span class="i ok">✓</span>Statements dated within 60 days</li><li><span class="i exc">◆</span>Your Playbook: Crestview often asks about large deposits; the Oct 14 wire is explained upfront</li></ul></div>
+      </div>
+     </div>
+     <!-- VIEW: MARQUEZ · 07 MANAGE TO CLOSING -->
+     <div class="view" id="v-mqclose" hidden>
+      <div class="canvas-head"><div><h1>07 · Manage to closing</h1><div class="sub">Marquez · Crestview Bank Statement Select · package v1 sent today · target closing Jan 15, 2027</div></div></div>
+      <div class="banner"><strong>Conditionally approved is not final approval.</strong> Crestview can add conditions until it issues clear to close.</div>
+      <div class="card"><h2>Where the loan is</h2><div class="stages" id="mqStages"></div></div>
+      <div class="card"><h2>Conditions · who owes what</h2><div id="mqCond"><div class="small muted">No conditions yet. Crestview's first review usually takes 2–4 business days on your files.</div>
+        <div style="margin-top:10px"><button class="ghost" data-act="mqSimCA">Mockup: simulate Crestview's conditional approval</button></div></div></div>
+      <div class="card"><h2>Record</h2><ul class="log" id="mqLog"></ul></div>
+     </div>
+
      <!-- VIEW: HOME / DAY START -->
      <div class="view" id="v-home" hidden>
       <div class="hero"><div><div class="sub">Wednesday, November 25, 2026</div><h1><span class="greet">Good morning</span><span class="uname-c"></span></h1></div></div>
@@ -1883,27 +2028,43 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
         <div class="sp"></div><button class="btn" data-act="resume">Resume Marquez</button>
       </div>
       <div class="choices">
-        <button class="choice" data-act="files"><div class="h">▤ Work on a loan file <span class="cnt cal">7 open</span></div><div class="pv">3 need you: Okafor (lock in 6 days), Patel (cover letter), Marquez (letter request).</div></button>
+        <button class="choice" data-act="files"><div class="h">▤ Work on a loan file <span class="cnt cal">7 open</span></div><div class="pv">3 need you: Okafor (lock in 6 days), Patel (cover letter), Marquez (review the Crestview route).</div></button>
         <button class="choice" data-act="brief"><div class="h">☀ My morning briefing <span class="cnt hot">3 need you</span></div><div class="pv">Prepared at 7:00 AM and sent to your email. Start with Okafor.</div></button>
         <button class="choice" data-act="lenders"><div class="h">⌂ Check lender status <span class="cnt cal">1 stale</span></div><div class="pv">Harborline raised its DSCR minimum (affects Chen). 1 rule waits for your review.</div></button>
         <button class="choice" data-act="intel"><div class="h">◔ Loan intelligence</div><div class="pv">9 files this month · 2 closed · my estimate matched the lender on 6 of 7.</div></button>
       </div>
       <div class="since"><span>Since yesterday:</span><span><b>2</b> borrower uploads in ARIVE</span><span><b>1</b> lender rule change</span><span><b>0</b> lender replies</span><span><b>2</b> files in ARIVE not yet imported</span></div>
-      <div class="wf2"><div class="wf2h"><div><div class="ey">How a non-QM file moves with Loni</div><div class="small muted">Seven steps, from the ARIVE import to closing. Click a step to open the sample file sitting there.</div></div></div><ol><li data-act="nguyen"><i>01</i><b>Import</b><span>Application (MISMO 3.4) and documents arrive from ARIVE</span><em>Sample: Nguyen ›</em></li><li data-act="brooks"><i>02</i><b>File integrity check</b><span>Optional: signs of editing, statement math, business lookups</span><em>Sample: Brooks ›</em></li><li data-act="chen"><i>03</i><b>Pre-select lenders</b><span>Your preferred lenders that pass the hard limits</span><em>Sample: Chen ›</em></li><li data-act="resume"><i>04</i><b>Pre-underwrite</b><span>Income, DTI and reserves per lender, with a recommendation</span><em>Sample: Marquez ›</em></li><li data-act="haddad"><i>05</i><b>Solve for yes</b><span>Ranked paths when a lender says no or almost</span><em>Sample: Haddad ›</em></li><li data-act="patel"><i>06</i><b>Package & submit</b><span>Cover letter and package to each lender’s checklist</span><em>Sample: Patel ›</em></li><li data-act="okafor"><i>07</i><b>Close</b><span>Conditions, deadlines and lessons for your Playbook</span><em>Sample: Okafor ›</em></li></ol><div class="wff2">Always on, alongside every file: <b>Lenders &amp; Playbook</b> · <b>Outbox</b> · <b>Morning briefing</b> · <b>Loan intelligence</b></div></div>
+      <div class="perf">
+        <div class="perfh"><div><div class="ey">Your November · month to date</div><div class="small muted">You compared with all 6 loan officers of Pacific Brokerage · funded loans</div></div><span class="sp"></span><span class="small muted">vs October</span></div>
+        <div class="pgrid">
+          <div class="pk"><div class="k">Originated loans</div><div class="v">2</div><div class="d up">▲ 1 vs Oct</div><div class="cmp"><div class="bar"><i style="width:18%"></i></div><span>18% of the brokerage · 11 loans</span></div><div class="avg">Brokerage average per loan officer: 1.8</div></div>
+          <div class="pk"><div class="k">Total loan amount</div><div class="v">$1.47M</div><div class="d up">▲ $0.62M vs Oct</div><div class="cmp"><div class="bar"><i style="width:16%"></i></div><span>16% of the brokerage · $8.92M</span></div><div class="avg">Brokerage average per loan officer: $1.49M</div></div>
+          <div class="pk"><div class="k">Origination fees</div><div class="v">$22,050</div><div class="d up">▲ $9,300 vs Oct</div><div class="cmp"><div class="bar"><i style="width:17%"></i></div><span>17% of the brokerage · $131,600</span></div><div class="avg">Brokerage average per loan officer: $21,930</div></div>
+          <div class="pk"><div class="k">Open pipeline</div><div class="v">$5.11M</div><div class="d">7 files</div><div class="cmp"><div class="bar"><i style="width:19%"></i></div><span>19% of the brokerage · $27.4M, 38 files</span></div><div class="avg">Expected to fund in December: 3 files, $2.81M</div></div>
+        </div>
+        <div class="small muted" style="margin-top:8px">Funded this month: Ortega ($640,000) and Kim ($830,000). Fees are your origination fees on funded loans. Brokerage figures from the shop's shared pipeline.</div>
+      </div>
+      <div class="wft" id="wfTile" data-act="wfToggle">
+        <div class="wftl"><div class="ey">How a non-QM file moves with Loni</div><div class="small muted" id="wfHint">7 steps · click to expand</div></div>
+        <div class="mini"><i style="background:#E09F7D"></i><i style="background:#EF5D60"></i><i style="background:#EC4067"></i><i style="background:#C42A8E"></i><i style="background:#A01A7D"></i><i style="background:#7E1463"></i><i style="background:#311847"></i></div><span class="chev" id="wfChev">▾</span>
+      </div>
+      <div id="wfFull" hidden><div class="wf2"><div class="wf2h"><div><div class="ey">How a non-QM file moves with Loni</div><div class="small muted">Seven steps, from the ARIVE import to closing. Click a step to open the sample file sitting there.</div></div></div><ol><li data-act="nguyen"><i>01</i><b>Import</b><span>Application (MISMO 3.4) and documents arrive from ARIVE</span><em>Sample: Nguyen ›</em></li><li data-act="brooks"><i>02</i><b>File integrity check <small>optional</small></b><span>Optional: signs of editing, statement math, business lookups</span><em>Sample: Brooks ›</em></li><li data-act="chen"><i>03</i><b>Pre-select lenders</b><span>Your preferred lenders that pass the hard limits</span><em>Sample: Chen ›</em></li><li data-act="resume"><i>04</i><b>Pre-underwrite</b><span>Income, DTI and reserves per lender, with a recommendation</span><em>Sample: Marquez ›</em></li><li data-act="haddad"><i>05</i><b>Solve for yes <small>optional</small></b><span>Only when a lender says no or almost, or to improve the rate</span><em>Sample: Haddad ›</em></li><li data-act="patel"><i>06</i><b>Package & submit</b><span>Cover letter and package to each lender’s checklist</span><em>Sample: Patel ›</em></li><li data-act="okafor"><i>07</i><b>Manage to closing</b><span>Conditions, deadlines and lessons for your Playbook</span><em>Sample: Okafor ›</em></li></ol><div class="wff2">Always on, alongside every file: <b>Lenders &amp; Playbook</b> · <b>Outbox</b> · <b>Morning briefing</b> · <b>Loan intelligence</b></div></div></div>
 
       <div class="ids" style="position:static;margin-top:10px"><span>SL-I-120</span><span>SL-I-122</span><span>SL-I-119</span></div>
      </div>
 
      <!-- VIEW: BRIEFING -->
      <div class="view" id="v-brief" hidden>
-      <div class="canvas-head"><div><h1><span class="greet">Good morning</span><span class="uname-c"></span></h1><div class="sub">Morning briefing · prepared Nov 25, 2026, 7:00 AM PT · also sent to your email</div></div><div class="sp"></div><button class="ghost" data-act="refresh">↻ Refresh</button></div>
+      <div class="canvas-head"><div><h1><span class="greet">Good morning</span><span class="uname-c"></span></h1><div class="sub" id="brSub">Morning briefing · prepared Nov 25, 2026, 7:00 AM PT · also sent to your email</div></div><div class="sp"></div><select id="brDay" class="brsel" title="Earlier briefings"><option value="0">Today · Wed Nov 25</option><option value="1">Yesterday · Tue Nov 24</option><option value="2">Mon Nov 23</option><option value="3">Fri Nov 20</option></select><button class="ghost" data-act="refresh">↻ Refresh</button></div>
+      <div id="brPast" hidden></div>
+      <div id="brToday">
       <section class="card"><div class="ids"><span>SL-I-103</span><span>D-025</span></div><h2>Needs you today · 3</h2>
         <div class="item"><span class="ic r">!</span><div><div class="t">Okafor · rate lock expires in 6 days</div><div class="m">2 conditions still open with Crestview: updated bank statement (Nov) and HOA certificate. Both requested from the borrower via ARIVE on Nov 21; no upload yet.</div></div><button class="btn sec" data-act="okafor">Open</button></div>
-        <div class="item"><span class="ic p">✎</span><div><div class="t">Patel · cover letter ready for your review</div><div class="m">Package for Summit Ridge is complete (16 of 16 documents). The letter explains the P&amp;L method and the 2 excluded deposits.</div></div><button class="btn sec" data-act="patel">Review</button></div>
-        <div class="item"><span class="ic h">◆</span><div><div class="t">Chen · Harborline raised its DSCR minimum to 1.10</div><div class="m">Chen's DSCR is 1.04: Harborline drops out. Crestview and Northgate still fit. Effective Dec 1.</div></div><button class="btn sec" data-act="chen">Open</button></div>
+        <div class="item"><span class="ic p">✎</span><div><div class="t">Patel · cover letter ready for your review</div><div class="m">Package for Summit Ridge is complete (23 of 23 checklist items, from 10 exhibits). The letter explains the P&amp;L method and the 2 excluded deposits.</div></div><button class="btn sec" data-act="patel">Review</button></div>
+        <div class="item"><span class="ic h">◆</span><div><div class="t">Chen · Harborline raised its DSCR minimum to 1.10</div><div class="m">Chen's DSCR is 1.06: Harborline drops out unless the file is locked before Dec 1. Crestview and Northgate still fit. Effective Dec 1.</div></div><button class="btn sec" data-act="chen">Open</button></div>
       </section>
       <section class="card"><h2>Changed since yesterday</h2>
-        <div class="item"><span class="ic g">↻</span><div><div class="t">Marquez · new statements in ARIVE</div><div class="m">Elena uploaded October and November. Pre-underwriting rerun: Crestview eligible, Harborline 2 points short, Summit Ridge needs a letter.</div></div><button class="btn sec" data-act="back">Open</button></div>
+        <div class="item"><span class="ic g">↻</span><div><div class="t">Marquez · new statements in ARIVE</div><div class="m">Elena uploaded October and November. Pre-underwriting rerun: Crestview eligible, Harborline 2 points short, Summit Ridge would need a letter (optional alternative).</div></div><button class="btn sec" data-act="back">Open</button></div>
         <div class="item"><span class="ic s">⎘</span><div><div class="t">Summit Ridge · new guideline pack (v2026.11)</div><div class="m">3 rules changed; none affects your open files. 1 extracted rule waits for your review.</div></div><button class="btn sec" data-act="lenders">See</button></div>
         <div class="item"><span class="ic r">!</span><div><div class="t">Pacific Arch · rate sheet missing this morning</div><div class="m">Prices shown are from yesterday, 8:30 AM. Marked stale on every file.</div></div><button class="btn sec" data-act="lenders">See</button></div>
       </section>
@@ -1911,7 +2072,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
         <table><thead><tr><th>File</th><th>Step</th><th>Readiness</th><th>Waiting on</th></tr></thead><tbody>
         <tr><td><strong>Okafor</strong></td><td>07 Close</td><td><span class="st exc">◆ Needs documents</span></td><td>Borrower</td></tr>
         <tr><td><strong>Patel</strong></td><td>06 Package &amp; submit</td><td><span class="st ok">✓ Clean</span></td><td>You</td></tr>
-        <tr><td><strong>Marquez</strong></td><td>04 Pre-underwrite</td><td><span class="st exc">◆ Needs documents</span></td><td>You (approve request)</td></tr>
+        <tr><td><strong>Marquez</strong></td><td>04 Pre-underwrite</td><td><span class="st ok">✓ Route ready</span></td><td>You (review the Crestview route)</td></tr>
         <tr><td><strong>Chen</strong></td><td>03 Pre-select</td><td><span class="st need">… Data needed</span></td><td>Borrower (leases)</td></tr>
         <tr><td><strong>Haddad</strong></td><td>05 Solve for yes</td><td><span class="st no">✕ Ineligible as is</span></td><td>You (choose a fix)</td></tr>
         <tr><td><strong>Brooks</strong></td><td>02 Integrity check</td><td><span class="st exc">◆ 2 flags</span></td><td>You (review)</td></tr>
@@ -1924,13 +2085,27 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
         <div class="small muted" style="margin-top:6px">Needs access to the ARIVE pipeline.<span class="inline-ids">SL-A-17</span> Until confirmed, the pilot briefing covers imported files only.</div>
       </section>
      </div>
+     </div>
 
      <!-- VIEW: FILES -->
      <div class="view" id="v-files" hidden>
-      <div class="canvas-head"><div><h1>Open files</h1><div class="sub">7 files in Second Look · sorted by what needs you first</div></div><div class="sp"></div><button class="ghost" data-act="import">+ New file from ARIVE</button></div>
-      <div class="filt" id="filt"><button class="on" data-f="all">All 5</button><button data-f="me">Needs me 3</button><button data-f="borrower">Waiting on borrower 2</button><button data-f="lender">Waiting on lender 0</button></div>
+      <div class="canvas-head"><div><h1>Open files</h1><div class="sub">7 files in Second Look · sorted by step, closest to closing first</div></div><div class="sp"></div><button class="ghost" data-act="import">+ New file from ARIVE</button></div>
+      <div class="filt" id="filt"><button class="on" data-f="all">All 7</button><button data-f="me">Needs me</button><button data-f="borrower">Waiting on borrower</button><button data-f="lender">Waiting on lender</button></div>
       <div class="fcards" id="fcards"></div>
       <div class="ids" style="position:static;margin-top:10px"><span>SL-I-121</span><span>SL-I-136</span></div>
+           <div class="card" id="closedCard" style="margin-top:16px">
+        <h2>History · closed files</h2>
+        <div class="srch">
+          <input id="hsQ" placeholder="Borrower name">
+          <select id="hsProg"><option value="">Any program</option><option>Bank statement</option><option>P&L</option><option>1099</option><option>DSCR</option><option>Asset depletion</option></select>
+          <select id="hsLender"><option value="">Any lender</option><option>Crestview</option><option>Harborline</option><option>Summit Ridge</option><option>Pacific Arch</option><option>Northgate</option></select>
+          <select id="hsOut"><option value="">Any outcome</option><option>Funded</option><option>Declined</option><option>Withdrawn</option></select>
+          <select id="hsPer"><option value="">Any time</option><option value="30">Last 30 days</option><option value="90">Last 90 days</option><option value="2026">2026</option></select>
+          <button class="ghost" data-act="hsClear">Clear</button>
+        </div>
+        <div class="small muted" id="hsInfo" style="margin:4px 0 8px">Last 5 closed files</div><div class="small muted" style="margin:-4px 0 8px">All files closed through Second Look since July. The lender scorecard in Loan intelligence counts files you sent in the last 90 days, so its totals differ.</div>
+        <table class="hist" id="hsTable"></table>
+      </div>
      </div>
 
      <!-- VIEW: LENDERS -->
@@ -1955,7 +2130,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
      <div class="view" id="v-intel" hidden>
       <div class="canvas-head"><div><h1>Loan intelligence</h1><div class="sub">Your brokerage · last 90 days · counts shown until there are enough files for percentages</div></div></div>
       <div class="kpis">
-        <div class="kpi"><div class="k">Files pre-underwritten</div><div class="v">23</div><div class="d">9 this month</div></div>
+        <div class="kpi"><div class="k">Files pre-underwritten</div><div class="v">19</div><div class="d">9 this month</div></div>
         <div class="kpi"><div class="k">Submitted</div><div class="v">11</div><div class="d">4 this month</div></div>
         <div class="kpi"><div class="k">Closed</div><div class="v">7</div><div class="d">2 declined, then placed elsewhere</div></div>
         <div class="kpi"><div class="k">First credible option</div><div class="v">35 min</div><div class="d">median, after import</div></div>
@@ -2074,7 +2249,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
   $$('[data-admin]').forEach(b=>b.addEventListener('click',()=>{menu.classList.remove('open');toast(b.textContent+': admin screen not detailed in this mockup')}));
 
   // ---- ids toggle ----
-  $('#idsBtn').addEventListener('click',()=>{document.body.classList.toggle('show-ids');$('#idsBtn').textContent='Evidence: '+(document.body.classList.contains('show-ids')?'on':'off')});
+  $('#idsBtn').addEventListener('click',()=>{document.body.classList.toggle('show-ids');$('#idsBtn').textContent='Review annotations: '+(document.body.classList.contains('show-ids')?'on':'off')});
 
   // ---- command bar ----
   acts.chen=()=>switchTo('Chen');acts.patel=()=>switchTo('Patel');
@@ -2083,7 +2258,6 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
   function render(){const q=pin.value.toLowerCase();cur=CMDS.filter(c=>c[0].toLowerCase().includes(q));sel=Math.min(sel,Math.max(cur.length-1,0));plist.innerHTML=cur.map((c,i)=>`<div class="opt${i===sel?' sel':''}" data-i="${i}">${c[0]}<span>${c[2]}</span></div>`).join('')||'<div class="opt">No match<span></span></div>'}
   function openPal(){pal.classList.add('open');pin.value='';sel=0;render();pin.focus()}
   function run(c){pal.classList.remove('open');if(!c)return;if(acts[c[1]]){say(c[0],'me');acts[c[1]]()}else if(c[1]==='admin')toast(c[0]+': not detailed in this mockup');else toast(c[0]+': available in the full mockup')}
-  $('#cmdBtn').addEventListener('click',openPal);
   document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openPal()}if(e.key==='Escape')pal.classList.remove('open')});
   pin.addEventListener('input',()=>{sel=0;render()});
   pin.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){sel=Math.min(sel+1,cur.length-1);render();e.preventDefault()}if(e.key==='ArrowUp'){sel=Math.max(sel-1,0);render();e.preventDefault()}if(e.key==='Enter')run(cur[sel])});
@@ -2127,14 +2301,15 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
     <div><span class="src inf">Loni's inference</span>Loni's own reading or match. Always open for your review.</div></div>`);
   acts.testDeposit=()=>{closeDrawer();if(!scenario)setScenario(true);dep.big=false;const b=$('.switch[data-dep=big]');b.classList.remove('on');b.parentElement.children[2].textContent='Excluded';recalc();document.getElementById('deciding').scrollIntoView({behavior:'smooth',block:'start'});say('Scenario: the Oct 14 wire is excluded. Summit Ridge rises to 48.1% DTI, over its 45% limit; Crestview stays eligible at 48.6%. Your working file is unchanged.')};
   acts.flag=()=>{closeDrawer();toast('Flag recorded · classification unchanged until reviewed');say('I flagged the Oct 14 classification for your review. Nothing changes in the working file until you decide.')};
-  acts.toPackage=()=>say('In the full mockup this opens <strong>step 06 · Package &amp; submit</strong> for Crestview: the package, the cover letter and the review checklist. Nothing is sent without you.');
+  acts.toPackage=()=>mqToPack();
 
   // ---- v0.4 views ----
   const VT={file:'',brief:'☀ Morning briefing',files:'▤ Open files',lenders:'⌂ Lender status',intel:'◔ Loan intelligence'};
   let curView='file';
   function showView(v){
-    curView=v;document.body.classList.toggle('on-home',v==='home');if(typeof paintSugg==='function')paintSugg(v);['file','s01','nguyen','brooks','chen','haddad','patel','okafor','hist','lcard','playbook','activity','billing','home','brief','files','lenders','intel'].forEach(k=>{const e=document.getElementById('v-'+k);if(e)e.hidden=(k!==v)});
-    const fv=VFILE[v];if(fv){curFile=fv;paintStepper(fv,v)}
+    {const nc=VFILE[v]||'_b';if(nc!==curCtx){THREADS[curCtx]=thread.innerHTML;thread.innerHTML=THREADS[nc]||'';curCtx=nc;if(THREADS[nc])thread.scrollTop=thread.scrollHeight}}
+    curView=v;document.body.classList.toggle('on-home',v==='home');if(typeof paintSugg==='function')paintSugg(v);['file','s01','nguyen','brooks','chen','haddad','patel','okafor','mqpack','mqclose','hist','lcard','playbook','activity','billing','home','brief','files','lenders','intel'].forEach(k=>{const e=document.getElementById('v-'+k);if(e)e.hidden=(k!==v)});
+    const fv=VFILE[v];if(fv){curFile=fv;paintStepper(fv,v);$('#sbFile').textContent=fv}
     document.body.classList.toggle('not-file',!fv);
     FILES.forEach(f=>f[4]=!!fv&&f[0]===fv);
     $('#viewTitle').textContent=VT[v]||'';
@@ -2145,12 +2320,12 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
   }
   const FC=[["Okafor","Asset depletion purchase · $1,200,000","07 Close","Needs documents","exc","2 conditions open · lock expires in 6 days","Chase the 2 conditions (drafts ready)","me borrower"],
   ["Patel","P&L purchase · $930,000","06 Package & submit","Clean","ok","Package complete for Summit Ridge","Review the cover letter","me"],
-  ["Marquez","Bank statement purchase · $680,000","04 Pre-underwrite","Needs documents","exc","Crestview eligible · Harborline 2 points short","Approve the letter request for Summit Ridge","me"],
+  ["Marquez","Bank statement purchase · $680,000","04 Pre-underwrite","Route ready","ok","Crestview eligible as is · 2 alternatives optional","Review the Crestview route","me"],
   ["Chen","DSCR refinance · $512,000","03 Pre-select","Data needed","need","Harborline drops out Dec 1 (DSCR 1.10)","Wait for leases from the borrower","borrower"],
   ["Haddad","Cash-out refinance · $610,000","05 Solve for yes","Ineligible as is","no","LTV 80% vs 75% max at every lender","Choose a fix: lower amount or exception","me"],
   ["Brooks","Bank statement purchase · $720,000","02 Integrity check","2 flags","exc","Re-saved PDFs, business name change","Review the 2 flags","me"],
   ["Nguyen","1099 purchase · $455,000","01 Import","New","need","Imported from ARIVE today","Run the check or go to pre-select","me"]];
-  function renderCards(f){$('#fcards').innerHTML=FC.filter(c=>f==='all'||c[7].includes(f)).map(c=>`<div class="fcard" data-open="${c[0]}"><div class="top2"><span class="nm">${c[0]}</span><span class="sp"></span><span class="stepb">${c[2]}</span></div><div class="small muted">${c[1]}</div><div><span class="st ${c[4]}">${c[4]==='ok'?'✓':c[4]==='exc'?'◆':'…'} ${c[3]}</span></div><div class="small">${c[5]}</div><div class="next">Next: <b>${c[6]}</b></div></div>`).join('')||'<div class="muted">No file in this group.</div>'}
+  function renderCards(f){FC.sort((a,b)=>parseInt(b[2])-parseInt(a[2]));$('#fcards').innerHTML=FC.filter(c=>f==='all'||c[7].includes(f)).map(c=>`<div class="fcard" data-open="${c[0]}"><div class="top2"><span class="nm">${c[0]}</span><span class="sp"></span><span class="stepb">${c[2]}</span></div><div class="small muted">${c[1]}</div><div><span class="st ${c[4]}">${c[4]==='ok'?'✓':c[4]==='exc'?'◆':'…'} ${c[3]}</span></div><div class="small">${c[5]}</div><div class="next">Next: <b>${c[6]}</b></div></div>`).join('')||'<div class="muted">No file in this group.</div>'}
   $('#filt').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$$('#filt button').forEach(x=>x.classList.toggle('on',x===b));renderCards(b.dataset.f)});
   $('#fcards').addEventListener('click',e=>{const c=e.target.closest('[data-open]');if(c)switchTo(c.dataset.open)});
   renderCards('all');
@@ -2178,40 +2353,40 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
 
 
   // ---- v0.9: B1 step 01 Import ----
-  let emdDone=false;
+  let emdDone=true;
   acts.s01=()=>{if(!marquezOpened){marquezOpened=true;thread.insertAdjacentHTML('beforeend',$('#marquezIntro').innerHTML);thread.querySelectorAll('.uname-c').forEach(x=>x.textContent=USER?', '+USER:'')}
     showView('s01');
     say(emdDone?'Here is the import for <strong>Marquez</strong>. Ready for pre-selection; the asset gap is explained.<div class="chips"><button class="chip rec" data-act="resume">★ Back to step 04</button></div>':'Here is what I imported for <strong>Marquez</strong>. The file is ready for pre-selection, and the numbers mostly match what Elena reported. One question could matter later: her assets are <strong>$4,277 lower</strong> than in the application. Is that the earnest money deposit?'+('<div class="chips"><button class="chip rec" data-act="emd">★ Yes, earnest money</button><button class="chip" data-act="emdAsk">Ask Elena</button><button class="chip" data-act="resume">Back to step 04</button></div>')+'<div class="why">Why I ask: lenders count reserves from the statements, not the application. The gap doesn\'t change any lender answer today.<span class="inline-ids">SL-I-004 · SL-I-018</span></div>')};
   acts.emd=()=>{if(emdDone)return;emdDone=true;
     $('[data-live=assetsSt]').innerHTML='<span class="st ok">✓ Explained</span>';
-    $('#rowAssets td:nth-child(3) .sm').textContent='Oct and Nov personal statements. Gap of $4,277 = earnest money deposit, cleared Nov 3 (you confirmed).';
+    $('#rowAssets td:nth-child(3) .sm').textContent='Savings + brokerage, Oct and Nov statements. Gap of $4,277 = earnest money deposit, cleared Nov 3 (you confirmed).';
     $('#chkAssets').innerHTML='<span class="i ok">✓</span>Assets: $4,277 gap explained by the earnest money deposit';
     say('Noted. I marked the gap as the earnest money deposit, which matches the receipt in the file. Nothing else to resolve at import.<div class="chips"><button class="chip rec" data-act="resume">★ Back to step 04</button></div>');};
-  acts.emdAsk=()=>{say('I drafted a short question for Elena. She can answer by replying; no document needed yet.<div class="draft"><div class="dh">Draft · email to Elena Marquez · you send it</div><strong>Subject:</strong> Quick question on your savings<br><br>Hi Elena, your application lists $80,000 in assets and your October and November statements show $75,723. Is the difference your earnest money deposit? Thank you! '+USER+'<div class="row"><button class="btn" data-act="sent">Open in my email</button></div></div>')};
+  acts.emdAsk=()=>{say('I drafted a short question for Elena. She can answer by replying; no document needed yet.<div class="draft"><div class="dh">Draft · email to Elena Marquez · you send it</div><strong>Subject:</strong> Quick question on your savings<br><br>Hi Elena, your application lists $262,400 in assets and your October and November statements show $258,123. Is the difference your earnest money deposit? Thank you! '+USER+'<div class="row"><button class="btn" data-act="sent">Open in my email</button></div></div>')};
   acts.reimport=()=>toast('Checked ARIVE: nothing new since 8:58 AM.');
   acts.editStory=()=>toast('Editing the borrower story is available in the full product.');
   VT.s01='';
 
 
   // ---- v0.10: one sample file per step ----
-  const VFILE={file:'Marquez',s01:'Marquez',nguyen:'Nguyen',brooks:'Brooks',chen:'Chen',haddad:'Haddad',patel:'Patel',okafor:'Okafor'};
+  const VFILE={file:'Marquez',s01:'Marquez',nguyen:'Nguyen',brooks:'Brooks',chen:'Chen',haddad:'Haddad',patel:'Patel',okafor:'Okafor',mqpack:'Marquez',mqclose:'Marquez'};
   let curFile='Marquez';
   const CHIP={Marquez:'<strong>Marquez</strong> · Purchase · $680,000 · San Diego, CA',Nguyen:'<strong>Nguyen</strong> · 1099 purchase · $455,000 · Chula Vista, CA',Brooks:'<strong>Brooks</strong> · Bank statement purchase · $720,000 · Escondido, CA',Chen:'<strong>Chen</strong> · DSCR refinance · $512,000 · La Mesa, CA',Haddad:'<strong>Haddad</strong> · Cash-out refinance · $610,000 · Santee, CA',Patel:'<strong>Patel</strong> · P&amp;L purchase · $930,000 · Poway, CA',Okafor:'<strong>Okafor</strong> · Asset depletion purchase · $1,200,000 · Del Mar, CA'};
   // step states per file: d=done, s=skipped, c=current, t=to do
   const STEPS={Marquez:'dsdcttt',Nguyen:'ctttttt',Brooks:'dcttttt',Chen:'dsctttt',Haddad:'dsddctt',Patel:'dsdddct',Okafor:'dsddddc'};
-  const LBL=['Import','Integrity','Pre-select','Pre-underwrite','Solve for yes','Package & submit','Close'];
+  const LBL=['Import','Integrity check','Pre-select','Pre-underwrite','Solve for yes','Package & submit','Manage to closing'];
   function paintStepper(fn,v){const st=STEPS[fn];$$('.step').forEach((b,i)=>{const c=st[i];b.className='step'+({d:' done',s:' skipped',c:' current',t:''})[c];
     b.querySelector('.dot').textContent=c==='d'?'✓':String(i+1).padStart(2,'0');
     b.querySelector('.lbl').textContent=i===1&&c==='s'?'Integrity (off)':LBL[i];
     b.classList.toggle('viewing',i===viewIdx(fn,v))})}
   const OPEN={Nguyen:'nguyen',Brooks:'brooks',Chen:'chen',Haddad:'haddad',Patel:'patel',Okafor:'okafor'};
   function openFile(n){showView(OPEN[n]);
-    if(n==='Nguyen')say('<strong>Nguyen</strong> is imported from ARIVE. The numbers match what Minh reported, within 7% on income. Next: run the file integrity check, or go straight to pre-select? I recommend pre-select: nothing in the import calls for deeper checks.<div class="chips"><button class="chip rec" data-act="ngPre">★ Go to pre-select</button><button class="chip" data-act="ngRun">Run the integrity check</button></div><div class="why">Why: both years of 1099s match the deposits, and every document came straight from ARIVE.<span class="inline-ids">SL-I-022 · D-014</span></div>');
+    if(n==='Nguyen')say('<strong>Nguyen</strong> is imported from ARIVE. The numbers match what Minh reported, within 7% on income. Next: run the file integrity check, or go straight to pre-select? I recommend pre-select: nothing in the import calls for deeper checks. One open question before pre-underwriting: the application counts a <strong>$66,000 gift</strong> from Minh\'s parents, and there is no gift letter yet, so funds to close don\'t reconcile.<div class="chips"><button class="chip rec" data-act="ngPre">★ Go to pre-select</button><button class="chip" data-act="ngRun">Run the integrity check</button></div><div class="why">Why: both years of 1099s match the deposits; nothing in the documents calls for a deeper check.<span class="inline-ids">SL-I-022 · D-014</span></div>');
     if(n==='Okafor')say('<strong>Okafor</strong> is conditionally approved by Crestview, 3 of 6 conditions cleared. The risk is timing: the rate lock expires <strong>Dec 1</strong>, and the HOA certificate usually takes 5–10 business days. I recommend asking Crestview for a 7-day extension now. One condition is a duplicate: the asset statements are already in the package.<div class="chips"><button class="chip rec" data-act="okLock">★ Ask for a lock extension</button><button class="chip" data-act="okDup">Answer the duplicate</button><button class="chip" data-act="okRem">Remind Grace</button></div><div class="why">Why now: an extension asked before expiry usually costs less than one asked after.<span class="inline-ids">SL-I-072 · SL-I-069</span></div>');
     if(n==='Patel'){$$('#v-patel .uname-sig').forEach(x=>x.textContent=USER||'You');say('The package for <strong>Patel</strong> is ready for Summit Ridge: 23 of 23 checklist items, and a cover letter where every figure points to a page. Three things to review before it goes out: the cover letter, the package, and what gets shared.<div class="chips"><button class="chip rec" data-act="ptRv1">★ Start with the cover letter</button><button class="chip" data-act="ptSecond">Also build one for Crestview</button></div><div class="why">Heads-up from your Playbook: Summit Ridge usually checks the business again within 10 days of closing.<span class="inline-ids">SL-I-060</span></div>')}
-    if(n==='Haddad')say('No lender takes <strong>Haddad</strong> as is: Samir asks for 80% LTV on a cash-out, and every lender stops at 75% or lower. I found 3 paths. I recommend asking <strong>Northgate</strong> for an exception (granted on 1 of 2 similar files of yours), with the lower loan agreed as the fallback.<div class="chips"><button class="chip rec" data-act="hdEx">★ Build the exception request</button><button class="chip" data-act="hdBorrower">Draft the options for Samir</button><button class="chip" data-act="hdPickA">Go with the lower loan</button></div><div class="why">Why Northgate first: Samir\'s priority is cash, and the exception keeps all $145,000. Its cost is +0.25% and a few days.<span class="inline-ids">SL-I-044 · SL-I-046</span></div>');
+    if(n==='Haddad')say('No lender takes <strong>Haddad</strong> as is: Samir asks for 80% LTV on a cash-out, and every lender stops at 75% or lower. On Nov 24 you chose to ask <strong>Northgate</strong> for an exception and sent the request to Lisa Park; no reply captured yet. The lower loan stays the fallback. Still to do: confirm the plan with Samir.<div class="chips"><button class="chip rec" data-act="hdBorrower">★ Draft the plan for Samir</button><button class="chip" data-act="obNudgeLisa">Follow up with Lisa Park</button><button class="chip" data-act="hdPickA">Go with the lower loan</button></div><div class="why">Why Northgate first: Samir\'s priority is cash, and the exception keeps all $145,000. Its cost is +0.25% and a few days.<span class="inline-ids">SL-I-044 · SL-I-046</span></div>');
     if(n==='Chen')say('For <strong>Chen</strong> I pre-selected <strong>4 of your 6</strong> DSCR programs. One is time-sensitive: Harborline raises its minimum DSCR to 1.10 on Dec 1, and Chen is at 1.06. Crestview still needs a current lease on unit B.<div class="chips"><button class="chip rec" data-act="chPU">★ Pre-underwrite these 4</button><button class="chip" data-act="chLease">Ask Wei for the lease</button><button class="chip" data-act="chWhyPA">Why not Pacific Arch?</button></div><div class="why">Why these 4: your DSCR refinance preferences first, then hard limits, then your history with each lender. You can add or drop any program.<span class="inline-ids">D-016 · SL-I-031</span></div>');
-    if(n==='Brooks')say('The integrity check on <strong>Brooks</strong> is done: 2 things to review, nothing blocking. Two March–April statements were re-saved in a PDF editor, and the business name changed mid-2025. Both have likely innocent explanations.<div class="chips"><button class="chip rec" data-act="brOrig">★ Ask Daniel for the original statements</button><button class="chip" data-act="brBoth">Mark both reviewed</button><button class="chip" data-act="brPre">Go to pre-select</button></div><div class="why">Why I suggest the originals: if the lender\'s own check flags the same PDFs later, it costs more time than asking now.<span class="inline-ids">SL-I-018</span></div>');}
+    if(n==='Brooks')say('The integrity check on <strong>Brooks</strong> is done: 2 things to review, nothing blocking. Two March–April statements were re-saved in a PDF editor, and the business name changed mid-2025. Both have likely innocent explanations.<div class="chips"><button class="chip rec" data-act="brOrig">★ Ask Daniel for the original statements</button><button class="chip" data-act="brBoth">Record outcomes</button><button class="chip" data-act="brPre">Go to pre-select</button></div><div class="why">Why I suggest the originals: if the lender\'s own check flags the same PDFs later, it costs more time than asking now.<span class="inline-ids">SL-I-018</span></div>');}
   acts.ngRun=()=>{say('In the full product the check runs here in about 2 minutes. To see a finished check, open <strong>Brooks</strong>, where you turned it on yesterday.<div class="chips"><button class="chip rec" data-act="brooks">★ Open Brooks</button></div>')};
   acts.ngPre=()=>{STEPS.Nguyen='dsctttt';paintStepper('Nguyen','nguyen');FILES.find(f=>f[0]==='Nguyen')[2]='03 Pre-select';
     say('Done: <strong>Nguyen</strong> moves to step 03. Integrity check skipped (you can run it any time before submitting). I\'m preparing the pre-selection from your preferred lenders for 1099 purchases.<div class="chips"><button class="chip" data-act="chen">See a pre-selection (Chen)</button><button class="chip" data-act="back">Back to Marquez</button></div>')};
@@ -2234,7 +2409,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
   $('#v-chen').addEventListener('click',e=>{const d=e.target.closest('[data-drop]'),a=e.target.closest('[data-add]');
     if(d){chPending=d.dataset.drop;say(`Why drop <strong>${CHN[chPending]}</strong>? I'll note it in your Playbook so the next pre-selection learns from it.<div class="chips"><button class="chip" data-act="chR1">Slow lately</button><button class="chip" data-act="chR2">Borrower preference</button><button class="chip" data-act="chR3">Pricing not competitive</button><button class="chip" data-act="chR4">Just this file</button></div>`)}
     if(a){const k=a.dataset.add;CHSEL.add(k);const r=$(`[data-row="${k}"]`);r.querySelector('td:nth-child(2)').innerHTML='<span class="st sel">● Added by you</span>';a.outerHTML='';chPaint();
-      say(`Added <strong>${CHN[k]}</strong>.`+(k==='pa'?' It is excluded by a hard limit, so step 04 will show it as ineligible unless you ask for an exception.':'')+(CHSEL.size>4?` That's ${CHSEL.size} programs, over your budget of 4. Fine for this file.`:''))}});
+      say(`Added <strong>${CHN[k]}</strong>.`+(k==='pa'?' It is excluded by a hard limit, so step 04 will show it as ineligible unless you ask for an exception.':'')+(CHSEL.size>4?` That's ${CHSEL.size} programs, above your usual shortlist of 4. Fine for this file.`:''))}});
   function chDrop(reason){const k=chPending;if(!k)return;chPending=null;CHSEL.delete(k);const r=$(`[data-row="${k}"]`);r.classList.add('dropped');r.querySelector('td:nth-child(2)').innerHTML='<span class="st out">○ Dropped by you</span>';r.querySelector('.act').innerHTML='<span class="small muted">'+reason+'</span>';chPaint();
     say(`Dropped <strong>${CHN[k]}</strong> (${reason.toLowerCase()}). Noted in your Playbook.`+(CHSEL.size<4?' I can add Northgate DSCR Lite to keep 4 in the run.<div class="chips"><button class="chip" data-act="chAddNL">Add DSCR Lite</button></div>':''));toast('Saved to your Playbook: '+CHN[k]+' · '+reason)}
   acts.chR1=()=>chDrop('Slow lately');acts.chR2=()=>chDrop('Borrower preference');acts.chR3=()=>chDrop('Pricing not competitive');acts.chR4=()=>chDrop('Just this file');
@@ -2250,10 +2425,11 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
   acts.hdEx=()=>{const e=$('#exBuilder');e.hidden=false;e.querySelectorAll('.uname-sig').forEach(x=>x.textContent=USER);e.scrollIntoView({behavior:'smooth',block:'start'});
     say('The exception request is on the right: the rule, the ask, 5 compensating factors and your history with Northgate. The email to Lisa Park is ready for you to send.')};
   acts.hdExClose=()=>{$('#exBuilder').hidden=true};
-  function hdPick(id,txt){['pA','pB','pC'].forEach(k=>$('#'+k).classList.toggle('chosen',k===id));toast('Chosen path: '+txt);
-    say('Noted: <strong>'+txt+'</strong>. Next, confirm it with Samir before anything goes to a lender.<div class="chips"><button class="chip rec" data-act="hdBorrower">★ Draft the summary for Samir</button></div>')}
+  let hdPath='pB';const HSUB={pB:'Your refinance: the plan (exception first)',pA:'Your refinance: the plan (lower loan)',pC:'Your refinance: the plan (appraisal first)'};
+  function hdPick(id,txt){const prev=hdPath;hdPath=id;hdRecord(id);if(prev&&prev!==id)hdChanged(prev,id);['pA','pB','pC'].forEach(k=>$('#'+k).classList.toggle('chosen',k===id));toast('Chosen path: '+txt);
+    if(prev===id)say('Noted: <strong>'+txt+'</strong>. Next, confirm it with Samir before anything goes to a lender.<div class="chips"><button class="chip rec" data-act="hdBorrower">★ Draft the summary for Samir</button></div>')}
   acts.hdPickA=()=>hdPick('pA','lower the loan to $571,875');acts.hdPickB=()=>hdPick('pB','exception at 80% with Northgate');acts.hdPickC=()=>hdPick('pC','order an appraisal first');
-  acts.hdBorrower=()=>say('Here is the summary for Samir. Rates are indicative; the wording about terms is locked so it never reads as a commitment to lend.<div class="draft"><div class="dh">Draft · email to Samir Haddad · you send it</div><strong>Subject:</strong> Your refinance: two ways forward<br><br>Hi Samir, at $610,000 your refinance is above what lenders allow for a cash-out today. Two options:<br>1. We ask one lender for an exception to keep the full amount, about $145,000 to you. Answer in 3 to 5 days; the rate would be slightly higher.<br>2. We lower the loan to $571,875, about $106,900 to you, with no exception needed.<br>I suggest we try option 1 and fall back to option 2 if needed. Both work for your Jan 31 date. Can you confirm?<br><br>Thank you! '+USER+'<div class="small muted" style="margin-top:6px">Rates and terms are estimates, not a commitment to lend. Subject to lender approval.</div><div class="row"><button class="btn" data-act="sent">Open in my email</button></div></div><div class="why">Locked wording on rates and terms (compliance guardrail).<span class="inline-ids">SL-I-049 · DP-2</span></div>');
+  acts.hdBorrower=()=>hdDraft();
 
 
   // ---- v0.13: B6 package & submit (Patel) ----
@@ -2261,7 +2437,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
   const ptDone=new Set();
   function ptRv(i){if(ptDone.has(i))return;ptDone.add(i);const it=$(`#v-patel [data-rv="${i}"]`);it.classList.add('done');it.querySelector('button').outerHTML='<span class="st ok">✓ Reviewed</span>';
     $('#ptCount').textContent=ptDone.size+' of 3';if(ptDone.size===3){$('#ptApprove').disabled=false;say('All 3 reviewed. You can approve the package.<div class="chips"><button class="chip rec" data-act="ptApprove">★ Approve the package</button></div>')}}
-  acts.ptRv1=()=>{acts.ptView();ptRv(1)};acts.ptRv2=()=>ptRv(2);acts.ptRv3=()=>ptRv(3);
+  acts.ptRv1=()=>{acts.ptView()};acts.ptRv2=()=>ptRv(2);acts.ptRv3=()=>ptRv(3);
   acts.ptApprove=()=>{if(ptDone.size<3){say('Review the 3 items first: cover letter, package, and what gets shared.');return}
     say('Package approved. Here is the email to Dan Ortiz at Summit Ridge, with the package as a secure link.<div class="draft"><div class="dh">Draft · email to Dan Ortiz, your account executive at Summit Ridge · you send it</div><strong>Subject:</strong> New submission · Ravi Patel · Flex P&amp;L 24 · purchase $930,000<br><br>Hi Dan, please find Ravi Patel\'s package for Flex P&amp;L 24: cover letter, 10 exhibits ordered to your checklist (secure link below). 80% LTV, DTI 38.6%, 11 months of reserves, no exception requested. Target closing Jan 8. Thank you! '+USER+'<br><span class="small muted">[secure link to the package]</span><div class="row"><button class="btn" data-act="ptSent">I sent it</button></div></div>')};
   acts.ptSent=()=>{$('#ptTrack').innerHTML='<span class="st ok">✓ Sent today by '+(USER||'you')+'</span>';STEPS.Patel='dsddddc';paintStepper('Patel','patel');FILES.find(f=>f[0]==='Patel')[2]='07 Close';
@@ -2311,10 +2487,10 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
   acts.histRun=()=>toast('The check would run now, in about 2 minutes. See Brooks for a finished check.');
   // suggestions above the composer
   const SUG={home:[['What needs me today?','brief'],['Resume Marquez','resume'],['Open my files','files']],
-    file:[['Show the full chart','fullChart'],['Request the letter of explanation','loe'],['Why Crestview?',null]],
+    file:[['Show the full chart','fullChart'],['Optional: letter for Summit Ridge','loe'],['Why Crestview?',null]],
     s01:[['Is the asset gap a problem?',null],['Back to step 04','resume']],
     nguyen:[['Go to pre-select','ngPre'],['Run the integrity check','ngRun']],
-    brooks:[['Mark both reviewed','brBoth'],['Ask Daniel for the originals','brOrig']],
+    brooks:[['Record outcomes','brBoth'],['Ask Daniel for the originals','brOrig']],
     chen:[['Why not Pacific Arch?','chWhyPA'],['Ask Wei for the lease','chLease']],
     haddad:[['Build the exception request','hdEx'],['Draft the options for Samir','hdBorrower']],
     patel:[['View the cover letter','ptView'],['Approve the package','ptApprove']],
@@ -2322,7 +2498,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
     hist:[['Back to the current step','histBack']],
     billing:[['Buy credits','buyCredits'],['Home','home']],
     activity:[['Open Okafor','okafor'],['Nudge Lisa Park','obNudgeLisa'],['Home','home']],
-    lcard:[['Open my Playbook','playbook'],['All lenders','lenders'],['Home','home']],playbook:[['Narrow the Harborline rule','pbNarrow'],['Show the 2 lessons','pbLes'],['Open Crestview','lcCrest']],
+    lcard:[['Open my Playbook','playbook'],['All lenders','lenders'],['Home','home']],playbook:[['Ask Harborline to clarify','pbClar'],['Show the 2 lessons','pbLes'],['Open Crestview','lcCrest']],
     brief:[['Open Okafor','okafor'],['Resume Marquez','resume']],files:[['Resume Marquez','resume']],lenders:[['Resume Marquez','resume']],intel:[['Resume Marquez','resume']]};
   function paintSugg(v){$('#sugg').innerHTML=(SUG[v]||[]).map(x=>x[1]?`<button class="chip" data-act="${x[1]}">${x[0]}</button>`:`<button class="chip" data-fill="${x[0]}">${x[0]}</button>`).join('')}
   $('#sugg').addEventListener('click',e=>{const b=e.target.closest('[data-fill]');if(b){$('#ask').value=b.dataset.fill;$('#ask').focus()}});
@@ -2357,7 +2533,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
     <div class="tog"><span class="sw lock"></span><div class="tx">Basic consistency<small>Always on for every file</small></div></div><div class="tog"><span class="sw"></span><div class="tx">Signs of document editing<small>Through a verification partner</small></div></div><div class="tog"><span class="sw"></span><div class="tx">Statement math and continuity</div></div><div class="tog"><span class="sw"></span><div class="tx">Business and CPA lookups</div></div><div class="tog"><span class="sw"></span><div class="tx">Bank data straight from the source<small>Needs the borrower's consent through ARIVE</small></div></div></div></div>`}
   function tPre(d){return `${head('03','Pre-select lenders',d.sub)}
     <div class="card"><h2>The file in one line</h2><div class="facts">${d.facts.map(x=>`<div class="kv"><div class="k">${x[0]}</div><div class="v">${x[1]}</div></div>`).join('')}</div></div>
-    <div class="card"><h2>Pre-selection</h2><div class="budget"><span><strong>${d.n}</strong> of ${d.of} programs went to pre-underwriting</span><span class="bar"><i style="width:${Math.min(100,d.n/4*100)}%"></i></span><span class="muted small">Your budget: 4 per file</span></div>
+    <div class="card"><h2>Pre-selection</h2><div class="budget"><span><strong>${d.n}</strong> of ${d.of} programs went to pre-underwriting</span><span class="bar"><i style="width:${Math.min(100,d.n/4*100)}%"></i></span><span class="muted small">Your usual shortlist: 4 per file</span></div>
     <table class="psel"><tr><th>Lender · program</th><th>Status</th><th>Why</th><th>Indicative rate</th><th>Your history</th></tr>
     <tr class="grp"><td colspan="5">Selected for step 04</td></tr>${d.sel.map(r=>`<tr><td class="ln">${r[0]}<small>${r[1]}</small></td><td>${st(r[2],r[3])}</td><td><p class="why">${r[4]}</p></td><td>${r[5]}</td><td class="small">${r[6]}</td></tr>`).join('')}
     <tr class="grp"><td colspan="5">Not selected</td></tr>${d.not.map(r=>`<tr><td class="ln">${r[0]}<small>${r[1]}</small></td><td>${st(r[2],r[3])}</td><td><p class="why">${r[4]}</p></td><td>${r[5]}</td><td class="small">${r[6]}</td></tr>`).join('')}</table>
@@ -2379,7 +2555,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
        sel:[['Crestview Lending','Bank Statement Select','sel','Selected','Your first choice for 12-month bank statement purchases. Within every hard limit.','7.250–7.500%','6 funded · avg 26 days'],['Harborline Mortgage','Pro Earner 12','exc','Near miss','Minimum score 700 for 80% LTV; Elena is at 698. Exception candidate: granted 2 of 3 times on your files.','7.000–7.250%','4 funded · 2 exceptions'],['Summit Ridge Capital','Flex BS','sel','Selected','Within limits. Lowest maximum DTI (45%) of the four.','7.125–7.375%','2 funded'],['Pacific Arch','Prime BS 12','need','Check needed','Allows 80% at 698 only with 24 months of statements; Elena has 12. Kept to confirm in step 04.','7.125–7.375%','1 funded']],
        not:[['Northgate Capital','Flex 12','out','Not on your list','Not in your bank statement preferences. Loni flagged it later, in step 04, as a better fit.','—','3 funded (other programs)'],['Crestview Lending','Bank Statement 24','out','Not needed','Needs 24 months; the same lender\'s 12-month program fits.','7.125–7.375%','—'],['Harborline Mortgage','Pro Earner 24','out','Not needed','Needs 24 months.','—','—']],
        lim:{cols:['Marquez','Crestview','Harborline','Summit Ridge','Pacific Arch'],rows:[['Minimum score at 80%','698',['ok','660'],['exc','700'],['ok','680'],['exc','700 (12 mo)']],['Maximum LTV','80%',['ok','80%'],['ok','80%'],['ok','80%'],['ok','80%']],['Months of statements','12',['ok','12'],['ok','12'],['ok','12'],['exc','24 below 700']],['Maximum DTI','est. 42%',['ok','50%'],['ok','50%'],['ok','45%'],['ok','43%']]]}})},
-   Nguyen:{1:()=>tSkip({sub:'Nguyen · 1099 purchase · $455,000',why:'You chose to go straight to pre-select: both years of 1099s match the deposits, and every document came straight from ARIVE.',basic:['Name and date of birth match across application, ID and credit report','1099 payers match the clinics listed in the application','Asset statements: 2 consecutive months, no missing pages']})},
+   Nguyen:{1:()=>tSkip({sub:'Nguyen · 1099 purchase · $455,000',why:'You chose to go straight to pre-select: both years of 1099s match the deposits; nothing in the documents calls for a deeper check.',basic:['Name and date of birth match across application, ID and credit report','1099 payers match the clinics listed in the application','Asset statements: 2 consecutive months, no missing pages']})},
    Brooks:{0:()=>tImport({sub:'Brooks · 24-month bank statement purchase · $720,000 · from ARIVE · snapshot v1 · Nov 23, 10:05 AM',app:['226 fields read, 0 unreadable','Self-employed since 2014: landscape design','Purchase, primary residence, Escondido'],docN:'41 files, 118 pages',docs:['Business bank statements · 24 months, Nov 2024 – Oct 2026','Personal statements · 2 months','Credit report · ID · purchase contract','Business license · CPA letter'],
      rvs:[['Monthly income','$21,000','$20,625','24-month average deposits $41,250 × 50% expense factor','exc','Close · −1.8%'],['Self-employed since','2014','Business license issued 2014, renewed 2025','','ok','Documented'],['Business name','Brooks Outdoor Design LLC','Statements before June 2025 read “Brooks Landscaping”','Same account number throughout','exc','To look at'],['Assets','$120,000','$118,400 in 2 months of statements','','ok','Documented'],['Monthly debts','$2,150','Credit report: auto $690, cards $310, student loan $1,150','','ok','Documented'],['Credit score','Not stated','Middle score 742','','ok','Documented'],['Purchase price','$900,000','Purchase contract signed Nov 19 · LTV 80%','','ok','Documented']],
      checks:[['ok','Name and date of birth match'],['ok','24 consecutive months, no missing pages'],['ok','Property address matches the contract'],['exc','Business name changed mid-2025'],['exc','Several statements look re-saved in a PDF tool']],ready:[['ok','24 months of business statements'],['ok','Credit report and ID'],['ok','Proof of self-employment'],['ok','Purchase contract'],['ok','2 months of asset statements']],readyC:'ok',readyT:'Ready',
@@ -2393,7 +2569,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
      rvs:[['Monthly income','$19,000','$19,440','12-month average deposits $48,600 × 40% (restaurant expense factor 60%)','ok','Close · +2.3%'],['Requested loan','$610,000','On an automated estimate of $762,500: LTV 80%','','exc','Above most limits'],['Mortgage payoff','$455,000','Payoff statement $454,820','','ok','Documented'],['Cash to Samir','$145,000','$610,000 − $455,000 payoff − $10,000 estimated costs','','ok','Consistent'],['Reserves','$60,000','$61,900 after closing · 14 months','','ok','Documented'],['Monthly debts','$3,550','Credit report: auto $620, cards $430, equipment loan $2,500','','ok','Documented'],['Credit score','Not stated','Middle score 712','','ok','Documented']],
      checks:[['ok','Name and date of birth match'],['ok','12 consecutive months, no missing pages'],['ok','No late mortgage payment in 48 months'],['ok','Business active since 2017']],ready:[['ok','12 months of business statements'],['ok','Credit report and ID'],['ok','Payoff statement'],['ok','2 months of asset statements']],readyC:'ok',readyT:'Ready',
      story:'Samir has run his restaurant in Santee for nine years. Deposits are steady at about $48,600 a month. He wants to take cash out of his home to open a second location by the end of January.',obj:'As much cash as possible',date:'Funds by Jan 31, 2027 <span class="tag" style="background:var(--slate-soft);color:var(--slate)">Stated</span>',hist:[['v1','Nov 19, 11:20 AM','First import: application and 22 documents','File created']]}),
-     1:()=>tSkip({sub:'Haddad · cash-out refinance · $610,000',why:'Off by default for you. All statements came straight from ARIVE and reconcile.',basic:['Name and date of birth match','12 consecutive months, no missing pages','Business active since 2017']}),
+     1:()=>tSkip({sub:'Haddad · cash-out refinance · $610,000',why:'Off by default for you. All statements reconcile and nothing called for a deeper check. Coming through ARIVE says nothing about authenticity; the check can still run before submitting.',basic:['Name and date of birth match','12 consecutive months, no missing pages','Business active since 2017']}),
      2:()=>tPre({sub:'Haddad · cash-out refinance · $610,000 · Nov 20, 9:02 AM',who:'Haddad',facts:[['Purpose','Cash-out refinance'],['Loan · LTV','$610,000 · 80%'],['Income','12-month business statements'],['Credit score','712'],['DTI','41%']],n:4,of:5,
        sel:[['Crestview Lending','Bank Statement Select','exc','Near miss','Cash-out capped at 75% LTV. Kept as the base for a structure fix.','7.500–7.750%','6 funded'],['Northgate Capital','Flex 12','exc','Near miss','Cash-out capped at 75%. Granted 80% on 1 of 2 similar files of yours.','7.625–7.875%','1 exception of 2'],['Harborline Mortgage','Pro Earner 12','exc','Near miss','80% cash-out only from score 740; Samir is at 712.','7.500–7.750%','4 funded'],['Summit Ridge Capital','Flex BS','exc','Near miss','Cash-out capped at 70%.','7.375–7.625%','2 funded']],
        not:[['Pacific Arch','Prime BS 12','no','Excluded','Cash-out capped at 65% on 12-month statements. <span class="tag" style="background:var(--slate-soft);color:var(--slate)">Published rule</span>','—','—']],
@@ -2446,7 +2622,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
       rvs:[['Eligible assets','$3,400,000','$3,382,000 across 3 accounts','Retirement accounts at 70% per most asset programs','ok','Close · −0.5%'],['Qualifying income','Not stated','$9,394 a month','$3,382,000 ÷ 360 months, before lender haircuts','need','Calculated'],['Large transfer','Not mentioned','$250,000 from brokerage to checking, Sep 3','Letter of explanation needed','exc','To explain'],['Monthly debts','$900','Credit report: auto $900','','ok','Documented'],['Credit score','Not stated','Middle score 781','','ok','Documented'],['Purchase price','$1,500,000','Purchase contract signed Oct 30 · LTV 80%','','ok','Documented']],
       checks:[['ok','Names match across accounts, trust and ID'],['ok','2 consecutive months on every account'],['exc','One large transfer to explain']],ready:[['ok','2 months on every asset account'],['ok','Trust certification'],['ok','Credit report and ID'],['ok','Purchase contract']],readyC:'ok',readyT:'Ready',
       story:'Grace retired in 2024 after a career as a hospital executive. She holds about $3.4 million in brokerage and retirement accounts, held partly in a family trust, and is buying a home in Del Mar.',obj:'Firm close date',date:'Close by Nov 30, 2026 <span class="tag" style="background:var(--slate-soft);color:var(--slate)">Stated</span>',hist:[['v2','Nov 19, 8:00 AM','Signed letter of explanation','Condition 4 cleared'],['v1','Nov 4, 9:15 AM','First import','File created']]}),
-    1:()=>tSkip({sub:'Okafor · asset depletion purchase · $1,200,000',why:'Off by default for you. All account statements came straight from ARIVE and reconcile.',basic:['Names match across accounts, trust and ID','2 consecutive months on every account']}),
+    1:()=>tSkip({sub:'Okafor · asset depletion purchase · $1,200,000',why:'Off by default for you. All account statements reconcile and nothing called for a deeper check. Coming through ARIVE says nothing about authenticity; the check can still run before submitting.',basic:['Names match across accounts, trust and ID','2 consecutive months on every account']}),
     2:()=>tPre({sub:'Okafor · asset depletion purchase · $1,200,000 · Nov 5',who:'Okafor',facts:[['Program type','Asset depletion'],['Loan · LTV','$1,200,000 · 80%'],['Eligible assets','$3.38M'],['Credit score','781'],['DTI','est. 39%']],n:3,of:4,
       sel:[['Crestview Lending','Asset Utilization','sel','Selected','Your first choice for asset-based files. Within every hard limit.','6.750–7.000%','2 funded'],['Northgate Capital','Asset Qualifier','sel','Selected','Within limits. Divides assets over 300 months.','6.875–7.125%','1 funded'],['Summit Ridge Capital','Asset Flex','sel','Selected','Within limits. Maximum LTV 75% above $1M.','7.000–7.250%','—']],
       not:[['Harborline Mortgage','Asset Depletion','no','Excluded','Maximum loan $1,000,000. <span class="tag" style="background:var(--slate-soft);color:var(--slate)">Published rule</span>','—','—']],
@@ -2463,7 +2639,8 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
     h.addEventListener('mousedown',e=>{on=true;h.classList.add('on');document.body.classList.add('resizing');e.preventDefault()});
     window.addEventListener('mousemove',e=>{if(on)set(e.clientX-m.getBoundingClientRect().left)});
     window.addEventListener('mouseup',()=>{if(on){on=false;h.classList.remove('on');document.body.classList.remove('resizing')}});
-    h.addEventListener('dblclick',()=>m.style.setProperty('--lw','380px'));
+    const dflt=()=>Math.round(Math.max(420,window.innerWidth*0.2));m.style.setProperty('--lw',dflt()+'px');
+    h.addEventListener('dblclick',()=>m.style.setProperty('--lw',dflt()+'px'));
     window.addEventListener('resize',()=>{const cur=parseFloat(getComputedStyle(m).getPropertyValue('--lw'))||380;set(cur)});})();
 
 
@@ -2485,16 +2662,16 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
     E('ex','80% cash-out on Flex 12','granted 1 of 2','Aug 2026','rule','Brokerage','Outcomes on your files','Northgate'),
     E('ex','No exception granted so far','0 of 2','Jun 2026','rule','Brokerage','Outcomes on your files','Pacific Arch')];
   const TN={ex:'Exception outcome',fa:'Execution fact',in:'Interpretation',ae:'Account executive note',rj:'Rejected document'};
-  const SN2={rule:'● Rule',les:'◆ Lesson to confirm',con:'✕ Contradiction'};
-  function pbRows(list,withLender){return `<tr><th>Type</th>${withLender?'<th>Lender</th>':''}<th>What the Playbook says</th><th>Evidence</th><th>Last</th><th>Source</th><th>Scope</th><th>Status</th></tr>`+list.map((e,i)=>`<tr><td><span class="etype ${e.t}">${TN[e.t]}</span></td>${withLender?`<td><a href="#" data-lc="${e.lender.toLowerCase().split(' ')[0]}">${e.lender}</a></td>`:''}<td>${e.txt}</td><td class="small">${e.ev}</td><td class="small">${e.last}</td><td class="small muted">${e.src}</td><td class="small">${e.scope}</td><td><span class="pstat ${e.stt}">${SN2[e.stt]}</span>${e.stt==='les'?` <button class="ghost" style="padding:2px 8px;font-size:11px" data-promote="${PB.indexOf(e)}">Make it a rule</button>`:''}</td></tr>`).join('')}
+  const SN2={rule:'● Brokerage observation',les:'◆ Observation to confirm',con:'◆ Open question',drafted:'✎ Clarification drafted · not sent',clar:'… Clarification sent · waiting'};
+  function pbRows(list,withLender){return `<tr><th>Type</th>${withLender?'<th>Lender</th>':''}<th>What the Playbook says</th><th>Evidence</th><th>Last</th><th>Source</th><th>Scope</th><th>Status</th></tr>`+list.map((e,i)=>`<tr><td><span class="etype ${e.t}">${TN[e.t]}</span></td>${withLender?`<td><a href="#" data-lc="${e.lender.toLowerCase().split(' ')[0]}">${e.lender}</a></td>`:''}<td>${e.txt}</td><td class="small">${e.ev}</td><td class="small">${e.last}</td><td class="small muted">${e.src}</td><td class="small">${e.scope}</td><td><span class="pstat ${e.stt}">${SN2[e.stt]}</span>${e.stt==='les'?` <button class="ghost" style="padding:2px 8px;font-size:11px" data-promote="${PB.indexOf(e)}">Confirm as a brokerage observation</button>`:''}</td></tr>`).join('')}
   let pbFilter='all';
   function paintPB(){const nl=PB.filter(e=>e.stt==='les').length;$('#pbf [data-f=les]').textContent='Lessons to confirm · '+nl;const l=PB.filter(e=>pbFilter==='all'||(pbFilter==='les'?e.stt==='les':e.t===pbFilter));$('#pbTable').innerHTML=pbRows(l,true)}
   $('#pbf').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;pbFilter=b.dataset.f;$$('#pbf button').forEach(x=>x.classList.toggle('on',x===b));paintPB()});
-  document.addEventListener('click',e=>{const p=e.target.closest('[data-promote]');if(p){const en=PB[+p.dataset.promote];en.stt='rule';en.ev+=' · confirmed by '+(USER||'you');toast('Now a Playbook rule: '+en.lender);paintPB();if(curView==='lcard')openLender(curLender,true)}});
-  acts.playbook=()=>{showView('playbook');paintPB();say('Your Playbook: 42 entries across 5 lenders. One needs you: Harborline declined a score exception your Playbook says it grants. Two one-file lessons wait for your confirmation.<div class="chips"><button class="chip rec" data-act="pbNarrow">★ Narrow the Harborline rule</button><button class="chip" data-act="pbLes">Show the 2 lessons</button></div><div class="why">Why narrow it: Ruiz had 8 months of reserves; both approvals had 12 or more.<span class="inline-ids">SL-I-090</span></div>')};
+  document.addEventListener('click',e=>{const p=e.target.closest('[data-promote]');if(p){const en=PB[+p.dataset.promote];en.stt='rule';en.ev+=' · confirmed by '+(USER||'you');toast('Confirmed as a brokerage observation: '+en.lender);paintPB();if(curView==='lcard')openLender(curLender,true)}});
+  acts.playbook=()=>{showView('playbook');paintPB();say('Your Playbook: 42 entries across 5 lenders. One needs you: Harborline\'s score-exception outcomes are mixed (granted twice, declined once). I suggest asking Jordan Pike rather than guessing why. Two one-file lessons wait for your confirmation.<div class="chips"><button class="chip rec" data-act="pbClar">★ Ask Harborline to clarify</button><button class="chip" data-act="pbLes">Show the 2 lessons</button></div><div class="why">Why ask: the outcomes alone don\'t show why Harborline said yes twice and no once.<span class="inline-ids">SL-I-090</span></div>')};
   acts.pbLes=()=>{$('#pbf [data-f=les]').click()};
   const pbResolve=(txt)=>{const e=PB.find(x=>x.stt==='con');if(e){e.stt='rule';e.txt=txt}$('#pbCon').innerHTML='<div class="t" style="color:#2E7A57">✓ Resolved · Harborline · FICO exception</div><div class="small" style="margin-top:4px">'+txt+'</div>';paintPB();toast('Playbook updated')};
-  acts.pbNarrow=()=>pbResolve('2-point score exception only with 12+ months of reserves (granted 2 of 2 with 12+; declined 1 with 8)');
+  acts.pbNarrowOld=()=>pbResolve('2-point score exception only with 12+ months of reserves (granted 2 of 2 with 12+; declined 1 with 8)');
   acts.pbKeep=()=>pbResolve('2-point score exception with 12 months of reserves · Ruiz noted as a one-off');
   acts.pbRetire=()=>pbResolve('Retired: no longer count on a score exception at Harborline');
   acts.pbExport=()=>toast('Exports your Playbook as a spreadsheet. It is yours.');
@@ -2517,7 +2694,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
      pref:[['1st','P&L'],['3rd','Bank statement purchase'],['4th','DSCR refinance']],dos:['Send a CPA-prepared P&L','Plan a verbal business check within 10 days of closing'],donts:['Count on 50% DTI on bank statements'],
      sc:[['6','files sent'],['5','approved'],['4','closed'],['25 days','average to close'],['3.6','conditions per file'],['1 of 1','exceptions granted']],
      progs:[['Flex P&L 24','v2026.11 · confirmed','Today 8:15','Shared catalog'],['Flex BS','v2026.11 · 1 rule to review','Today 8:15','Shared catalog'],['Rental Plus','v2026.11 · confirmed','Today 8:15','Shared catalog']],
-     files:[['Patel','06 Package & submit','Package sent'],['Marquez','04 Pre-underwrite','Needs a letter of explanation']],change:'3 rules updated (reserves, condo, seasoning) · 1 waits for your review'},
+     files:[['Patel','06 Package & submit','Package ready · not sent yet'],['Marquez','04 Pre-underwrite','Alternative: would need a letter']],change:'3 rules updated (reserves, condo, seasoning) · 1 waits for your review'},
    pacific:{n:'Pacific Arch',since:'On your panel since 2024',ae:'Lee Chang · lee.chang@pacificarch.example · (555) 010-5520',chan:'Wholesale · pricing tier 3 · rate sheet by email',map:'Lowest rates for strong borrowers (720+, 24 months of statements). Rigid: no exception in my history.',mapBy:'Written by you, Jun 2026',
      pref:[['4th','Bank statement purchase']],dos:['Use it only for clean, strong files'],donts:['Ask for exceptions','Send 12-month files below 700'],
      sc:[['3','files sent'],['2','approved'],['2','closed'],['22 days','average to close'],['3.0','conditions per file'],['0 of 2','exceptions granted']],
@@ -2553,13 +2730,12 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
   const PT=(to)=>/Elena|Wei|Daniel|Samir|Ravi|Grace|Minh/.test(to)?['b','Borrower']:/agent/.test(to)?['a','Agent']:/Title|title/.test(to)?['t','Title']:['l','Lender'];
   let OB=[
     {f:'Okafor',to:'Maria Lopez, Crestview',sub:'Lock extension · Grace Okafor · Asset Utilization',st:'07',when:'Today 7:58 AM',urg:'Lock expires in 6 days'},
-    {f:'Marquez',to:'Elena Marquez',sub:'Letter of explanation for your Oct 14 deposit',st:'04',when:'Today 9:05 AM',urg:'Needed for Summit Ridge'},
+    {f:'Marquez',to:'Elena Marquez',sub:'Letter of explanation for your Oct 14 deposit',st:'04',when:'Today 9:05 AM',urg:'Optional · only if you choose Summit Ridge'},
     {f:'Chen',to:'Wei Chen',sub:'Lease for unit B',st:'03',when:'Today 8:42 AM',urg:'Crestview needs it'},
     {f:'Brooks',to:'Daniel Brooks',sub:'Two statements to upload again',st:'02',when:'Today 8:25 AM',urg:''},
-    {f:'Haddad',to:'Samir Haddad',sub:'Your refinance: two ways forward',st:'05',when:'Yesterday 4:30 PM',urg:'Before asking Northgate'}];
+    {f:'Haddad',to:'Samir Haddad',sub:'Your refinance: the plan (exception first)',st:'05',when:'Yesterday 4:30 PM',urg:'Confirm the plan with Samir'}];
   let SENT=[
-    {f:'Patel',to:'Dan Ortiz, Summit Ridge',sub:'New submission · Ravi Patel · Flex P&L 24',when:'Nov 20, 6:15 PM',wait:'Waiting on the lender · first review',rep:''},
-    {f:'Haddad',to:'Lisa Park, Northgate',sub:'Exception request · cash-out refi at 80%',when:'Nov 24, 4:40 PM',wait:'Waiting on the lender · 1 day',rep:''},
+        {f:'Haddad',to:'Lisa Park, Northgate',sub:'Exception request · cash-out refi at 80%',when:'Nov 24, 4:40 PM',wait:'Waiting on the lender · 1 day',rep:''},
     {f:'Okafor',to:'Grace Okafor',sub:'Two items to finish your approval',when:'Nov 21, 10:02 AM',wait:'Waiting on the borrower · 4 days',rep:''},
     {f:'Okafor',to:'Maria Lopez, Crestview',sub:'Conditions 1–6 · Okafor',when:'Nov 19, 3:30 PM',wait:'',rep:'Replied Nov 20: "Got it, 3 cleared."'},
     {f:'Patel',to:'Ravi Patel',sub:'Your loan options',when:'Nov 15, 11:02 AM',wait:'',rep:'Replied Nov 15: "Summit Ridge, no buydown please."'}];
@@ -2577,21 +2753,21 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
     ['Yesterday','yo','You confirmed Summit Ridge\'s reserves rule','Lenders']];
   const WN={lo:'Loni',yo:'You',ex:'Lender / ARIVE'};
   let logW='all';
-  function paintOB(){$('#obTable').innerHTML='<tr><th>File</th><th>To</th><th>Subject</th><th>Step</th><th>Prepared</th><th>Why now</th><th></th></tr>'+OB.map((m,i)=>{const p=PT(m.to);return `<tr><td><strong>${m.f}</strong></td><td><span class="party ${p[0]}">${p[1]}</span> ${m.to}</td><td>${m.sub}</td><td>${m.st}</td><td class="small">${m.when}</td><td class="small">${m.urg||'—'}</td><td class="acts"><button class="ghost" data-ob-open="${i}">Open in my email</button><button class="btn" data-ob-sent="${i}">I sent it</button><button class="ghost" data-ob-del="${i}" title="Discard">✕</button></td></tr>`}).join('')+(OB.length?'':'<tr><td colspan="7" class="muted">Nothing waiting. Loni will add drafts here as you work.</td></tr>');
-    $('#sentTable').innerHTML='<tr><th>File</th><th>To</th><th>Subject</th><th>Sent</th><th>Status</th></tr>'+SENT.map(m=>{const p=PT(m.to);return `<tr><td><strong>${m.f}</strong></td><td><span class="party ${p[0]}">${p[1]}</span> ${m.to}</td><td>${m.sub}</td><td class="small">${m.when}</td><td class="small">${m.rep?'<span class="st ok">✓ Replied</span> '+m.rep:'<span class="st exc">◆ '+m.wait+'</span>'}</td></tr>`}).join('');
+  function paintOB(){$('#obTable').innerHTML='<tr><th>File</th><th>To</th><th>Subject</th><th>Step</th><th>Prepared</th><th>Why now</th><th></th></tr>'+OB.map((m,i)=>{const p=PT(m.to);return `<tr${m.sup?' class="sup"':''}><td><strong>${m.f}</strong></td><td><span class="party ${p[0]}">${p[1]}</span> ${m.to}</td><td>${m.sub}</td><td>${m.st}</td><td class="small">${m.when}</td><td class="small">${m.urg||'—'}</td><td class="acts">${m.sup?`<span class="st out">Superseded</span> <button class="ghost" data-ob-del="${i}" title="Remove">✕</button>`:`<button class="ghost" data-ob-open="${i}">Open in my email</button><button class="btn" data-ob-sent="${i}">I sent it</button><button class="ghost" data-ob-del="${i}" title="Discard">✕</button>`}</td></tr>`}).join('')+(OB.length?'':'<tr><td colspan="7" class="muted">Nothing waiting. Loni will add drafts here as you work.</td></tr>');
+    $('#sentTable').innerHTML='<tr><th>File</th><th>To</th><th>Subject</th><th>Sent</th><th>Status</th></tr>'+SENT.map(m=>{const p=PT(m.to);return `<tr><td><strong>${m.f}</strong></td><td><span class="party ${p[0]}">${p[1]}</span> ${m.to}</td><td>${m.sub}</td><td class="small">${m.when}</td><td class="small">${m.rep?'<span class="st ok">✓ Reply captured</span> '+m.rep:'<span class="st need">○ Marked sent by you</span> <span class="small muted">No reply captured by Second Look. Check your inbox before following up.</span>'}</td></tr>`}).join('');
     $('#logList').innerHTML=LOG.filter(l=>logW==='all'||l[1]===logW).map(l=>`<li><span class="tm">${l[0]}</span><span class="who ${l[1]}">${WN[l[1]]}</span><span>${l[2]}</span><span class="small muted">${l[3]}</span></li>`).join('');
     $('#obC').textContent=OB.length;$('#obBadge').textContent=OB.length;$('#obBadge').style.display=OB.length?'':'none'}
   $('#obTabs').addEventListener('click',e=>{const b=e.target.closest('[data-t]');if(!b)return;$$('#obTabs button').forEach(x=>x.classList.toggle('on',x===b));$$('#v-activity [data-p]').forEach(p=>p.hidden=p.dataset.p!==b.dataset.t)});
   $('#logF').addEventListener('click',e=>{const b=e.target.closest('[data-w]');if(!b)return;logW=b.dataset.w;$$('#logF button').forEach(x=>x.classList.toggle('on',x===b));paintOB()});
   const nowT=()=>{const d=new Date();return d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'})};
   document.addEventListener('click',e=>{let b;
-    if(b=e.target.closest('[data-ob-sent]')){const m=OB.splice(+b.dataset.obSent,1)[0];SENT.unshift({f:m.f,to:m.to,sub:m.sub,when:'Today '+nowT(),wait:'Waiting on the reply · just sent',rep:''});LOG.unshift([nowT(),'yo','You sent: '+m.sub,m.f]);paintOB();toast('Moved to Sent. Loni will watch for the reply.')}
+    if(b=e.target.closest('[data-ob-sent]')){const m=OB.splice(+b.dataset.obSent,1)[0];SENT.unshift({f:m.f,to:m.to,sub:m.sub,when:'Today '+nowT(),wait:'Waiting on the reply · just sent',rep:''});LOG.unshift([nowT(),'yo','You sent: '+m.sub,m.f]);paintOB();toast('Marked as sent by you. Loni shows a reply only if it is captured.')}
     else if(b=e.target.closest('[data-ob-del]')){const m=OB.splice(+b.dataset.obDel,1)[0];LOG.unshift([nowT(),'yo','You discarded the draft: '+m.sub,m.f]);paintOB();toast('Draft discarded')}
     else if(b=e.target.closest('[data-ob-open]')){toast('Opens in your email app, with your Second Look address in copy.')}});
   // every draft Loni writes in the conversation lands in the outbox
   const _say=say;
   say=function(html,who){const m=_say(html,who);try{if(who!=='me'&&html.includes('class="draft"')){const re=/email to ([^·<]+?) · you send it<\/div><strong>Subject:<\/strong> ([^<]+)/g;let x;while((x=re.exec(html))){const to=x[1].trim(),sub=x[2].trim();if(!OB.some(o=>o.sub===sub&&o.to===to)){OB.unshift({f:(typeof curFile!=='undefined'&&VFILE[curView])?curFile:'—',to,sub,st:(STEPS[curFile]?String(STEPS[curFile].indexOf('c')+1).padStart(2,'0'):'—'),when:'Today '+nowT(),urg:'Just drafted'});LOG.unshift([nowT(),'lo','Drafted: '+sub,curFile])}}paintOB()}}catch(err){}return m};
-  acts.activity=()=>{showView('activity');paintOB();say(`Your outbox has <strong>${OB.length} drafts</strong> waiting for you. Most urgent: the lock extension for Okafor; the lock expires in 6 days. Three people have gone quiet: Grace, Lisa Park at Northgate and the title company.<div class="chips"><button class="chip rec" data-act="okafor">★ Open Okafor</button><button class="chip" data-act="obNudgeLisa">Nudge Lisa Park</button></div><div class="why">Sorted by deadline, then by how long the draft has waited.<span class="inline-ids">SL-I-098</span></div>`)};
+  acts.activity=()=>{showView('activity');paintOB();say(`Your outbox has <strong>${OB.filter(m=>!m.sup).length} drafts</strong> waiting for you. Most urgent: the lock extension for Okafor; the lock expires in 6 days. Three people have gone quiet: Grace, Lisa Park at Northgate and the title company.<div class="chips"><button class="chip rec" data-act="okafor">★ Open Okafor</button><button class="chip" data-act="obNudgeLisa">Nudge Lisa Park</button></div><div class="why">Sorted by deadline, then by how long the draft has waited.<span class="inline-ids">SL-I-098</span></div>`)};
   acts.obNudgeLisa=()=>say('A short nudge for Lisa.'+`<div class="draft"><div class="dh">Draft · email to Lisa Park, Northgate · you send it</div><strong>Subject:</strong> Following up · Haddad exception at 80%<br><br>Hi Lisa, following up on the Haddad cash-out request at 80% sent yesterday. Samir needs the funds by Jan 31, so an early answer helps us plan. Happy to send the full package if useful. Thank you! ${USER}<div class="row"><button class="btn" data-act="sent">Open in my email</button></div></div>`);
   acts.obSettings=()=>toast('Message settings: voice, language, signature and locked wording. Coming in the full product.');
   paintOB();
@@ -2617,8 +2793,113 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
   acts.buyCredits=()=>toast('Buying credits opens checkout in the product. Illustrative in this mockup.');
   acts.invoice=()=>toast('Downloads the invoice as a PDF.');
 
+  // ---- v0.24 ----
+  const THREADS={};let curCtx='_b';
+$('#helpBtn').addEventListener('click',()=>{$('#helpView').hidden=false;$('#adminMenu').classList.remove('open');$('#userMenu').hidden=true});
+  acts.helpClose=()=>{$('#helpView').hidden=true};acts.helpTour=()=>{acts.helpClose();toast('The guided tour comes in the full product.')};
+  $('#helpView').addEventListener('click',e=>{if(e.target.id==='helpView')acts.helpClose()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')$('#helpView').hidden=true});
+  acts.wfToggle=()=>{const f=$('#wfFull'),o=f.hidden;f.hidden=!o;$('#wfTile').classList.toggle('open',o);$('#wfHint').textContent=o?'7 steps · click to collapse':'7 steps · click to expand'};
+  const CLOSED=[["Kim", "Bank statement purchase", "$830,000", "Crestview", "Funded", "Nov 21, 2026", "19 days"], ["Ortega", "P&L purchase", "$640,000", "Summit Ridge", "Funded", "Nov 7, 2026", "24 days"], ["Ruiz", "Bank statement purchase", "$560,000", "Harborline", "Declined", "Nov 10, 2026", "Score exception refused"], ["Bennett", "Asset depletion purchase", "$1,050,000", "Crestview", "Funded", "Aug 29, 2026", "21 days"], ["Alvarez", "DSCR purchase", "$425,000", "Northgate", "Funded", "Aug 12, 2026", "26 days"], ["Lowe", "P&L refinance", "$515,000", "Crestview", "Declined", "Mar 18, 2026", "Unlicensed bookkeeper P&L"], ["Singh", "1099 purchase", "$498,000", "Harborline", "Funded", "Oct 30, 2026", "33 days"], ["Moreno", "DSCR refinance", "$612,000", "Northgate", "Funded", "Oct 9, 2026", "22 days"], ["Park", "Bank statement cash-out", "$470,000", "Summit Ridge", "Withdrawn", "Sep 22, 2026", "Borrower chose not to proceed"], ["Fischer", "Asset depletion purchase", "$1,400,000", "Pacific Arch", "Funded", "Jun 15, 2026", "18 days"], ["Tran", "Bank statement purchase", "$705,000", "Crestview", "Funded", "Jul 25, 2026", "20 days"], ["Wong", "DSCR purchase", "$380,000", "Harborline", "Declined", "Jul 2, 2026", "DSCR under 1.00"]];
+  const MON={Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+  const cd=x=>{const m=x.match(/(\w+) (\d+), (\d+)/);return new Date(+m[3],MON[m[1]],+m[2])};
+  const NOW=new Date(2026,10,26);
+  function paintHS(){const q=$('#hsQ').value.trim().toLowerCase(),p=$('#hsProg').value,l=$('#hsLender').value,o=$('#hsOut').value,per=$('#hsPer').value;
+    const any=q||p||l||o||per;
+    let r=CLOSED.slice().sort((a,b)=>cd(b[5])-cd(a[5])).filter(c=>(!q||c[0].toLowerCase().includes(q))&&(!p||c[1].includes(p))&&(!l||c[3]===l)&&(!o||c[4]===o)&&(!per||(per==='2026'?cd(c[5]).getFullYear()===2026:(NOW-cd(c[5]))/864e5<=+per)));
+    if(!any)r=r.slice(0,5);
+    $('#hsInfo').textContent=any?`${r.length} closed file${r.length===1?'':'s'} match`:'Last 5 closed files · search all 12 by criteria';
+    const sc={Funded:'ok',Declined:'no',Withdrawn:'need'};
+    $('#hsTable').innerHTML='<tr><th>Borrower</th><th>Program</th><th class="num">Loan</th><th>Lender</th><th>Outcome</th><th>Closed</th><th>Note</th></tr>'+(r.length?r.map(c=>`<tr><td><strong>${c[0]}</strong></td><td>${c[1]}</td><td class="num">${c[2]}</td><td>${c[3]}</td><td><span class="st ${sc[c[4]]}">${({ok:'✓',no:'✕',need:'○'})[sc[c[4]]]} ${c[4]}</span></td><td>${c[5]}</td><td class="small muted">${c[4]==='Funded'?'Funded in '+c[6]:c[6]}</td></tr>`).join(''):'<tr><td colspan="7" class="muted">No closed file matches. Try fewer criteria.</td></tr>')}
+  ['hsQ','hsProg','hsLender','hsOut','hsPer'].forEach(id=>$('#'+id).addEventListener('input',paintHS));
+  acts.hsClear=()=>{['hsQ','hsProg','hsLender','hsOut','hsPer'].forEach(id=>$('#'+id).value='');paintHS()};
+  paintHS();
+  acts.pbClar=()=>{const e=PB.find(x=>x.stt==='con');if(e)e.stt='drafted';paintPB();$('#pbCon').innerHTML='<div class="t" style="color:#5B5470">✎ Clarification drafted · not sent yet · Harborline · score exception</div><div class="small" style="margin-top:4px">Draft ready for Jordan Pike, also in your outbox. The three outcomes stay recorded; nothing changes until Harborline answers in writing.</div>';
+    say('Here is the question for Jordan. A written answer becomes a <strong>written clarification</strong> in your Playbook, within the scope he states.<div class="draft"><div class="dh">Draft · email to Jordan Pike, Harborline · you send it</div><strong>Subject:</strong> Score exceptions on Pro Earner 12<br><br>Hi Jordan, on Pro Earner 12 you approved a 2-point score exception twice for us this year, and declined one on Nov 10. To bring you the right files: what does Harborline look at for these exceptions (reserves, DTI, other factors)? Is there a written policy we can follow? Thank you! '+USER+'<div class="row"><button class="btn" data-act="sent">Open in my email</button></div></div>')};
+  acts.pbOpen=()=>{$('#pbCon').innerHTML='<div class="t" style="color:#5B5470">◆ Kept as an open question · Harborline · score exception</div><div class="small" style="margin-top:4px">Granted 2 of 3. Loni will show the three outcomes when a file needs this exception, without calling it likely or unlikely.</div>';toast('Kept unresolved')};
+  const HDP={pB:{t:'Ask Northgate for an exception at 80%',tasks:['Send the exception request to Lisa Park (draft ready)','Confirm the fallback with Samir before Northgate answers','If declined: switch to the lower loan, no new documents needed'],
+      body:'We will ask one lender for an exception to keep the full $610,000, about $145,000 to you. We expect an answer in 3 to 5 business days, and the rate would be slightly higher (about 7.875%). If the lender says no, the fallback is a $571,875 loan, about $106,900 to you.<br>Timing: this can fit your Jan 31 date if the lender answers this week; that is not confirmed yet.'},
+    pA:{t:'Lower the loan to $571,875 (75%)',tasks:['Update the loan amount in ARIVE','Pre-underwrite again with Crestview, Northgate and Harborline','Package for the best of the three'],
+      body:'We will lower the loan to $571,875, about $106,900 to you instead of $145,000. Three lenders accept that amount as is, so no exception is needed and timing is more predictable for your Jan 31 date.'},
+    pC:{t:'Order an appraisal first',tasks:['Order the appraisal ($650, about 10 days)','Rerun the paths when the value comes in','Keep the lower loan as the fallback'],
+      body:'We will order an appraisal ($650, about 10 days). If the home is valued at $813,400 or more, the full $610,000 fits without an exception. If it comes in lower, we will look at the smaller loan or an exception. Schedule: appraisal report around Dec 9, then about 3 to 4 weeks of underwriting and closing; funds could arrive around early to mid January if the value comes in. That depends on the date the appraiser can visit and the lender, and is not confirmed.'}};
+  function hdRecord(id){const p=HDP[id];$('#hdDec').innerHTML=`<strong>Decision</strong> · ${p.t} · chosen by ${USER||'you'}, today ${new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit'})}<ul>${p.tasks.map(t=>'<li>'+t+'</li>').join('')}</ul><div class="small muted" style="margin-top:4px">Borrower summary, lender inquiry and package assumptions now follow this path.</div>`}
+  function hdDraft(){if(!hdPath){say('Which path should the summary for Samir follow? I\'ll write it around your choice.<div class="chips"><button class="chip rec" data-act="hdPickB">Exception at 80%</button><button class="chip" data-act="hdPickA">Lower loan</button><button class="chip" data-act="hdPickC">Appraisal first</button></div>');return}
+    const p=HDP[hdPath];say('Here is the summary for Samir, written around <strong>'+p.t.toLowerCase()+'</strong>. Rates are indicative; wording about terms is locked.<div class="draft"><div class="dh">Draft · email to Samir Haddad · you send it</div><strong>Subject:</strong> '+HSUB[hdPath]+'<br><br>Hi Samir, '+p.body+'<br>Can you confirm this works for you?<br><br>Thank you! '+USER+'<div class="small muted" style="margin-top:6px">Rates and terms are estimates, not a commitment to lend. Subject to lender approval.</div><div class="row"><button class="btn" data-act="sent">Open in my email</button></div></div>')}
+  const _ptView=acts.ptView;let ptOpened=false;
+  acts.ptView=()=>{_ptView();if(!ptOpened&&!ptDone.has(1)){ptOpened=true;const it=$('#v-patel [data-rv="1"]');const b=it&&it.querySelector('button');if(b)b.outerHTML='<span class="st need">○ Opened · not yet reviewed</span> <button class="ghost" data-act="dvRev">Mark as reviewed</button>'}};
+  acts.dvRev=()=>{if(!ptDone.has(1)){const it=$('#v-patel [data-rv="1"]');it.querySelectorAll('.st.need,button').forEach(x=>x.remove());it.insertAdjacentHTML('beforeend','<button></button>');ptRv(1)}$('#dvRev').textContent='✓ Reviewed';acts.dvClose();toast('Cover letter marked as reviewed')};
+  const DISP=['Explained with supporting evidence','Replacement documents requested','Referred to the lender','Unresolved · proceeding with acknowledgment'];
+  const DC=['ok','need','need','exc'];
+  function brAsk(i){if(brRev[i]){const n=brRev.indexOf(false);if(n>=0)brAsk(n);return}say(`Outcome for flag ${i+1} (${i?'business name change':'re-saved statements'})? “Reviewed” alone isn't an outcome; the lender may ask what you concluded.<div class="chips">${DISP.map((d,k)=>`<button class="chip" data-act="brD${i}${k}">${d}</button>`).join('')}</div>`)}
+  for(let i=0;i<2;i++)for(let k=0;k<4;k++)acts['brD'+i+k]=()=>{if(brRev[i])return;brRev[i]=true;const f=$('#flag'+(i+1));f.classList.add('done');f.querySelector('.fh>span').outerHTML=`<span style="color:var(--${DC[k]==='ok'?'green':DC[k]==='exc'?'amber':'slate'})">${DC[k]==='ok'?'✓':DC[k]==='exc'?'◆':'○'}</span>`;
+    $('[data-live=f'+(i+1)+']').outerHTML=`<span class="st ${DC[k]}">${DISP[k]}</span>`;f.querySelector('.acts').innerHTML=`<span class="small muted">Outcome recorded by ${USER||'you'} · today${k===3?' · noted in the package for the lender':''}</span>`;
+    const n=brRev.filter(x=>!x).length;$('#brOpen').textContent=n;$('#brOpen').style.color=n?'var(--amber)':'var(--green)';
+    if(n)brAsk(brRev.indexOf(false));else say('Both flags have an outcome. <strong>Brooks</strong> can go to pre-select; the outcomes travel with the file.<div class="chips"><button class="chip rec" data-act="brPre">★ Go to pre-select</button></div>')};
+  acts.brRev1=()=>brAsk(0);acts.brRev2=()=>brAsk(1);acts.brBoth=()=>brAsk(brRev[0]?1:0);
+  // ---- v0.25 ----
+  $('#sbFile').textContent='';
+  const PASTB={1:{d:'Tue Nov 24',need:[['!','r','Haddad · no lender fits as is','LTV 80% against 75% at every lender. Choose a path in Solve for yes.','haddad','Open'],['✎','p','Patel · package being assembled','21 of 23 checklist items; the signed letter of explanation was still missing.','patel','Open']],
+      chg:[['↻','g','Marquez · application updated in ARIVE','Assets changed from $254,000 to $262,400. Reserves recalculated.'],['⎘','s','Harborline · bulletin 26-11','Minimum DSCR rises to 1.10 on Dec 1; files locked before Dec 1 keep 1.00.']],
+      done:['You chose the exception path for Haddad and sent the request to Lisa Park (4:40 PM)','You turned on the integrity check for Brooks','Okafor: insurance binder received, condition cleared']},
+    2:{d:'Mon Nov 23',need:[['◆','h','Brooks · new file imported','24 months of business statements; several look re-saved. Consider the integrity check.','brooks','Open']],
+      chg:[['↻','g','Okafor · 3 of 6 conditions cleared','Crestview cleared the trust, the letter of explanation and the insurance binder.']],
+      done:['Patel: Ravi confirmed Summit Ridge, no buydown','Chen: pre-selection prepared, waiting on the unit B lease']},
+    3:{d:'Fri Nov 20',need:[['!','r','Okafor · 6 conditions from Crestview','Conditional approval received on Nov 18. 2 conditions need Grace.','okafor','Open']],
+      chg:[['⎘','s','Pacific Arch · rate sheet late','Arrived at 10:40 AM instead of 8:30 AM.']],done:['Marquez imported from ARIVE (snapshot v1)','Haddad imported from ARIVE']}};
+  $('#brDay').addEventListener('change',e=>{const v=+e.target.value,today=!v;$('#brToday').hidden=!today;$('#brPast').hidden=today;
+    $('#brSub').textContent=today?'Morning briefing · prepared Nov 25, 2026, 7:00 AM PT · also sent to your email':'Morning briefing of '+PASTB[v].d+' · 7:00 AM PT · as it was sent, read only';
+    if(today){say('Back to today\'s briefing.');return}
+    const b=PASTB[v];const it=x=>`<div class="item"><span class="ic ${x[1]}">${x[0]}</span><div><div class="t">${x[2]}</div><div class="m">${x[3]}</div></div>${x[4]?`<button class="btn sec" data-act="${x[4]}">${x[5]}</button>`:'<span></span>'}</div>`;
+    $('#brPast').innerHTML=`<div class="pastnote">You are reading the briefing of <strong>${b.d}</strong> as it was sent. Some items may be resolved since; today's briefing has the current picture.</div>
+      <section class="card"><h2>Needed you that day · ${b.need.length}</h2>${b.need.map(it).join('')}</section>
+      <section class="card"><h2>Changed since the day before</h2>${b.chg.map(it).join('')}</section>
+      <section class="card"><h2>Done that day</h2><ul class="chk">${b.done.map(x=>`<li><span class="i ok">✓</span>${x}</li>`).join('')}</ul></section>`;
+    say(`Showing the briefing of <strong>${b.d}</strong>, read only.<div class="chips"><button class="chip" data-act="brToday">Back to today</button></div>`)});
+  acts.brToday=()=>{$('#brDay').value='0';$('#brDay').dispatchEvent(new Event('change'))};
+  const mqDone=new Set();let mqLog=[];
+  const mqL=(w,t)=>{mqLog.unshift([new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}),w,t]);const l=$('#mqLog');if(l)l.innerHTML=mqLog.map(x=>`<li><span class="tm">${x[0]}</span><span class="who ${x[1]}">${({lo:'Loni',yo:'You',ex:'Crestview'})[x[1]]}</span><span>${x[2]}</span><span></span></li>`).join('')};
+  function mqSetStep(st){STEPS.Marquez=st;const f=FILES.find(x=>x[0]==='Marquez');const c=FC.find(x=>x[0]==='Marquez');
+    if(st[5]==='c'){f[2]='06 Package & submit';f[3]='Package ready for your review';if(c){c[2]='06 Package & submit';c[3]='Package ready';c[4]='ok';c[5]='Crestview package, 21 of 21 items';c[6]='Review and approve the package'}}
+    if(st[6]==='c'){f[2]='07 Manage to closing';f[3]='Waiting on Crestview';if(c){c[2]='07 Manage to closing';c[3]='Submitted';c[4]='need';c[5]='Package v1 sent to Crestview';c[6]='Wait for Crestview\'s first review';c[7]='lender'}}
+    FULLV.Marquez[5]='mqpack';if(st[6]==='c')FULLV.Marquez[6]='mqclose';renderCards('all');paintFilt()}
+  function mqToPack(){if(STEPS.Marquez[6]==='c'){showView('mqclose');return}mqSetStep('dsddsct');showView('mqpack');
+    say('Crestview\'s package for <strong>Marquez</strong> is ready: 21 of 21 checklist items and a cover letter that explains the three deciding deposits upfront. Solve for yes is skipped: Crestview needs no exception. Three things to review before it goes out.<div class="chips"><button class="chip rec" data-act="mqRv1">★ Start with the cover letter</button></div>')}
+  function mqRv(i){if(mqDone.has(i))return;mqDone.add(i);const it=$(`#v-mqpack [data-mq="${i}"]`);it.classList.add('done');it.querySelector('button').outerHTML='<span class="st ok">✓ Reviewed</span>';$('#mqCount').textContent=mqDone.size+' of 3';mqL('yo',['','Reviewed the cover letter','Reviewed the package','Reviewed what gets shared'][i]);
+    if(mqDone.size===3){$('#mqApprove').disabled=false;say('All 3 reviewed. You can approve the package.<div class="chips"><button class="chip rec" data-act="mqApprove">★ Approve the package</button></div>')}}
+  acts.mqRv1=()=>mqRv(1);acts.mqRv2=()=>mqRv(2);acts.mqRv3=()=>mqRv(3);
+  acts.mqApprove=()=>{if(mqDone.size<3){say('Review the 3 items first.');return}mqL('yo','Approved package v1 for Crestview');
+    say('Package approved. Here is the email to Maria Lopez.<div class="draft"><div class="dh">Draft · email to Maria Lopez, Crestview · you send it</div><strong>Subject:</strong> New submission · Elena Marquez · Bank Statement Select · purchase $680,000<br><br>Hi Maria, please find Elena Marquez\'s package for Bank Statement Select: cover letter and 12 exhibits ordered to your checklist (secure link below). 80% LTV, DTI 42.2%, 13.4 months of reserves, no exception requested. The Oct 14 wire is explained in the letter. Target closing Jan 15. Thank you! '+USER+'<br><span class="small muted">[secure link to the package]</span><div class="row"><button class="btn" data-act="mqSent">I sent it</button></div></div>')};
+  function mqStages(n,sub){const L=[['Submitted','today'],['Underwriting','2–4 days'],['Conditional approval',''],['Conditions',''],['Clear to close',''],['Closing docs',''],['Funded','target Jan 15']];
+    $('#mqStages').innerHTML=L.map((x,i)=>`<div class="sg ${i<n?'d':i===n?'c':''}"><i>${i<n?'✓':i===n?i+1:''}</i><b>${x[0]}</b>${i===n&&sub?sub:x[1]}</div>`).join('')}
+  acts.mqSent=()=>{if(STEPS.Marquez[6]==='c')return;$('#mqTrack').innerHTML='<span class="st need">○ Marked sent by you · today</span>';mqL('yo','Marked package v1 as sent to Crestview');mqSetStep('dsddsdc');showView('mqclose');mqStages(1,'waiting');
+    say('Logged: package v1 marked as sent by you. <strong>Marquez</strong> moves to step 07. I\'ll show Crestview\'s answer when it is captured; if it comes only to your inbox, tell me.<div class="chips"><button class="chip" data-act="mqSimCA">Mockup: simulate the conditional approval</button></div>')};
+  acts.mqSimCA=()=>{if($('#mqCond [data-mqc]'))return;mqStages(3,'1 of 2 cleared');mqL('ex','Conditional approval received by email (captured), 2 conditions');
+    $('#mqCond').innerHTML=`<table class="cond"><tr><th>Condition from Crestview</th><th>Owner</th><th>Status</th><th>Evidence</th><th></th></tr>
+      <tr data-mqc="1"><td>Source of the $46,200 deposit of Oct 14</td><td><span class="own y">You</span></td><td id="mqC1"><span class="st exc">◆ Open</span></td><td class="small">Invoice SN-104 (E6 p.1) and the wire record (E3 p.27) already in the package</td><td id="mqC1a"><button class="ghost" data-act="mqResp">Draft the response</button></td></tr>
+      <tr><td>Hazard insurance binder</td><td><span class="own t">Insurance agent</span></td><td><span class="st ok">✓ Cleared</span></td><td class="small">Binder received Dec 2</td><td></td></tr></table>`;
+    say('Crestview conditionally approved <strong>Marquez</strong>, with 2 conditions. One is yours: the source of the Oct 14 deposit. The evidence is already in the package (invoice and wire record), so I drafted a response that points to the exact pages.<div class="chips"><button class="chip rec" data-act="mqResp">★ Draft the response</button></div>')};
+  acts.mqResp=()=>{$('#mqC1').innerHTML='<span class="st need">✎ Response drafted</span>';
+    say('Here is the response. It points to pages Crestview already has, plus the client\'s payment confirmation.<div class="draft"><div class="dh">Draft · email to Maria Lopez, Crestview · you send it</div><strong>Subject:</strong> Condition 1 · source of Oct 14 deposit · Marquez<br><br>Hi Maria, the $46,200 deposit of Oct 14 is a client payment from Studio Nine LLC for invoice SN-104. Please see exhibit E6 page 1 (invoice) and E3 page 27 (wire record, same amount and payer). I also attach Studio Nine\'s payment confirmation. Could you clear condition 1? Thank you! '+USER+'<div class="row"><button class="btn" data-act="mqRespSent">I sent it</button></div></div>')};
+  acts.mqRespSent=()=>{$('#mqC1').innerHTML='<span class="st need">○ Response marked sent · waiting</span>';$('#mqC1a').innerHTML='<button class="ghost" data-act="mqAcc">Record Crestview\'s answer</button>';mqL('yo','Marked the condition 1 response as sent');
+    say('Logged as sent by you. No answer captured yet. When Crestview answers, record it here or I\'ll show it if it reaches your Second Look address.<div class="chips"><button class="chip" data-act="mqAcc">Mockup: Crestview accepted it</button></div>')};
+  acts.mqAcc=()=>{$('#mqC1').innerHTML='<span class="st ok">✓ Accepted by Crestview</span>';$('#mqC1a').innerHTML='<span class="small muted">Reported by '+(USER||'you')+' · today</span>';mqStages(4,'next: clear to close');mqL('ex','Condition 1 accepted (reported by you)');
+    say('Condition 1 is cleared: Crestview accepted the invoice and wire record. All conditions are cleared; next is clear to close.<div class="why">Possible Playbook observation: Crestview accepted an invoice plus wire record as the source of a large business deposit (1 of 1). I\'ll ask you to confirm it at closing.</div>')};
+  D.Marquez[4]=()=>`${head('05','Solve for yes','Marquez · not needed')}<div class="card"><h2>Skipped</h2><p style="margin:0;font-size:13.5px">Crestview was eligible as is, so the file went straight from pre-underwriting to the package. Solve for yes stays available if Crestview declines or you want to try Harborline.</p><div style="margin-top:10px"><button class="ghost" data-act="solve">Try Harborline in Solve for yes</button></div></div>`;
+  HIST.Marquez[4]={when:'today',who:'Skipped',sk:true,items:[['Not needed: Crestview eligible as is','today']]};
+  function hdChanged(prev,id){let n=0;OB.forEach(m=>{if(m.f==='Haddad'&&m.to==='Samir Haddad'&&m.sub!==HSUB[id]&&!m.sup){m.sup=true;n++}});paintOB();
+    const lisa=prev==='pB'||SENT.some(m=>m.to.startsWith('Lisa Park'));
+    say(`<strong>You changed the plan</strong> to ${HDP[id].t.toLowerCase()}. ${n?`${n} draft to Samir is now outdated and marked <strong>Superseded</strong> in the outbox.`:''} ${id!=='pB'&&lisa?'The exception request sent to Lisa Park on Nov 24 may need a follow-up so Northgate stops working on it.':''}<div class="chips"><button class="chip rec" data-act="hdBorrower">★ Draft the new plan for Samir</button>${id!=='pB'&&lisa?'<button class="chip" data-act="hdLisa">Draft a note to Lisa Park</button>':''}</div>`)}
+  acts.hdLisa=()=>say(`A short note so Northgate can pause.<div class="draft"><div class="dh">Draft · email to Lisa Park, Northgate · you send it</div><strong>Subject:</strong> Haddad exception request · on hold<br><br>Hi Lisa, thank you for looking at the Haddad cash-out request. We are going a different way for now (${HDP[hdPath].t.toLowerCase()}), so please put the 80% exception on hold. I'll come back to you if that changes. Thank you! ${USER}<div class="row"><button class="btn" data-act="sent">Open in my email</button></div></div>`);
+  const _paintOB=paintOB;paintOB=function(){_paintOB();const n=OB.filter(m=>!m.sup).length;$('#obC').textContent=n;$('#obBadge').textContent=n;$('#obBadge').style.display=n?'':'none'};paintOB();
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-ob-sent]');if(!b)return;const m=OB[+b.dataset.obSent];if(m&&/Score exceptions on Pro Earner 12/.test(m.sub)){const en=PB.find(x=>x.stt==='drafted');if(en){en.stt='clar';paintPB()}const c=$('#pbCon');if(c)c.innerHTML='<div class="t" style="color:#5B5470">… Clarification sent · waiting for Harborline · score exception</div><div class="small" style="margin-top:4px">Marked sent by you. When Jordan answers in writing, you review it and it becomes a written clarification within his stated scope.</div>'}},true);
+  function paintFilt(){const n=k=>FC.filter(c=>c[7]===k).length;const L={all:'All '+FC.length,me:'Needs me '+n('me'),borrower:'Waiting on borrower '+n('borrower'),lender:'Waiting on lender '+n('lender')};$$('#filt button').forEach(b=>b.textContent=L[b.dataset.f])}
+  paintFilt();
+  function obMarkSent(re){const i=OB.findIndex(m=>re.test(m.sub)&&!m.sup);if(i<0)return;const m=OB.splice(i,1)[0];SENT.unshift({f:m.f,to:m.to,sub:m.sub,when:'Today '+new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}),wait:'',rep:''});paintOB()}
+  const _mqSent=acts.mqSent;acts.mqSent=()=>{_mqSent();obMarkSent(/New submission · Elena Marquez/)};
+  const _mqRS=acts.mqRespSent;acts.mqRespSent=()=>{_mqRS();obMarkSent(/Condition 1 · source of Oct 14/)};
   // ---- v0.3 navigation ----
-  const FILES=[["Marquez","Purchase · $680,000 · bank statement","04 Pre-underwrite","Waiting on: letter of explanation",true],["Chen","DSCR refinance · $512,000","03 Pre-select","Waiting on: borrower (lease agreements)"],["Patel","P&L purchase · $930,000","06 Package & submit","Cover letter ready for your review"],["Okafor","Asset depletion · $1.2M","07 Close","Rate lock expires in 6 days"],["Haddad","Cash-out refinance · $610,000","05 Solve for yes","No lender fits as is: choose a fix"],["Brooks","Bank statement purchase · $720,000","02 Integrity check","2 flags to review"],["Nguyen","1099 purchase · $455,000","01 Import","New from ARIVE today"]];
+  const FILES=[["Marquez","Purchase · $680,000 · bank statement","04 Pre-underwrite","Ready: review the Crestview route",true],["Chen","DSCR refinance · $512,000","03 Pre-select","Waiting on: borrower (lease agreements)"],["Patel","P&L purchase · $930,000","06 Package & submit","Cover letter ready for your review"],["Okafor","Asset depletion · $1.2M","07 Close","Rate lock expires in 6 days"],["Haddad","Cash-out refinance · $610,000","05 Solve for yes","No lender fits as is: choose a fix"],["Brooks","Bank statement purchase · $720,000","02 Integrity check","2 flags to review"],["Nguyen","1099 purchase · $455,000","01 Import","New from ARIVE today"]];
   const fm=$('#fileMenu'),fl=$('#fileList'),fs=$('#fileSearch');
   function renderFiles(){const q=fs.value.toLowerCase();fl.innerHTML=FILES.filter(f=>f.join(' ').toLowerCase().includes(q)).map(f=>`<div class="f${f[4]?' cur':''}" data-file="${f[0]}"><span class="nm">${f[0]}${f[4]?' <span class="muted small">(open)</span>':''}</span><span class="stp">${f[2]}</span><span class="mt">${f[1]} · ${f[3]}</span></div>`).join('')||'<div class="f"><span class="mt">No file matches</span></div>'}
   $('#fileChip').addEventListener('click',e=>{e.stopPropagation();fm.classList.toggle('open');fs.value='';renderFiles();fs.focus()});
@@ -2630,7 +2911,7 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
     if(n==='new'){say('Two files are in ARIVE but not in Second Look yet: <strong>Delgado</strong> (DSCR purchase) and <strong>Ramirez</strong> (bank statement refinance). Which one should I import? <span class="muted">(Import screen comes in the full mockup.)</span>');return}
     const f=FILES.find(x=>x[0].toLowerCase()===n.toLowerCase());if(!f){say('I couldn\'t find that file. Try the file list.');return}
     if(OPEN[f[0]]){if(curFile===f[0]&&VFILE[curView]){say(`We're already on <strong>${f[0]}</strong>.`);return}if(VFILE[curView]==='Marquez')say('Saved <strong>Marquez</strong> at step 04.');openFile(f[0]);return}
-    say(`${VFILE[curView]==='Marquez'?'Saved <strong>Marquez</strong> at step 04: waiting on the letter of explanation for Summit Ridge. ':''}Opening <strong>${f[0]}</strong> at step ${f[2]}. ${f[3]}. <span class="muted">(${f[0]}'s screens come in the full mockup.)</span><div class="chips"><button class="chip" data-act="back">Back to Marquez</button></div><span class="inline-ids">SL-I-136 · SL-I-137</span>`);toast('Marquez saved · resume point kept');
+    say(`${VFILE[curView]==='Marquez'?'Saved <strong>Marquez</strong> at step 04: Crestview route ready for your review. ':''}Opening <strong>${f[0]}</strong> at step ${f[2]}. ${f[3]}. <span class="muted">(${f[0]}'s screens come in the full mockup.)</span><div class="chips"><button class="chip" data-act="back">Back to Marquez</button></div><span class="inline-ids">SL-I-136 · SL-I-137</span>`);toast('Marquez saved · resume point kept');
   }
   acts.okafor=()=>switchTo('Okafor');
   $('#needBadge').addEventListener('click',()=>acts.brief());
@@ -2654,6 +2935,6 @@ body.dark .pack .p,body.dark .umcred b{color:#F7B4DD}
 })();
 </script>
 <!-- Release banner (added by Release Manager to the published copy only) -->
-<div id="sl-release-banner" aria-label="Release label" style="position:fixed;right:12px;bottom:8px;z-index:2147483647;pointer-events:none;font:500 11px/1.4 Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:#5b3a63;background:rgba(255,255,255,.82);border:1px solid rgba(91,58,99,.18);border-radius:999px;padding:2px 9px;letter-spacing:.01em">v0.23 · Prototype — fictional data</div>
+<div id="sl-release-banner" aria-label="Release label" style="position:fixed;right:12px;bottom:8px;z-index:2147483647;pointer-events:none;font:500 11px/1.4 Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:#5b3a63;background:rgba(255,255,255,.82);border:1px solid rgba(91,58,99,.18);border-radius:999px;padding:2px 9px;letter-spacing:.01em">v0.26 · Prototype — fictional data</div>
 </body>
 </html>
