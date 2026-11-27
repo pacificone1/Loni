@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loni · powered by Second Look · Mockup v0.32</title>
+<title>Loni · powered by Second Look · Mockup v0.33</title>
 <style>
 :root{
   --ink:#311847; --ink2:#4A3E4F; --muted:#6E5E6B; --line:#ECE2E6; --bg:#FBF7F5; --card:#fff;
@@ -1263,6 +1263,20 @@ body.dark .vset,body.loni-dark .vset{background:transparent;border-color:#4A3460
 body.dark #vPop{background:#231432;border-color:#3E2A52}body.dark .vl2 select{background:#1B0F28;border-color:#4A3460;color:#fff}
 @media (max-width:760px){#vPop{left:8px!important;right:8px;width:auto}}
 
+
+/* ===== v0.33 ===== */
+.tourbtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:10px;padding:10px 14px;border-radius:12px;border:1px solid #E6CFE0;background:#fff;color:#7E1463;font-weight:700;font-size:14px;cursor:pointer}
+.tourbtn:hover{background:#FBF4F9;border-color:#A01A7D}
+.tourbtn .tp{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#A01A7D,#311847);color:#fff;font-size:10px;padding-left:2px}
+body.dark .tourbtn{background:transparent;border-color:#4A3460;color:#F09ACD}
+#tourM{z-index:120;padding-top:4vh}
+.tourc{width:min(1000px,94vw);background:#fff;border-radius:16px;padding:12px 14px 14px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.tourc .hh{display:flex;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap}.tourc .sp{flex:1}
+#tourV{display:block;width:100%;aspect-ratio:16/9;border-radius:10px;background:#1B0F28}
+body.dark .tourc{background:#231432}
+.kvst{font-size:11.5px;margin-top:6px;color:var(--muted)}.kvst b{color:#7E1463}
+.kvbar{height:4px;border-radius:4px;background:#F1E6EE;margin-top:4px;overflow:hidden}.kvbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#A01A7D,#EC4067);transition:width .2s}
+
 @media print{
   body.fbprint .app,body.fbprint #fbPanel,body.fbprint .ovl,body.fbprint #toast,body.fbprint .mtabs{display:none!important}
   body.fbprint #fbPrint{display:block!important;font-family:Inter,system-ui,sans-serif;color:#311847}
@@ -1296,6 +1310,7 @@ body.dark #vPop{background:#231432;border-color:#3E2A52}body.dark .vl2 select{ba
     <label for="fname">First name</label>
     <input id="fname" type="text" placeholder="e.g. Mary">
     <button class="go" type="submit">Continue</button>
+    <button class="tourbtn" type="button" id="tourBtn"><span class="tp">▶</span> Watch the 4-min tour</button>
     <div class="soc2"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>SOC 2 Type II</b> · data encrypted in transit and at rest</span></div>
   </form>
 </div>
@@ -1388,7 +1403,9 @@ body.dark #vPop{background:#231432;border-color:#3E2A52}body.dark .vl2 select{ba
 <label class="vl2">Speed <b id="vRateV"></b><input type="range" id="vRate" min="0.8" max="1.1" step="0.01"></label>
 <label class="vl2">Tone <b id="vPitchV"></b><input type="range" id="vPitch" min="0.9" max="1.3" step="0.01"></label>
 <div class="vact"><button class="ghost" id="vReset">Reset</button><button class="btn" id="vTry">▶ Hear Loni</button></div>
-<div class="vtip" id="vTip"></div></div>
+<div class="kvst" id="kvSt"></div><div class="kvbar" id="kvBar"><i></i></div><div class="vtip" id="vTip"></div></div>
+<div id="tourM" class="ovl" hidden><div class="tourc"><div class="hh"><strong>Meet Loni · 4-minute tour</strong><span class="small muted" style="margin-left:8px">Prototype · fictional data · AI-generated voice</span><span class="sp"></span><button class="ghost" id="tourX" aria-label="Close">✕</button></div>
+<video id="tourV" controls playsinline preload="none"></video></div></div>
 <div class="app">
   <!-- TOP BAR -->
   <div class="top">
@@ -3666,6 +3683,47 @@ $('#helpBtn').addEventListener('click',()=>{$('#helpView').hidden=false;$('#admi
     $('#vReset').addEventListener('click',()=>{VS={name:'',rate:VDEF.rate,pitch:VDEF.pitch};vSave();pickVoice();show();toast('Voice reset to the best available')});
     $('#vTry').addEventListener('click',()=>speakText(`Good ${new Date().getHours()<12?'morning':'afternoon'}${USER?', '+USER:''}. Crestview is ready for your review, and I drafted the letter for Elena. Shall we start with Marquez?`,true));}
 
+
+  // ---- v0.33: tour video + Loni's own voice (Kokoro Heart, same as the video) ----
+  const DEMO='https://demo.hiloni.xyz/';
+  const ONLINE=/^(demo\.hiloni\.xyz|localhost|127\.0\.0\.1)$/.test(location.hostname);
+  const VBASE=ONLINE?'./':DEMO;
+  {const m=$('#tourM'),v=$('#tourV');
+    const open=()=>{if(!v.src){v.src=VBASE+'media/Loni_Intro_Tour_v1.mp4';v.poster=VBASE+'media/Loni_Intro_Tour_v1_poster.jpg'}stopVoice();m.hidden=false;v.play().catch(()=>{})};
+    const close=()=>{v.pause();m.hidden=true};
+    $('#tourBtn').addEventListener('click',open);$('#tourX').addEventListener('click',close);
+    m.addEventListener('click',e=>{if(e.target===m)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!m.hidden)close()});
+    v.addEventListener('error',()=>toast('The tour video could not load. It plays from demo.hiloni.xyz.'));
+    acts.tour=open}
+  const KV={st:'idle',p:0,mod:null,ac:null,tok:0,src:[],next:0};
+  const small=()=>innerWidth<760||(navigator.deviceMemory&&navigator.deviceMemory<4);
+  function paintKV(){const el=$('#kvSt'),bar=$('#kvBar');if(!el)return;
+    const t={idle:'',loading:`Loading Loni's own voice (same as the video): <b>${Math.round(KV.p*100)}%</b>. First visit only, about 90 MB. Browser voice until then.`,ready:`<b>Loni's own voice is ready</b> (same as the video).`,error:`Loni's own voice isn't available here. Using a browser voice.`,phone:`On phones Loni uses a browser voice.`}[KV.st];
+    el.innerHTML=t;bar.style.display=KV.st==='loading'?'':'none';bar.firstChild.style.width=Math.round(KV.p*100)+'%';
+    const tip=$('#vTip');if(tip)tip.style.display=(KV.st==='ready'&&useK())?'none':'';const tone=$('#vPitch');if(tone){const k=useK();tone.disabled=k;tone.parentElement.style.opacity=k?.45:1}}
+  function loadK(){if(KV.st!=='idle')return;if(small()){KV.st='phone';paintKV();return}KV.st='loading';paintKV();
+    import(VBASE+'vendor/loni-voice.js').then(m=>{KV.mod=m;return m.init(VBASE,p=>{KV.p=p;paintKV()})}).then(()=>{KV.st='ready';paintKV();fillSel()}).catch(e=>{console.warn('Loni voice',e);KV.st='error';paintKV()})}
+  const useK=()=>KV.st==='ready'&&(!VS.name||VS.name==='__kokoro');
+  function stopK(){KV.tok++;KV.src.forEach(s=>{try{s.stop()}catch(e){}});KV.src=[];KV.next=0}
+  function stopVoice(){if(SS)SS.cancel();stopK();lav&&lav.classList.remove('speaking');lhead&&lhead.classList.remove('speaking')}
+  async function speakK(t){stopVoice();const my=KV.tok;
+    if(!KV.ac){KV.ac=new (window.AudioContext||window.webkitAudioContext)()}if(KV.ac.state==='suspended')try{await KV.ac.resume()}catch(e){}
+    const parts=(t.replace(/ · /g,', ').match(/[^.!?]+[.!?]+["')\]]*|[^.!?]+$/g)||[t]).map(x=>x.trim()).filter(Boolean);
+    let left=parts.length;const on=()=>{lav&&lav.classList.add('speaking');lhead&&lhead.classList.add('speaking')},off=()=>{if(KV.tok===my){lav&&lav.classList.remove('speaking');lhead&&lhead.classList.remove('speaking')}};
+    for(const p of parts){let a;try{a=await KV.mod.synth(p,Math.max(.8,Math.min(1.15,VS.rate)))}catch(e){console.warn(e);break}
+      if(KV.tok!==my)return;const ac=KV.ac,b=ac.createBuffer(1,a.length,KV.mod.SAMPLE_RATE);b.copyToChannel(a,0);const s=ac.createBufferSource();s.buffer=b;s.connect(ac.destination);
+      const at=Math.max(ac.currentTime+0.03,KV.next);s.start(at);KV.next=at+b.duration+0.12;KV.src.push(s);on();s.onended=()=>{left--;KV.src=KV.src.filter(x=>x!==s);if(left<=0||!KV.src.length&&left<=0)off()}}
+  }
+  {const _sp=speakText;speakText=function(t,force){if(!t||(!VOICE&&!force))return;if(useK()){speakK(t);return}_sp(t,force)}}
+  {const _fs=fillSel;fillSel=function(){_fs();const sel=$('#vSel');if(!sel)return;if(KV.st==='ready'||KV.st==='loading'){const o=document.createElement('option');o.value='__kokoro';o.textContent=KV.st==='ready'?'★ Loni · Heart (same as the video)':'Loni · Heart (loading…)';o.disabled=KV.st!=='ready';sel.insertBefore(o,sel.firstChild);if(useK())sel.value='__kokoro'}paintKV()}}
+  $('#vSel').addEventListener('change',e=>{if(e.target.value==='__kokoro'){VS.name='__kokoro';vSave();paintKV()}},true);
+  ['#micBtn','#vBtn'].forEach(id=>$(id).addEventListener('click',()=>stopK(),true));
+  $('#ask').addEventListener('keydown',()=>stopK());
+  // start loading the voice once the broker signs in (needs a click for audio anyway)
+  document.getElementById('landing').addEventListener('submit',()=>{if(VOICE){loadK();try{KV.ac=KV.ac||new (window.AudioContext||window.webkitAudioContext)();KV.ac.resume()}catch(e){}}},true);
+  $('#vBtn').addEventListener('click',()=>{if(VOICE)loadK()});
+  paintKV();
+
   // ---- v0.3 navigation ----
   const FILES=[["Marquez","Purchase · $680,000 · bank statement","04 Pre-underwrite","Ready: review the Crestview route",true],["Chen","DSCR refinance · $512,000","03 Pre-select","Waiting on: borrower (lease agreements)"],["Patel","P&L purchase · $930,000","06 Package & submit","Cover letter ready for your review"],["Okafor","Asset depletion · $1.2M","07 Close","Rate lock expires in 6 days"],["Haddad","Cash-out refinance · $610,000","05 Solve for yes","No lender fits as is: choose a fix"],["Brooks","Bank statement purchase · $720,000","02 Integrity check","2 flags to review"],["Nguyen","1099 purchase · $455,000","01 Import","New from ARIVE today"]];
   const fm=$('#fileMenu'),fl=$('#fileList'),fs=$('#fileSearch');
@@ -3703,6 +3761,6 @@ $('#helpBtn').addEventListener('click',()=>{$('#helpView').hidden=false;$('#admi
 })();
 </script>
 <!-- Release banner (added by Release Manager to the published copy only) -->
-<div id="sl-release-banner" aria-label="Release label" style="position:fixed;right:12px;bottom:8px;z-index:2147483647;pointer-events:none;font:500 11px/1.4 Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:#5b3a63;background:rgba(255,255,255,.82);border:1px solid rgba(91,58,99,.18);border-radius:999px;padding:2px 9px;letter-spacing:.01em">v0.32 · Prototype — fictional data</div>
+<div id="sl-release-banner" aria-label="Release label" style="position:fixed;right:12px;bottom:8px;z-index:2147483647;pointer-events:none;font:500 11px/1.4 Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:#5b3a63;background:rgba(255,255,255,.82);border:1px solid rgba(91,58,99,.18);border-radius:999px;padding:2px 9px;letter-spacing:.01em">v0.33 · Prototype — fictional data</div>
 </body>
 </html>
