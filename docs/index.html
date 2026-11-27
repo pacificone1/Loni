@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loni · powered by Second Look · Mockup v0.27</title>
+<title>Loni · powered by Second Look · Mockup v0.32</title>
 <style>
 :root{
   --ink:#311847; --ink2:#4A3E4F; --muted:#6E5E6B; --line:#ECE2E6; --bg:#FBF7F5; --card:#fff;
@@ -1042,6 +1042,235 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
   body.dark .mtabs .mloni .mav{border-color:#1B0F28}
 }
 
+
+/* ===== v0.28: lender finder ===== */
+.ltabs{display:flex;gap:6px;margin:0 0 14px}
+.ltabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-weight:600;font-size:13px;color:var(--ink2)}
+.ltabs button.on{background:linear-gradient(120deg,#A01A7D,#311847);color:#fff;border-color:transparent}
+.fsrc{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.fsrc label{font-size:12px;font-weight:600}
+.fsrc select{font:inherit;font-size:13px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+.crit{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px}
+.cg .cl{font-size:11.5px;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.cg .cl b{color:#7E1463;text-transform:none;letter-spacing:0;font-size:13px;margin-left:6px}
+.seg{display:flex;flex-wrap:wrap;gap:5px}
+.seg button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 10px;font-size:12.5px;color:var(--ink2)}
+.seg button.on{background:#311847;color:#fff;border-color:#311847}
+.cg input[type=range]{width:100%;accent-color:#A01A7D}
+.fbar{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);flex-wrap:wrap}.fbar .sp{flex:1}
+.fgrp{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:14px 0 6px;color:#7E1463}
+.fgrp:first-child{margin-top:0}
+.lres{display:grid;grid-template-columns:28px 1.6fr 1fr 1fr 1fr 1.3fr auto;gap:10px;align-items:center;padding:10px 4px;border-top:1px solid var(--line);font-size:13px}
+.lres .rk{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:800;color:#fff;background:linear-gradient(135deg,#A01A7D,#311847)}
+.lres .nm b{display:block}.lres .nm small{color:var(--muted)}
+.lres .k{font-size:10.5px;color:var(--muted);display:block}
+.lres .acts{display:flex;gap:5px;justify-content:flex-end;flex-wrap:wrap}
+.lres .acts button{font-size:11.5px;padding:4px 9px}
+.lres .why .st{white-space:nowrap}
+.pan{font-size:10.5px;font-weight:700;border-radius:999px;padding:2px 8px;white-space:nowrap}
+.pan.y{background:#E4F1EA;color:#2E7A57}.pan.n{background:#ECE8F0;color:#5B5470}.pan.added{background:#EFE3EC;color:#7E1463}
+.head2{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700;border-top:0}
+.cmpt td,.cmpt th{text-align:center}.cmpt td:first-child,.cmpt th:first-child{text-align:left}
+#fModal{position:fixed;inset:0;z-index:96;background:rgba(49,24,71,.45);backdrop-filter:blur(3px);display:flex;align-items:flex-start;justify-content:center;padding-top:60px}
+#fModal[hidden]{display:none}
+.fmc{width:min(700px,94vw);background:#fff;border-radius:16px;padding:18px 22px;box-shadow:0 24px 60px rgba(0,0,0,.25)}
+.fmc textarea{width:100%;box-sizing:border-box;font:inherit;font-size:13px;border:1px solid var(--line);border-radius:8px;padding:8px}
+.fmc .chipsx{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.fmc .chipsx span{font-size:12px;border-radius:999px;padding:3px 10px;background:#F6EEF5;border:1px solid #EADBE6}
+body.dark .ltabs button,body.dark .seg button,body.dark .fsrc select{background:#231432;border-color:#4A3460;color:#E9DDEA}
+body.dark .seg button.on{background:#EC4067;border-color:#EC4067}
+body.dark .fmc{background:#231432}body.dark .fmc textarea{background:#1B0F28;border-color:#4A3460;color:#fff}body.dark .fmc .chipsx span{background:#2C1A3E;border-color:#3E2A52}
+body.dark .cg .cl b,body.dark .fgrp{color:#F09ACD}
+@media (max-width:1024px){.lres{grid-template-columns:28px 1.5fr 1fr 1fr 1fr;}.lres .why{grid-column:2/-1}.lres .acts{grid-column:2/-1;justify-content:flex-start}}
+@media (max-width:760px){.crit{grid-template-columns:1fr}.lres{grid-template-columns:28px 1fr 1fr}.lres>div:nth-child(n+3){grid-column:auto}.lres .why,.lres .acts{grid-column:1/-1}.head2{display:none}}
+
+
+/* ===== v0.29 ===== */
+/* icon grid shortcuts */
+.dock.dockg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 12px}
+.dock.dockg button{position:relative;flex-direction:column;justify-content:center;gap:3px;border-radius:12px;padding:8px 4px 6px;font-size:11px;font-weight:600;background:#FBF7FA;border:1px solid transparent;color:#5B3D57;transition:all .15s}
+.dock.dockg button svg{width:20px;height:20px}
+.dock.dockg button:hover{background:#fff;border-color:#E6CFE0;color:#7E1463;transform:translateY(-1px);box-shadow:0 4px 12px rgba(126,20,99,.10)}
+.dock.dockg button.on{background:linear-gradient(135deg,#A01A7D,#311847);color:#fff;border-color:transparent;box-shadow:0 6px 16px rgba(49,24,71,.25)}
+.dock.dockg .n{position:absolute;top:4px;right:6px;min-width:16px;height:16px;line-height:16px;padding:0 4px;font-size:10px;text-align:center;box-shadow:0 0 0 2px #fff}
+.dock.dockg .n.ni{background:#E09F7D}.dock.dockg .n.nw{background:#EF5D60}
+body.loni-dark .dock.dockg button,body.dark .dock.dockg button{background:rgba(255,255,255,.06);color:#EADCEB;border-color:transparent}
+body.loni-dark .dock.dockg button.on,body.dark .dock.dockg button.on{background:linear-gradient(135deg,#EC4067,#A01A7D)}
+body.dark .dock.dockg .n,body.loni-dark .dock.dockg .n{box-shadow:0 0 0 2px #1B0F28}
+/* home tiles */
+@media (min-width:1280px){.choices{grid-template-columns:repeat(3,1fr)}}
+.choices .choice:nth-child(5)::before{background:#E09F7D}.choices .choice:nth-child(6)::before{background:#EF5D60}
+.since a{color:inherit;text-decoration:underline dotted}
+/* import */
+.impbtn{display:inline-flex;align-items:center;gap:8px}
+.impn{background:#EF5D60;color:#fff;border-radius:999px;font-size:10.5px;font-weight:800;padding:1px 7px}
+.impalert{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#FFF3EE,#FBF0F6);border:1px solid #F3CDBE;border-radius:12px;padding:10px 14px;margin:0 0 14px;font-size:13px}
+.impalert .sp{flex:1}.impalert .dotp{width:9px;height:9px;border-radius:50%;background:#EF5D60;box-shadow:0 0 0 4px rgba(239,93,96,.18);flex:none}
+.ovl{position:fixed;inset:0;z-index:97;background:rgba(49,24,71,.45);backdrop-filter:blur(3px);display:flex;align-items:flex-start;justify-content:center;padding-top:50px}
+.ovl[hidden]{display:none}
+.imc{width:min(760px,94vw);max-height:86vh;overflow:auto;background:#fff;border-radius:16px;padding:18px 22px;box-shadow:0 24px 60px rgba(0,0,0,.25)}
+.imc .hh{display:flex;align-items:center;gap:8px;margin-bottom:10px}.imc .sp{flex:1}
+.itabs{display:flex;gap:6px;margin-bottom:12px;border-bottom:1px solid var(--line)}
+.itabs button{border:0;background:none;padding:8px 12px;font-weight:600;color:var(--muted);border-bottom:2px solid transparent;display:flex;gap:6px;align-items:center}
+.itabs button.on{color:#7E1463;border-bottom-color:#A01A7D}
+.irow{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px;display:grid;grid-template-columns:22px 1fr auto;gap:4px 10px;align-items:start}
+.irow.sel{border-color:#A01A7D;background:#FCF6FA}
+.irow input{margin-top:3px;accent-color:#A01A7D;width:16px;height:16px}
+.irow .t{font-weight:700}.irow .d{font-size:12.5px;color:var(--ink2)}.irow .m{font-size:11.5px;color:var(--muted);text-align:right;white-space:nowrap}
+.irow .ack{grid-column:2/-1;display:flex;gap:8px;align-items:center;font-size:12.5px;background:#FFF7EE;border:1px dashed #E6B48F;border-radius:8px;padding:7px 10px;margin-top:6px}
+.irow .ack input{margin:0}
+.irow .new{font-size:10px;font-weight:800;color:#fff;background:#EF5D60;border-radius:999px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+.drop{border:2px dashed #D9B9CF;border-radius:14px;padding:22px;display:flex;gap:14px;align-items:center;cursor:pointer;background:#FCF8FB}
+.drop:hover{border-color:#A01A7D}.drop .ic{font-size:26px;color:#A01A7D}
+.imfoot{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);position:sticky;bottom:-18px;background:inherit;padding-bottom:4px}
+.imfoot .sp{flex:1}
+.pfld{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0}.pfld td{padding:5px 6px;border-top:1px solid var(--line)}.pfld td:first-child{color:var(--muted);width:38%}
+.cfm{color:#9A6A00;font-weight:600}
+body.dark .imc{background:#231432}body.dark .irow.sel{background:#2C1A3E}body.dark .irow .ack{background:#2A1C2E;border-color:#7A5A44}body.dark .drop{background:#1B0F28;border-color:#4A3460}body.dark .impalert{background:#2C1A3E;border-color:#5A3A4E}
+/* feedback */
+#fbBtn.on{background:linear-gradient(120deg,#EC4067,#A01A7D);color:#fff;border-color:transparent}
+#fbPanel{position:fixed;right:18px;bottom:18px;z-index:95;width:330px;background:#fff;border-radius:16px;box-shadow:0 18px 50px rgba(49,24,71,.28);border:1px solid #EADBE6;overflow:hidden}
+#fbPanel[hidden]{display:none}
+#fbPanel .fbh{display:flex;align-items:center;gap:8px;padding:10px 12px;background:linear-gradient(120deg,#A01A7D,#311847);color:#fff}
+#fbPanel .fbh .ghost{color:#fff;border-color:rgba(255,255,255,.3);background:transparent;padding:2px 8px}
+#fbPanel .fbh .muted{color:rgba(255,255,255,.75)!important}
+#fbPanel .fbh .sp{flex:1}.fbdot{width:8px;height:8px;border-radius:50%;background:#EF5D60;box-shadow:0 0 0 3px rgba(239,93,96,.35)}
+#fbPanel.min .fbbody{display:none}
+.fbbody{padding:12px}
+.fbscr{font-weight:700;font-size:13.5px;margin:2px 0 10px;color:#311847}
+.fbr{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}
+.fbr button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:7px 2px;font-size:11.5px;font-weight:600;color:var(--ink2);display:flex;flex-direction:column;align-items:center;gap:2px}
+.fbr button span{font-size:18px}
+.fbr button.on[data-fbr="1"]{background:#F1ECF4;border-color:#5B5470}.fbr button.on[data-fbr="2"]{background:#E9F4EE;border-color:#2E7A57}.fbr button.on[data-fbr="3"]{background:#FCE8F1;border-color:#EC4067}
+#fbTxt{width:100%;box-sizing:border-box;font:inherit;font-size:13px;border:1px solid var(--line);border-radius:8px;padding:8px;resize:vertical}
+.fbsaved{color:#2E7A57;min-height:16px;margin:4px 0}
+.fbact{display:flex;gap:5px;flex-wrap:wrap}.fbact button{font-size:11.5px;padding:5px 8px}
+body.dark #fbPanel{background:#231432;border-color:#3E2A52}body.dark .fbscr{color:#F6EDF3}body.dark .fbr button{background:#1B0F28;border-color:#4A3460;color:#E9DDEA}body.dark #fbTxt{background:#1B0F28;border-color:#4A3460;color:#fff}
+.fbrow{border-top:1px solid var(--line);padding:10px 0;display:grid;grid-template-columns:1fr auto;gap:4px 10px}
+.fbrow .q{grid-column:1/-1;font-size:13px;color:var(--ink2);white-space:pre-wrap}
+#fbPrint{display:none}
+@media (max-width:760px){
+  #fbBtn{font-size:0}#fbBtn::before{content:'☆';font-size:15px}
+  #fbPanel{left:8px;right:8px;width:auto;bottom:74px}
+  .loni .dock.dockg{grid-template-columns:repeat(7,1fr);gap:4px;padding:8px}
+  .loni .dock.dockg button{padding:6px 2px;font-size:9.5px}.loni .dock.dockg svg{width:18px;height:18px}
+  .impalert{flex-wrap:wrap}.irow{grid-template-columns:22px 1fr}.irow .m{grid-column:2;text-align:left}
+}
+
+/* ===== v0.30 ===== */
+#fbPanel{width:380px}#fbTxt{min-height:130px}
+.dock.dockg{gap:5px;padding:8px 12px}
+.dock.dockg button{flex-direction:row;gap:6px;padding:7px 6px;font-size:11px;justify-content:center;min-height:34px}
+.dock.dockg button svg{width:16px;height:16px;flex:none}
+.dock.dockg button .l{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dock.dockg .n{top:-6px;right:-4px}
+.src.gen{background:#FFF4D6;color:#8A6100;border-color:#F1D48A}
+a.cm{display:block;color:var(--plum-deep);font-weight:600;font-size:12.5px;text-decoration:underline dotted;margin-bottom:3px}
+.fitp{display:inline-block;font-weight:800;color:#7E1463;background:#F6EEF5;border-radius:999px;padding:2px 9px;font-size:12px}
+.fit{display:flex;align-items:center;gap:4px;white-space:nowrap}.fit b{font-size:15px;color:#7E1463;min-width:18px;text-align:center}
+.fit button{width:20px;height:20px;border-radius:6px;border:1px solid var(--line);background:#fff;padding:0;font-size:12px;line-height:1}
+.fitr{font-size:11px;color:var(--muted);margin-top:3px;max-width:150px;min-width:110px}.fitr.adj{color:#9A6A00}
+.ccbtn{margin-left:auto;order:3;border:1px solid #E6CFE0;background:#fff;color:#7E1463;border-radius:999px;padding:4px 11px;font-size:12px;font-weight:600;white-space:nowrap}
+.ccbtn:hover{background:#F6EEF5}
+.hrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.hrow h2{margin:0}.hrow .sp{flex:1}
+.hrow+*{margin-top:10px}
+.tscroll{overflow-x:auto;max-width:100%}
+.srcl{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.35}
+.mnote{font-size:11.5px;color:var(--muted);padding:6px 12px}
+.roles{display:flex;gap:4px;padding:4px 10px 8px}.roles button{flex:1;font-size:11px!important;padding:5px 4px!important;border:1px solid var(--line)!important;border-radius:8px!important;text-align:center!important}
+.roles button.on{background:#311847!important;color:#fff!important;border-color:#311847!important}
+body:not(.role-super) .superonly{display:none!important}body.role-super .notsuper{display:none}
+body.role-lo .adminonly{display:none!important}
+.rolechip{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2px 8px;background:#F6EEF5;color:#7E1463;margin-left:6px;white-space:nowrap}
+.req{display:grid;grid-template-columns:1fr auto;gap:6px 12px;border-top:1px solid var(--line);padding:10px 0}
+.req .t{font-weight:700}.req .m{font-size:12.5px;color:var(--ink2)}.req .a{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.alt input{width:72px;font:inherit;font-size:13px;padding:4px 6px;border:1px solid var(--line);border-radius:6px}
+.alt td{vertical-align:top}
+.cmb td{padding:6px 4px;border-top:1px solid var(--line);font-size:13px}.cmb td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.cmb tr.tot td{font-weight:800;border-top:2px solid #A01A7D}
+.ccopt{display:grid;gap:6px;margin:8px 0}.ccopt label{display:flex;gap:8px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:13px;cursor:pointer}
+.ccopt label.on{border-color:#A01A7D;background:#FCF6FA}
+.ccres{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}.ccres .x{border:1px solid var(--line);border-radius:10px;padding:10px}.ccres .n{font-size:22px;font-weight:800;color:#311847}.ccres .l{font-size:11px;color:var(--muted)}
+.drec textarea{width:100%;box-sizing:border-box;min-height:150px;font:inherit;font-size:13px;border:1px solid var(--line);border-radius:10px;padding:10px}
+.drec .saved{background:#E9F4EE;border:1px solid #BFE0CC;border-radius:10px;padding:10px;font-size:13px;white-space:pre-wrap}
+.uprule{display:grid;grid-template-columns:1fr auto;gap:4px 10px;border-top:1px solid var(--line);padding:9px 0;font-size:13px}
+body.dark .fit button,body.dark .ccbtn,body.dark .alt input{background:#1B0F28;border-color:#4A3460;color:#E9DDEA}
+body.dark .fitp,body.dark .rolechip{background:#2C1A3E;color:#F09ACD}
+body.dark .src.gen{background:#3A2E14;color:#F1D48A;border-color:#6B5524}
+body.dark .ccopt label.on{background:#2C1A3E}body.dark .drec textarea{background:#1B0F28;border-color:#4A3460;color:#fff}body.dark .drec .saved{background:#1E3326;border-color:#2E5A3F}
+/* responsive hardening */
+.canvas,.view{min-width:0}
+.view .card,.view section{max-width:100%;box-sizing:border-box}
+.view table{max-width:100%}
+.canvas-head{flex-wrap:wrap;row-gap:8px}
+.canvas-head>div:first-child{min-width:0;flex:1 1 260px}
+.canvas-head h1,.canvas-head .sub{overflow-wrap:anywhere}
+.view p,.view .m,.view .why{overflow-wrap:break-word}
+.psel td.ln{min-width:130px}.psel p.why{min-width:200px;max-width:340px;white-space:normal}.tscroll>.psel{width:100%}
+.view img,.view svg{max-width:100%}
+
+/* canvas-width responsive (class set by ResizeObserver) */
+.canvas.cvn .grid4,.canvas.cvn .kpis,.canvas.cvn .facts,.canvas.cvn .cost,.canvas.cvn .pgrid,.canvas.cvn .sc,.canvas.cvn .rvw,.canvas.cvn .dl,.canvas.cvn .packs,.canvas.cvn .bal,.canvas.cvn .ccres{grid-template-columns:repeat(2,minmax(0,1fr))}
+.canvas.cvn .split,.canvas.cvn .cols2,.canvas.cvn .g2,.canvas.cvn .opts,.canvas.cvn .lc-top,.canvas.cvn .dd,.canvas.cvn .hstep,.canvas.cvn .hgrid,.canvas.cvn .crit,.canvas.cvn .choices{grid-template-columns:minmax(0,1fr)}
+.canvas.cvn .wf2 ol{grid-template-columns:repeat(4,1fr)}
+.canvas.cvn .fitrow,.canvas.cvn .scale{grid-template-columns:110px minmax(0,1fr)}
+.canvas.cvn .view .card{overflow-x:auto}
+.canvas.cvn .lres{grid-template-columns:28px 1fr 1fr}.canvas.cvn .lres .why,.canvas.cvn .lres .acts{grid-column:1/-1}
+.canvas.cvx .grid4,.canvas.cvx .kpis,.canvas.cvx .facts,.canvas.cvx .cost,.canvas.cvx .pgrid,.canvas.cvx .sc,.canvas.cvx .rvw,.canvas.cvx .dl,.canvas.cvx .packs,.canvas.cvx .bal{grid-template-columns:minmax(0,1fr)}
+.canvas.cvx .fitrow,.canvas.cvx .scale{grid-template-columns:minmax(0,1fr)}
+.dock.dockg.dn button{flex-direction:column;gap:2px;font-size:10px;padding:5px 2px}.dock.dockg.dn button svg{width:15px;height:15px}
+@media (max-width:1280px){.cmp-pane,.tabpane{overflow-x:auto}}
+@media (max-width:760px){.ccbtn{font-size:0;padding:4px 8px}.ccbtn::before{content:'◎';font-size:14px}.ccres{grid-template-columns:1fr 1fr}#fbPanel{width:auto}.req{grid-template-columns:1fr}
+  .loni .dock.dockg button{flex-direction:column;gap:2px;font-size:9px;min-height:0}}
+
+
+/* ===== v0.31 ===== */
+body.role-lo .owneronly{display:none!important}
+.umrole{padding:8px 12px;border-top:1px solid var(--line);margin-top:4px}
+.umrole .roles{padding:6px 0 0}
+.vbtn{margin-left:auto;display:inline-flex;align-items:center;gap:5px;border:1px solid #E6CFE0;background:#fff;color:#7E1463;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700;white-space:nowrap;cursor:pointer}
+.vbtn.on{background:linear-gradient(120deg,#A01A7D,#7E1463);color:#fff;border-color:transparent}
+.vbtn .vi{font-size:13px}
+body.dark .vbtn:not(.on),body.loni-dark .vbtn:not(.on){background:transparent;color:#F09ACD;border-color:#4A3460}
+.loni-av{position:relative}
+.loni-av.speaking::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid #EC4067;animation:vring 1.1s ease-out infinite}
+@keyframes vring{0%{transform:scale(.9);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+.vwave{display:none;align-items:flex-end;gap:2px;height:14px;margin-left:6px}
+.vwave i{width:3px;background:#EC4067;border-radius:2px;animation:vw .9s ease-in-out infinite}
+.vwave i:nth-child(2){animation-delay:.15s}.vwave i:nth-child(3){animation-delay:.3s}.vwave i:nth-child(4){animation-delay:.45s}
+@keyframes vw{0%,100%{height:3px}50%{height:14px}}
+.loni-head.speaking .vwave{display:inline-flex}
+.composer .mic{align-self:flex-end;width:40px;height:40px;border-radius:50%;border:1px solid #E6CFE0;background:#fff;color:#7E1463;display:grid;place-items:center;padding:0;flex:none;cursor:pointer;margin-right:6px}
+.composer .mic svg{width:18px;height:18px}
+.composer .mic.rec{background:#EF5D60;color:#fff;border-color:#EF5D60;animation:mpulse 1.2s ease-in-out infinite}
+@keyframes mpulse{0%,100%{box-shadow:0 0 0 0 rgba(239,93,96,.5)}50%{box-shadow:0 0 0 8px rgba(239,93,96,0)}}
+body.dark .composer .mic{background:#1B0F28;border-color:#4A3460;color:#F09ACD}
+.msg .b .sp-btn{border:0;background:none;color:var(--muted);cursor:pointer;font-size:12px;padding:0 0 0 6px}
+@media (max-width:760px){.vbtn .vl{display:none}}
+@media (prefers-reduced-motion:reduce){.loni-av.speaking::after,.vwave i,.composer .mic.rec{animation:none}}
+
+
+/* ===== v0.32 voice settings ===== */
+.vset{border:1px solid #E6CFE0;background:#fff;color:#7E1463;border-radius:999px;width:28px;height:28px;padding:0;font-size:13px;cursor:pointer;margin-left:4px;flex:none}
+body.dark .vset,body.loni-dark .vset{background:transparent;border-color:#4A3460;color:#F09ACD}
+#vPop{position:fixed;z-index:98;width:320px;background:#fff;border:1px solid #EADBE6;border-radius:14px;box-shadow:0 18px 50px rgba(49,24,71,.25);padding:12px 14px}
+#vPop[hidden]{display:none}
+#vPop .vph{display:flex;align-items:center;gap:8px;margin-bottom:8px}#vPop .sp{flex:1}
+.vl2{display:block;font-size:12px;color:var(--muted);margin:8px 0}.vl2 b{color:#7E1463;font-weight:700}
+.vl2 select{display:block;width:100%;margin-top:4px;font:inherit;font-size:13px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+.vl2 input[type=range]{display:block;width:100%;accent-color:#A01A7D}
+.vact{display:flex;gap:8px;justify-content:flex-end;margin-top:6px}
+.vtip{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+body.dark #vPop{background:#231432;border-color:#3E2A52}body.dark .vl2 select{background:#1B0F28;border-color:#4A3460;color:#fff}
+@media (max-width:760px){#vPop{left:8px!important;right:8px;width:auto}}
+
+@media print{
+  body.fbprint .app,body.fbprint #fbPanel,body.fbprint .ovl,body.fbprint #toast,body.fbprint .mtabs{display:none!important}
+  body.fbprint #fbPrint{display:block!important;font-family:Inter,system-ui,sans-serif;color:#311847}
+}
+#fbPrint .ph{border-bottom:3px solid #A01A7D;padding-bottom:10px;margin-bottom:14px}
+#fbPrint .ph h1{font-size:20px;margin:0}#fbPrint table{width:100%;border-collapse:collapse;font-size:12px}
+#fbPrint td,#fbPrint th{border-bottom:1px solid #E6D6E2;padding:7px 6px;text-align:left;vertical-align:top}#fbPrint th{color:#7E1463;font-size:11px;text-transform:uppercase}
+
 @media print{
   @page{size:letter;margin:14mm}
   body{background:#fff}
@@ -1116,6 +1345,50 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
   <button data-act="brief" data-v="brief"><i>☀</i>Briefing</button>
   <button data-act="activity" data-v="activity"><i>✉</i>Outbox</button>
 </nav>
+<div id="fModal" hidden><div class="fmc"><div class="hh"><strong>Scenario summary</strong><span class="ro" style="font-size:11px;margin-left:8px;color:var(--muted)">Internal use · not for the borrower</span><span class="sp"></span><button class="ghost" data-act="fClose">✕</button></div><div id="fModalBody"></div>
+<label class="small muted" style="display:block;margin-top:10px">Your notes</label><textarea id="fNotes" rows="3" placeholder="e.g. Ask Bayline about the 2-point exception before Friday"></textarea>
+<div style="display:flex;gap:8px;margin-top:10px;justify-content:flex-end"><button class="ghost" data-act="fPdf">⇩ Save as PDF</button><button class="btn" data-act="fClose">Done</button></div></div></div>
+<div id="impModal" class="ovl" hidden><div class="imc">
+  <div class="hh"><strong>Start new files</strong><span class="sp"></span><button class="ghost" data-act="impClose">✕</button></div>
+  <div class="itabs"><button data-itab="pos" class="on">From your POS (ARIVE) <span class="impn" id="impTabN">4</span></button><button data-itab="up">Upload a 1003</button></div>
+  <div id="impPos">
+    <div class="small muted" style="margin:2px 0 10px">Files created in ARIVE that Loni hasn't imported. Importing reads the 1003 (MISMO 3.4) and the borrower documents, then runs step 01.</div>
+    <div id="impList"></div>
+  </div>
+  <div id="impUp" hidden>
+    <div class="small muted" style="margin:2px 0 10px">For a file that isn't in your POS yet, or that came from another loan officer. Accepts a 1003 as a PDF (Loni reads it and asks you to confirm) or as MISMO 3.4 XML.</div>
+    <div class="drop" id="impDrop" data-act="impPick"><div class="ic">⇪</div><div><strong>Drop a 1003 here</strong> or click to choose<br><span class="small muted">PDF or MISMO 3.4 XML · one file per borrower</span></div></div>
+    <div class="small muted" style="margin-top:6px">Mockup: try <a href="#" data-act="impPick">Reyes_1003.pdf</a> or <a href="#" data-act="impPickX">Kowalski_MISMO34.xml</a></div>
+    <div id="impUpRes"></div>
+  </div>
+  <div class="imfoot"><div class="small" id="impSum"></div><span class="sp"></span><button class="ghost" data-act="impClose">Cancel</button><button class="btn" id="impGo" data-act="impGo" disabled>Import</button></div>
+</div></div>
+<div id="fbPanel" hidden>
+  <div class="fbh"><span class="fbdot"></span><strong>Feedback</strong><span class="small muted" id="fbCount"></span><span class="sp"></span><button class="ghost" data-act="fbMin" title="Minimize">–</button><button class="ghost" data-act="fbOff" title="Turn feedback off">✕</button></div>
+  <div class="fbbody">
+    <div class="small muted">This screen</div><div class="fbscr" id="fbScr"></div>
+    <div class="fbr"><button data-fbr="1"><span>👎</span>Don't like</button><button data-fbr="2"><span>👍</span>Like</button><button data-fbr="3"><span>❤️</span>Love</button></div>
+    <textarea id="fbTxt" rows="7" placeholder="What works, what's missing, what you'd change…"></textarea>
+    <div class="fbsaved small" id="fbSaved"></div>
+    <div class="fbact"><button class="ghost" data-act="fbReview">Review all</button><button class="ghost" data-act="fbPdf">⇩ Save as PDF</button><button class="btn" data-act="fbMail">✉ Send to Loni's team</button></div>
+  </div>
+</div>
+<div id="fbReviewM" class="ovl" hidden><div class="imc"><div class="hh"><strong>Your feedback</strong><span class="sp"></span><button class="ghost" data-act="fbRevClose">✕</button></div><div id="fbRevBody"></div>
+<div class="imfoot"><span class="sp"></span><button class="ghost" data-act="fbPdf">⇩ Save as PDF</button><button class="btn" data-act="fbMail">✉ Send to Loni's team</button></div></div></div>
+<div id="fbPrint"></div>
+<div id="fbOffM" class="ovl" hidden><div class="imc" style="width:min(480px,94vw)"><div class="hh"><strong>Turn feedback off?</strong></div>
+<p style="margin:4px 0 12px;font-size:14px">You rated <b id="fbOffN"></b>. Feedback is not kept unless you save it as a PDF or send it to Loni's team.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><button class="ghost" data-act="fbKeep">Keep feedback on</button><button class="ghost" data-act="fbDiscard">Discard and turn off</button><button class="ghost" data-act="fbPdf">⇩ Save as PDF</button><button class="btn" data-act="fbMail">✉ Send to Loni's team</button></div></div></div>
+<div id="cmM" class="ovl" hidden><div class="imc"><div class="hh"><strong id="cmT"></strong><span class="sp"></span><button class="ghost" data-act="cmClose">✕</button></div><div id="cmBody"></div></div></div>
+<div id="ccM" class="ovl" hidden><div class="imc"><div class="hh"><strong>Credit score · <span id="ccFile"></span></strong><span class="ro small muted" style="margin-left:8px">Equifax</span><span class="sp"></span><button class="ghost" data-act="ccClose">✕</button></div><div id="ccBody"></div></div></div>
+<div id="upM" class="ovl" hidden><div class="imc"><div class="hh"><strong>Upload a guideline or rate sheet</strong><span class="sp"></span><button class="ghost" data-act="upClose">✕</button></div><div id="upBody"></div></div></div>
+
+<div id="vPop" hidden><div class="vph"><strong>Loni's voice</strong><span class="sp"></span><button class="ghost" id="vPopX" aria-label="Close">✕</button></div>
+<label class="vl2">Voice<select id="vSel"></select></label>
+<label class="vl2">Speed <b id="vRateV"></b><input type="range" id="vRate" min="0.8" max="1.1" step="0.01"></label>
+<label class="vl2">Tone <b id="vPitchV"></b><input type="range" id="vPitch" min="0.9" max="1.3" step="0.01"></label>
+<div class="vact"><button class="ghost" id="vReset">Reset</button><button class="btn" id="vTry">▶ Hear Loni</button></div>
+<div class="vtip" id="vTip"></div></div>
 <div class="app">
   <!-- TOP BAR -->
   <div class="top">
@@ -1126,23 +1399,24 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
     <div class="top-actions">
       <button class="ghost" id="idsBtn" title="Show or hide our internal review annotations (idea, assumption and decision IDs). For Jean and the team, not for design partners">Review annotations: off</button>
       <button class="ghost" id="modeBtn" title="Switch between light and dark background">☾ Dark</button>
+      <button class="ghost" id="fbBtn" title="Rate each screen and leave comments for the Second Look team">☆ Feedback</button>
       <button class="ghost" id="helpBtn" title="Help">? Help</button>
-      <button class="ghost" id="adminBtn" aria-haspopup="true">⚙ Admin</button>
+      <button class="ghost owneronly" id="adminBtn" aria-haspopup="true">⚙ Admin</button>
       <span class="org" id="orgName">Pacific Brokerage</span><div class="avatar" id="avatar" title="Your account">JB</div>
-      <div id="userMenu" hidden><div class="who" id="umWho"></div><div class="umorg">Pacific Brokerage · NMLS #000000</div><div class="umcred"><b>730</b> credits left</div><button data-act="billing" id="umBilling">Billing &amp; credits</button><button id="signOut">Sign out</button></div>
+      <div id="userMenu" hidden><div class="who" id="umWho"></div><div class="umorg">Pacific Brokerage · NMLS #000000</div><div class="umcred"><b>730</b> credits left</div><button data-act="billing" id="umBilling" class="owneronly">Billing &amp; credits</button><div class="umrole"><div class="small muted">View as (mockup)</div><div class="roles"><button data-role="owner">Owner</button><button data-role="lo">Loan officer</button></div></div><button id="signOut">Sign out</button></div>
     </div>
     <div class="fmenu" id="fileMenu" role="menu">
       <input id="fileSearch" placeholder="Search files (name, lender, status…)">
       <div id="fileList"></div>
-      <div class="new" data-file="new">+ Start a new file from ARIVE · 2 not imported yet</div>
+      <div class="new" data-file="new">+ Start a new file from POS · <span id="fmImp">4 not imported yet</span></div>
     </div>
     <div class="menu" id="adminMenu" role="menu">
       <div class="mh">Brokerage</div>
       <button data-admin>Users</button>
       <button data-admin>Roles &amp; permissions</button>
       <div class="mh">Lenders management</div>
-      <button data-admin>Add a lender</button>
-      <button data-admin>Lender data status</button>
+      <button data-act="adminl">Manage lenders &amp; compensation</button>
+      <button data-act="reqOpen">Panel requests <span class="impn" id="reqN">1</span></button>
       <div class="mh">Look (mockup)</div>
       <button id="themeBtn">Loni panel: switch to dark</button>
       <div class="mh">Settings</div>
@@ -1159,9 +1433,10 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
         <div class="loni-av" role="img" aria-label="Loni avatar"></div>
         <div><div class="t">Loni</div><div class="s" id="loniSub">Your AI loan assistant · Marquez file</div></div>
         <span class="inline-ids">SL-I-119 · 138</span>
+        <button class="vbtn on" id="vBtn" aria-pressed="true" title="Loni speaks her replies"><span class="vi">🔊</span><span class="vl">Voice on</span></button><button class="vset" id="vSetBtn" title="Choose Loni's voice" aria-label="Voice settings">⚙</button>
         <button class="ghost mclose" data-act="mLoniClose" aria-label="Close Loni">✕</button>
       </div>
-      <nav class="dock" aria-label="Go to"><button data-act="home">⌂ Home</button><button data-act="brief">☀ Briefing <span class="n">3</span></button><button data-act="files">▤ Files</button><button data-act="lenders">▦ Lenders</button><button data-act="playbook">✎ Playbook</button><button data-act="activity">✉ Outbox <span class="n" id="obBadge">5</span></button><button data-act="intel">◔ Intelligence</button></nav>
+      <nav class="dock dockg" aria-label="Go to"><button data-act="home" title="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span class="l">Home</span></button><button data-act="brief" title="Briefing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span class="l">Briefing</span><span class="n">3</span></button><button data-act="files" title="Files"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6l2 2h8v13H4z"/><path d="M4 9h16"/></svg><span class="l">Files</span><span class="n ni" id="dockImp" title="Files in your POS not yet imported">4</span></button><button data-act="lenders" title="Lenders"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10"/><path d="M2 10l10-6 10 6z"/></svg><span class="l">Lenders</span></button><button data-act="playbook" title="Playbook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M4 17a3 3 0 0 1 3-3h11"/><path d="M8 8h6"/></svg><span class="l">Playbook</span><span class="n nw">2</span></button><button data-act="activity" title="Outbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg><span class="l">Outbox</span><span class="n" id="obBadge">5</span></button><button data-act="intel" title="Intelligence"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span class="l">Intelligence</span></button></nav>
       <div class="thread" id="thread">
       </div>
       <template id="marquezIntro">
@@ -1193,15 +1468,15 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
       <div class="sugg" id="sugg"></div>
       <form class="composer" id="composer">
         <textarea id="ask" rows="3" placeholder="Ask Loni anything about this file, or tell her what to do…" autocomplete="off"></textarea>
-        <button class="btn" type="submit">Send</button>
+        <button class="mic" type="button" id="micBtn" title="Talk to Loni" aria-label="Talk to Loni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button><button class="btn" type="submit">Send</button>
       </form>
-      <div class="chint">Enter to send · Shift+Enter for a new line</div>
+      <div class="chint">Enter to send · Shift+Enter for a new line · <span id="micHint">🎙 or talk to Loni</span></div>
     </aside>
 
     <!-- CANVAS -->
     <div class="rsz" id="rsz" title="Drag to resize · double-click to reset"></div>
     <main class="canvas" id="canvas">
-     <div class="stepbar" id="stepbar"><span class="sbl" id="sbFile">Marquez</span><nav class="ribbon" aria-label="Loan file progress">
+     <div class="stepbar" id="stepbar"><span class="sbl" id="sbFile">Marquez</span><button class="ccbtn" data-act="ccOpen" title="Check the borrower credit score with Equifax">◎ Credit score</button><nav class="ribbon" aria-label="Loan file progress">
       <button class="step done" data-s="01" title="01 Import"><span class="dot">✓</span><span class="lbl">Import</span></button><span class="sep"></span>
       <button class="step skipped" data-s="02" title="02 File integrity check (off for this file)"><span class="dot">02</span><span class="lbl">Integrity (off)</span></button><span class="sep"></span>
       <button class="step done" data-s="03" title="03 Pre-select lenders"><span class="dot">✓</span><span class="lbl">Pre-select</span></button><span class="sep"></span>
@@ -1362,12 +1637,13 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
           <table class="cmp">
             <thead><tr><th></th><th>Crestview Lending</th><th>Harborline Mortgage</th><th>Summit Ridge Capital</th><th>Pacific Arch</th></tr></thead>
             <tbody>
+              <tr><td>Broker fit <span class="muted small">(from step 03)</span></td><td><span class="fitp">8/10</span></td><td><span class="fitp">7/10</span></td><td><span class="fitp">6/10</span></td><td><span class="fitp">3/10</span></td></tr>
               <tr><td>Checked eligibility <span class="muted small">(our estimate)</span></td><td><span class="st ok" data-live="st2-crestview">✓ Eligible</span></td><td><span class="st exc">◆ Exception possible</span></td><td><span class="st need" data-live="st2-summit">… Data needed</span></td><td><span class="st no">✕ Ineligible</span></td></tr>
               <tr><td>Submission readiness <span class="muted small">(your work left)</span></td><td>Review the package</td><td>Ask the AE about the exception first</td><td>Signed letter from Elena</td><td>24 months of statements</td></tr>
               <tr><td>Lender decision</td><td class="muted">Not contacted</td><td class="muted">Not contacted · no exception granted</td><td class="muted">Not contacted</td><td class="muted">—</td></tr>
               <tr><td>Indicative rate</td><td class="num">7.375%</td><td class="num">7.125%*</td><td class="num">7.250%</td><td class="num">—</td></tr>
               <tr><td>Program</td><td>Bank Statement Select</td><td>Pro Earner 12</td><td>Flex BS</td><td>Prime BS 12</td></tr>
-              <tr><td>Expense factor</td><td class="num">50%</td><td class="num">30% (service)</td><td class="num">50%</td><td class="num">50%</td></tr>
+              <tr><td>Calculation method <span class="muted small">(click to check)</span></td><td><a href="#" class="cm" data-cm="crestview">Business BS · 12 mo · 50% expense factor</a><span class="src pub">Lender worksheet</span></td><td><a href="#" class="cm" data-cm="harborline">Business BS · 12 mo · 30% (service business)</a><span class="src pub">Guideline · Pro Earner guide p. 14</span></td><td><a href="#" class="cm" data-cm="summit">Business BS · 12 mo · 50% expense factor</a><span class="src gen">Generic method · not confirmed for this lender</span></td><td><a href="#" class="cm" data-cm="pacific">Business BS · 24 mo · 50% expense factor</a><span class="src pub">Guideline · Prime BS §4.2</span></td></tr>
               <tr><td>Qualifying income</td><td class="num" data-live="inc-50a">$14,796</td><td class="num" data-live="inc-30">$20,714</td><td class="num" data-live="inc-50b">$14,796</td><td class="num" data-live="inc-50c">$14,796</td></tr>
               <tr><td>DTI / max</td><td class="num"><span data-live="dti2-crestview">42.2%</span> / 50%</td><td class="num"><span data-live="dti2-harborline">29.6%</span> / 50%</td><td class="num"><span data-live="dti2-summit">41.9%</span> / 45%</td><td class="num"><span data-live="dti2-pacific">41.1%</span> / 43%</td></tr>
               <tr><td>LTV / max at 698</td><td class="num">80% / 80%</td><td class="num">80% / 75% → 85% at 700</td><td class="num">80% / 80%</td><td class="num">n/a under 700</td></tr>
@@ -1683,17 +1959,18 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
         <h2>Pre-selection</h2>
         <div class="budget"><span><strong id="chCount">4</strong> of 6 DSCR programs on your panel go to pre-underwriting</span><span class="bar"><i id="chBar" style="width:100%"></i></span><span class="muted small">Your usual shortlist: 4 per file · <a href="#" data-act="chBudget">change</a></span></div>
         <table class="psel">
-          <tr><th>Lender · program</th><th>Status</th><th>Why</th><th>Indicative rate</th><th>Your history</th><th></th></tr>
-          <tr class="grp"><td colspan="6">Selected for step 04</td></tr>
+          <tr><th>Lender · program</th><th>Status</th><th>Broker fit <span class="muted small" style="font-weight:400;text-transform:none;letter-spacing:0">Loni proposes, you adjust</span></th><th>Why</th><th>Indicative rate</th><th>Your history</th><th></th></tr>
+          <tr class="grp"><td colspan="7">Selected for step 04</td></tr>
           <tr data-row="ng"><td class="ln">Northgate Capital<small>DSCR Select</small></td><td><span class="st sel">● Selected</span></td><td><p class="why">Your first choice for DSCR refinances. Within every hard limit.</p></td><td>6.875–7.250%</td><td class="small">5 funded · avg 24 days</td><td class="act"><button class="ghost" data-drop="ng">Drop</button></td></tr>
           <tr data-row="hb"><td class="ln">Harborline Mortgage<small>DSCR 1.0</small></td><td><span class="st exc">◆ Time-sensitive</span></td><td><p class="why">Within limits today. Minimum DSCR rises to 1.10 on <strong>Dec 1</strong>; Chen is at 1.06. Harborline bulletin 26-11 (Nov 14, written by the lender): files <strong>locked</strong> before Dec 1 keep the 1.00 minimum.</p></td><td>6.990–7.375%</td><td class="small">2 funded · avg 31 days</td><td class="act"><button class="ghost" data-drop="hb">Drop</button></td></tr>
           <tr data-row="cv"><td class="ln">Crestview Lending<small>Investor DSCR</small></td><td><span class="st need">… Data needed</span></td><td><p class="why">Requires a current lease on both units. Unit B is month-to-month.</p></td><td>7.000–7.375%</td><td class="small">3 funded · avg 27 days</td><td class="act"><button class="ghost" data-drop="cv">Drop</button></td></tr>
           <tr data-row="sr"><td class="ln">Summit Ridge Capital<small>Rental Plus</small></td><td><span class="st exc">◆ Near miss</span></td><td><p class="why">Maximum LTV 70% on 2-unit properties; Chen is at 70.1% ($1,000 over: 70% of $730,000 is $511,000). Exception candidate, or lower the loan by $1,000 in step 05.</p></td><td>7.125–7.500%</td><td class="small">1 funded</td><td class="act"><button class="ghost" data-drop="sr">Drop</button></td></tr>
-          <tr class="grp"><td colspan="6">Not selected</td></tr>
+          <tr class="grp"><td colspan="7">Not selected</td></tr>
           <tr data-row="nl"><td class="ln">Northgate Capital<small>DSCR Lite</small></td><td><span class="st out">○ Not needed</span></td><td><p class="why">Fits, but the same lender's DSCR Select prices about 0.40% lower for this file.</p></td><td>7.375–7.750%</td><td class="small">—</td><td class="act"><button class="ghost" data-add="nl">Add</button></td></tr>
           <tr data-row="pa"><td class="ln">Pacific Arch<small>DSCR Prime</small></td><td><span class="st no">✕ Excluded</span></td><td><p class="why">Minimum DSCR 1.20; Chen is at 1.06. <span class="tag" style="background:var(--slate-soft);color:var(--slate)">Published rule</span> <span class="small muted">DSCR guide v4.2, §3.1, Oct 2026</span></p></td><td>—</td><td class="small">—</td><td class="act"><button class="ghost" data-add="pa">Add anyway</button></td></tr>
         </table>
-        <div class="small muted" style="margin-top:8px">Indicative ranges from today's rate sheets, before pre-underwriting. Confirmed in step 04. Your DSCR refinance preferences (Northgate, Harborline, Crestview) come from Lenders management.</div>
+        <div class="small muted" style="margin-top:8px"><strong>Broker fit</strong> combines how far the file is inside the lender's limits, the indicative rate, your history with the lender and its usual days to close. Your compensation is never part of it. Change a score with − / +; Loni keeps its own score beside yours and learns from the difference.</div>
+        <div class="small muted" style="margin-top:6px">Indicative ranges from today's rate sheets, before pre-underwriting. Confirmed in step 04. Your DSCR refinance preferences (Northgate, Harborline, Crestview) come from Lenders management.</div>
         <div class="ids"><span>SL-I-023</span><span>SL-I-024</span><span>SL-I-031</span><span>SL-I-033</span><span>SL-I-034</span><span>D-016</span><span>D-018</span></div>
       </div>
       <div class="card">
@@ -2110,6 +2387,41 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
       <div class="card"><h2>Record</h2><ul class="log" id="mqLog"></ul></div>
      </div>
 
+     <!-- VIEW: LENDER FINDER -->
+     <div class="view" id="v-lfind" hidden>
+      <div class="canvas-head"><div><h1>Find lenders</h1><div class="sub">Loni's lender catalog · 312 lenders, 43 lend non-QM in California in your channel · published guidelines checked Nov 25, 8:30 AM PT</div></div></div>
+      <div class="ltabs"><button data-act="lenders">Your panel · 5</button><button data-act="lfind" class="on">⌕ Find lenders · catalog of 312</button></div>
+      
+      <div class="card">
+        <h2>Scenario</h2>
+        <div class="fsrc"><label>Start from a file</label><select id="fFile"><option value="">Blank scenario</option><option value="Marquez" selected>Marquez · bank statement purchase</option><option value="Chen">Chen · DSCR refinance</option><option value="Haddad">Haddad · cash-out refinance</option><option value="Nguyen">Nguyen · 1099 purchase</option><option value="Brooks">Brooks · 24-month bank statement purchase</option><option value="Patel">Patel · P&amp;L purchase</option><option value="Okafor">Okafor · asset depletion purchase</option></select>
+          <span class="small muted" id="fFileNote">Filled from the file. Change any criterion to explore.</span></div>
+        <div class="crit">
+          <div class="cg"><div class="cl">Program</div><div class="seg" data-k="prog"><button data-v="BS12">Bank statement 12</button><button data-v="BS24">Bank statement 24</button><button data-v="PL">P&amp;L</button><button data-v="1099">1099</button><button data-v="DSCR">DSCR</button><button data-v="ASSET">Asset depletion</button><button data-v="ITIN">ITIN</button></div></div>
+          <div class="cg"><div class="cl">Transaction</div><div class="seg" data-k="tx"><button data-v="P">Purchase</button><button data-v="RT">Rate &amp; term</button><button data-v="CO">Cash-out</button></div></div>
+          <div class="cg"><div class="cl">Occupancy</div><div class="seg" data-k="occ"><button data-v="PR">Primary</button><button data-v="SH">Second home</button><button data-v="INV">Investment</button></div></div>
+          <div class="cg" id="cgDscr"><div class="cl">DSCR</div><div class="seg" data-k="dscr"><button data-v="1.25">≥ 1.25</button><button data-v="1.10">1.10–1.24</button><button data-v="1.00">1.00–1.09</button><button data-v="0.75">0.75–0.99</button></div></div>
+          <div class="cg cg2"><div class="cl">LTV <b id="vLtv"></b></div><input type="range" id="rLtv" min="50" max="90" step="1"></div>
+          <div class="cg cg2"><div class="cl">Credit score <b id="vFico"></b></div><input type="range" id="rFico" min="600" max="820" step="1"></div>
+          <div class="cg cg2"><div class="cl">Loan amount <b id="vAmt"></b></div><input type="range" id="rAmt" min="100000" max="3000000" step="5000"></div>
+          <div class="cg cg2"><div class="cl">Show</div><div class="seg" data-k="scope"><button data-v="all">All lenders</button><button data-v="new">Not on my panel</button></div></div>
+        </div>
+        <div class="fbar"><span id="fSummary" class="small"></span><span class="sp"></span><button class="ghost" data-act="fStack" id="fStackBtn">⊞ Add to compare</button><button class="ghost" data-act="fCard">⎙ Scenario summary</button></div>
+      </div>
+      <div id="fCompare" hidden class="card"></div>
+      <div class="card"><h2 id="fResH">Results</h2><div id="fRes"></div>
+        <div class="small muted" style="margin-top:8px">Eligibility comes from each lender's published guidelines in the catalog. Rates are indicative from today's rate sheets. Lenders not on your panel need a broker approval with them before you can submit.</div></div>
+     </div>
+
+     <!-- VIEW: MANAGE LENDERS (super admin) -->
+     <div class="view" id="v-adminl" hidden>
+      <div class="canvas-head"><div><h1>Manage lenders</h1><div class="sub">Pacific Brokerage · owner only · every change is logged</div></div><div class="sp"></div><button class="ghost" data-act="upOpen">⇪ Upload a guideline</button><button class="btn" data-act="alSave">Save changes</button></div>
+      <div class="banner"><strong>Compensation is set per lender, not per loan.</strong> Under the loan officer compensation rule it can't change with a loan's rate or terms, and Loni never uses it to rank lenders. Confirm your agreements with counsel.</div>
+      <div class="card"><div class="hrow"><h2>Lenders · <span id="alCount"></span></h2><span class="sp"></span><button class="ghost" data-act="alAdd">+ Add a lender</button></div>
+        <div class="tscroll"><table class="alt"><thead><tr><th>Lender</th><th>Status</th><th>Broker compensation</th><th>Min · max per loan</th><th>Agreement</th><th>Account executive</th><th>Rule sources</th></tr></thead><tbody id="alBody"></tbody></table></div></div>
+      <div class="card"><h2>Change log</h2><table class="hist" id="alLog"><tr><th>When</th><th>Who</th><th>Change</th></tr><tr><td>Oct 2, 2026</td><td>Jean (owner)</td><td>Crestview compensation set to 2.00% (agreement renewed)</td></tr><tr><td>Jun 12, 2026</td><td>Jean (owner)</td><td>Harborline added · 1.75%</td></tr></table></div>
+     </div>
+
      <!-- VIEW: HOME / DAY START -->
      <div class="view" id="v-home" hidden>
       <div class="hero"><div><div class="sub">Wednesday, November 25, 2026</div><h1><span class="greet">Good morning</span><span class="uname-c"></span></h1></div></div>
@@ -2121,9 +2433,11 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
         <button class="choice" data-act="files"><div class="h">▤ Work on a loan file <span class="cnt cal">7 open</span></div><div class="pv">3 need you: Okafor (lock in 6 days), Patel (cover letter), Marquez (review the Crestview route).</div></button>
         <button class="choice" data-act="brief"><div class="h">☀ My morning briefing <span class="cnt hot">3 need you</span></div><div class="pv">Prepared at 7:00 AM and sent to your email. Start with Okafor.</div></button>
         <button class="choice" data-act="lenders"><div class="h">⌂ Check lender status <span class="cnt cal">1 stale</span></div><div class="pv">Harborline raised its DSCR minimum (affects Chen). 1 rule waits for your review.</div></button>
+        <button class="choice" data-act="playbook"><div class="h">✎ My Playbook <span class="cnt hot">2 to confirm</span></div><div class="pv">42 entries across 5 lenders. 1 contradiction on Harborline to settle; 2 lessons from recent files to confirm.</div></button>
+        <button class="choice" data-act="activity"><div class="h">✉ Outbox <span class="cnt cal" id="hOb">5 drafts</span></div><div class="pv">Drafts ready for you to send from your email. Loni never sends anything. Oldest: lock extension for Okafor.</div></button>
         <button class="choice" data-act="intel"><div class="h">◔ Loan intelligence</div><div class="pv">9 files this month · 2 closed · my estimate matched the lender on 6 of 7.</div></button>
       </div>
-      <div class="since"><span>Since yesterday:</span><span><b>2</b> borrower uploads in ARIVE</span><span><b>1</b> lender rule change</span><span><b>0</b> lender replies</span><span><b>2</b> files in ARIVE not yet imported</span></div>
+      <div class="since"><span>Since yesterday:</span><span><b>2</b> borrower uploads in ARIVE</span><span><b>1</b> lender rule change</span><span><b>0</b> lender replies</span><span><a href="#" data-act="impOpen"><b id="sinceImp">4</b> files in your POS not yet imported</a></span></div>
       <div class="perf">
         <div class="perfh"><div><div class="ey">Your November · month to date</div><div class="small muted">You compared with all 6 loan officers of Pacific Brokerage · funded loans</div></div><span class="sp"></span><span class="small muted">vs October</span></div>
         <div class="pgrid">
@@ -2153,6 +2467,7 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
         <div class="item"><span class="ic p">✎</span><div><div class="t">Patel · cover letter ready for your review</div><div class="m">Package for Summit Ridge is complete (23 of 23 checklist items, from 10 exhibits). The letter explains the P&amp;L method and the 2 excluded deposits.</div></div><button class="btn sec" data-act="patel">Review</button></div>
         <div class="item"><span class="ic h">◆</span><div><div class="t">Chen · Harborline raised its DSCR minimum to 1.10</div><div class="m">Chen's DSCR is 1.06: Harborline drops out unless the file is locked before Dec 1. Crestview and Northgate still fit. Effective Dec 1.</div></div><button class="btn sec" data-act="chen">Open</button></div>
       </section>
+      <section class="card adminonly" id="brReq"></section>
       <section class="card"><h2>Changed since yesterday</h2>
         <div class="item"><span class="ic g">↻</span><div><div class="t">Marquez · new statements in ARIVE</div><div class="m">Elena uploaded October and November. Pre-underwriting rerun: Crestview eligible, Harborline 2 points short, Summit Ridge would need a letter (optional alternative).</div></div><button class="btn sec" data-act="back">Open</button></div>
         <div class="item"><span class="ic s">⎘</span><div><div class="t">Summit Ridge · new guideline pack (v2026.11)</div><div class="m">3 rules changed; none affects your open files. 1 extracted rule waits for your review.</div></div><button class="btn sec" data-act="lenders">See</button></div>
@@ -2170,8 +2485,8 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
         </tbody></table>
       </section>
       <section class="card"><h2>Not yet in Second Look · 2 in ARIVE</h2>
-        <div class="item"><span class="ic s">+</span><div><div class="t">Delgado · DSCR purchase · $640,000</div><div class="m">Created in ARIVE yesterday.</div></div><button class="btn sec" data-act="import">Import</button></div>
-        <div class="item"><span class="ic s">+</span><div><div class="t">Ramirez · bank statement refinance · $410,000</div><div class="m">Created in ARIVE Nov 22.</div></div><button class="btn sec" data-act="import">Import</button></div>
+        <div class="item"><span class="ic s">+</span><div><div class="t">Delgado · DSCR purchase · $640,000</div><div class="m">Created in ARIVE yesterday.</div></div><button class="btn sec" data-imp="Delgado">Import</button></div>
+        <div class="item"><span class="ic s">+</span><div><div class="t">Ramirez · bank statement refinance · $410,000</div><div class="m">Created in ARIVE Nov 22.</div></div><button class="btn sec" data-imp="Ramirez">Import</button></div>
         <div class="small muted" style="margin-top:6px">Needs access to the ARIVE pipeline.<span class="inline-ids">SL-A-17</span> Until confirmed, the pilot briefing covers imported files only.</div>
       </section>
      </div>
@@ -2179,7 +2494,8 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
 
      <!-- VIEW: FILES -->
      <div class="view" id="v-files" hidden>
-      <div class="canvas-head"><div><h1>Open files</h1><div class="sub">7 files in Second Look · sorted by step, closest to closing first</div></div><div class="sp"></div><button class="ghost" data-act="import">+ New file from ARIVE</button></div>
+      <div class="canvas-head"><div><h1>Open files</h1><div class="sub">7 files in Second Look · sorted by step, closest to closing first</div></div><div class="sp"></div><button class="ghost" data-act="imp1003">⇪ Import a 1003</button><button class="btn impbtn" data-act="impOpen">+ New file from POS <span class="impn" id="impN">4 new</span></button></div>
+      <div class="impalert" id="impAlert"><span class="dotp"></span><span><b id="impAN">4 files</b> in your POS (ARIVE) are not in Loni yet. 2 arrived since your morning briefing.</span><span class="sp"></span><button class="ghost" data-act="impOpen">Review and import</button></div>
       <div class="filt" id="filt"><button class="on" data-f="all">All 7</button><button data-f="me">Needs me</button><button data-f="borrower">Waiting on borrower</button><button data-f="lender">Waiting on lender</button></div>
       <div class="fcards" id="fcards"></div>
       <div class="ids" style="position:static;margin-top:10px"><span>SL-I-121</span><span>SL-I-136</span></div>
@@ -2200,16 +2516,19 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
 
      <!-- VIEW: LENDERS -->
      <div class="view" id="v-lenders" hidden>
-      <div class="canvas-head"><div><h1>Lenders</h1><div class="sub">Your panel · 5 lenders · checked Nov 25, 2026, 8:45 AM PT</div></div><div class="sp"></div><button class="ghost" data-act="playbook">✎ Open my Playbook</button><button class="ghost" data-act="addlender">+ Add a lender</button></div>
+      <div class="canvas-head"><div><h1>Lenders</h1><div class="sub">Your panel · 5 lenders · checked Nov 25, 2026, 8:45 AM PT</div></div><div class="sp"></div><button class="ghost" data-act="playbook">✎ Open my Playbook</button><button class="btn" data-act="lfind">⌕ Find lenders for a file</button></div>
+      <div class="ltabs"><button data-act="lenders" class="on">Your panel · 5</button><button data-act="lfind">⌕ Find lenders · catalog of 312</button></div>
+      
       <div class="reco" style="margin-bottom:14px;display:flex;gap:16px;align-items:center"><div><div class="ey" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--plum)">Your Playbook</div><div style="font-size:15px;font-weight:700;margin-top:2px">42 entries across 5 lenders · 1 contradiction · 2 lessons to confirm</div><div class="small" style="color:var(--ink2)">Click a lender name for its card: your notes, preferences, track record and what Loni has learned.</div></div><span style="flex:1"></span><button class="btn" data-act="playbook">Review the Playbook</button></div>
-      <section class="card"><div class="ids"><span>SL-I-104</span><span>SL-I-083</span><span>SL-I-082</span><span>D-022</span></div><h2>Data freshness and changes</h2>
-        <table><thead><tr><th>Lender</th><th>Guidelines</th><th>Rate sheet</th><th>What changed</th><th>Your open files affected</th></tr></thead><tbody>
-        <tr><td><a href="#" data-lc="crestview">Crestview Lending</a></td><td>v2026.10 · confirmed</td><td><span class="fresh ok">Today 8:30</span></td><td class="muted">No change</td><td>Marquez, Okafor</td></tr>
-        <tr><td><a href="#" data-lc="harborline">Harborline Mortgage</a></td><td>v2026.11 · confirmed</td><td><span class="fresh ok">Today 8:30</span></td><td>DSCR minimum 1.00 → 1.10, effective Dec 1</td><td><strong>Chen</strong> (drops out)</td></tr>
-        <tr><td><a href="#" data-lc="summit">Summit Ridge Capital</a></td><td>v2026.11 · <span class="fresh new">1 rule to review</span></td><td><span class="fresh ok">Today 8:15</span></td><td>3 rules updated (reserves, condo, seasoning)</td><td class="muted">None</td></tr>
-        <tr><td><a href="#" data-lc="pacific">Pacific Arch</a></td><td>v2026.10 · confirmed</td><td><span class="fresh old">Stale · yesterday</span></td><td>Rate sheet not received this morning</td><td class="muted">None priced</td></tr>
-        <tr><td><a href="#" data-lc="northgate">Northgate Capital</a></td><td>v2026.09 · catalog only</td><td><span class="fresh ok">Today 8:20</span></td><td class="muted">Not on your panel yet</td><td>Marquez (better fit)</td></tr>
-        </tbody></table>
+      <section class="card"><div class="ids"><span>SL-I-104</span><span>SL-I-083</span><span>SL-I-082</span><span>D-022</span><span>SL-I-154</span></div><div class="hrow"><h2>Your panel · rules, sources and compensation</h2><span class="sp"></span><button class="ghost" data-act="upOpen">⇪ Upload a guideline or rate sheet</button></div>
+        <div class="tscroll"><table class="lpt"><thead><tr><th>Lender</th><th>Your compensation</th><th>Guidelines · where the rules come from</th><th>Rate sheet</th><th>What changed</th><th>Your open files affected</th></tr></thead><tbody>
+        <tr><td><a href="#" data-lc="crestview">Crestview Lending</a></td><td><strong>2.00%</strong><div class="small muted">$3,000 min · $25,000 max</div></td><td>v2026.10 · confirmed<div class="srcl">Guide PDF uploaded by you · Oct 2 · 41 rules confirmed by you</div></td><td><span class="fresh ok">Today 8:30</span><div class="srcl">Emailed daily by Maria Lopez (AE)</div></td><td class="muted">No change</td><td>Marquez, Okafor</td></tr>
+        <tr><td><a href="#" data-lc="harborline">Harborline Mortgage</a></td><td><strong>1.75%</strong><div class="small muted">$2,500 min · $20,000 max</div></td><td>v2026.11 · confirmed<div class="srcl">Lender bulletin 26-11 (Nov 14) + guide v2026.11 · confirmed by you</div></td><td><span class="fresh ok">Today 8:30</span><div class="srcl">Emailed daily by the AE</div></td><td>DSCR minimum 1.00 → 1.10, effective Dec 1</td><td><strong>Chen</strong> (drops out)</td></tr>
+        <tr><td><a href="#" data-lc="summit">Summit Ridge Capital</a></td><td><strong>2.25%</strong><div class="small muted">$3,000 min · $30,000 max</div></td><td>v2026.11 · <span class="fresh new">1 rule to review</span><div class="srcl">Flex Guide v2026.11 uploaded by you · Nov 24 · 1 rule to review</div></td><td><span class="fresh ok">Today 8:15</span><div class="srcl">Forwarded from your inbox daily</div></td><td>3 rules updated (reserves, condo, seasoning)</td><td class="muted">None</td></tr>
+        <tr><td><a href="#" data-lc="pacific">Pacific Arch</a></td><td><strong>1.50%</strong><div class="small muted">$2,000 min · $15,000 max</div></td><td>v2026.10 · confirmed<div class="srcl">Guide v2026.10 · Second Look catalog · confirmed by Kevin Liu</div></td><td><span class="fresh old">Stale · yesterday</span><div class="srcl">Not received today</div></td><td>Rate sheet not received this morning</td><td class="muted">None priced</td></tr>
+        <tr><td><a href="#" data-lc="northgate">Northgate Capital</a></td><td class="muted small">Not on your panel</td><td>v2026.09 · catalog only<div class="srcl">Second Look catalog only · published guide v2026.09 · not confirmed by your brokerage</div></td><td><span class="fresh ok">Today 8:20</span><div class="srcl">Public rate sheet</div></td><td class="muted">Not on your panel yet</td><td>Marquez (better fit)</td></tr>
+        </tbody></table></div>
+        <div class="small muted" style="margin-top:8px">Compensation: lender-paid, as a % of the loan amount, from your brokerage agreement with each lender. Set by the brokerage owner in Manage lenders. It is shown here only: Loni never uses it to rank, score or recommend lenders on a file. Rules: Second Look never logs in to lender portals with your password; rules come from guides and rate sheets you upload or forward, lender bulletins, and the shared catalog, and each rule shows who confirmed it.</div>
       </section>
       <section class="card"><h2>Waiting for your review · 1</h2>
         <div class="item"><span class="ic h">?</span><div><div class="t">Summit Ridge · reserves for loans over $1M</div><div class="m">Extracted from Flex Guide v2026.11, p. 21: "12 months of reserves for loan amounts above $1,000,000". Confirmed by the Second Look team; your review closes it.</div></div><button class="btn sec" data-act="reviewrule">Review</button></div>
@@ -2398,13 +2717,13 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
   let curView='file';
   function showView(v){
     {const nc=VFILE[v]||'_b';if(nc!==curCtx){THREADS[curCtx]=thread.innerHTML;thread.innerHTML=THREADS[nc]||'';curCtx=nc;if(THREADS[nc])thread.scrollTop=thread.scrollHeight}}
-    curView=v;document.body.classList.toggle('on-home',v==='home');if(typeof paintSugg==='function')paintSugg(v);['file','s01','nguyen','brooks','chen','haddad','patel','okafor','mqpack','mqclose','hist','lcard','playbook','activity','billing','home','brief','files','lenders','intel'].forEach(k=>{const e=document.getElementById('v-'+k);if(e)e.hidden=(k!==v)});
+    curView=v;document.body.classList.toggle('on-home',v==='home');if(typeof paintSugg==='function')paintSugg(v);['file','s01','nguyen','brooks','chen','haddad','patel','okafor','mqpack','mqclose','hist','lcard','lfind','adminl','playbook','activity','billing','home','brief','files','lenders','intel'].forEach(k=>{const e=document.getElementById('v-'+k);if(e)e.hidden=(k!==v)});
     const fv=VFILE[v];if(fv){curFile=fv;paintStepper(fv,v);$('#sbFile').textContent=fv}
     document.body.classList.toggle('not-file',!fv);
     FILES.forEach(f=>f[4]=!!fv&&f[0]===fv);
     $('#viewTitle').textContent=VT[v]||'';
     $('#chipTxt').innerHTML=fv?CHIP[fv]:'<span class="muted">No file open</span>';
-    $$('.dock button').forEach(b=>b.classList.toggle('on',b.dataset.act===({home:'home',brief:'brief',files:'files',lenders:'lenders',lcard:'lenders',intel:'intel',playbook:'playbook',activity:'activity'})[v]));
+    $$('.dock button').forEach(b=>b.classList.toggle('on',b.dataset.act===({home:'home',brief:'brief',files:'files',lenders:'lenders',lcard:'lenders',lfind:'lenders',intel:'intel',playbook:'playbook',activity:'activity'})[v]));
     $('#canvas').scrollTop=0;
     $('#loniSub').textContent='Your AI loan assistant · '+(fv?fv+' file':VT[v].slice(2));
   }
@@ -2589,7 +2908,7 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
     billing:[['Buy credits','buyCredits'],['Home','home']],
     activity:[['Open Okafor','okafor'],['Nudge Lisa Park','obNudgeLisa'],['Home','home']],
     lcard:[['Open my Playbook','playbook'],['All lenders','lenders'],['Home','home']],playbook:[['Ask Harborline to clarify','pbClar'],['Show the 2 lessons','pbLes'],['Open Crestview','lcCrest']],
-    brief:[['Open Okafor','okafor'],['Resume Marquez','resume']],files:[['Resume Marquez','resume']],lenders:[['Resume Marquez','resume']],intel:[['Resume Marquez','resume']]};
+    brief:[['Open Okafor','okafor'],['Resume Marquez','resume']],files:[['Resume Marquez','resume']],lenders:[['Find lenders for a file','lfind'],['Resume Marquez','resume']],lfind:[['Only lenders not on my panel','fNew'],['Add to compare','fStack'],['Scenario summary','fCard']],intel:[['Resume Marquez','resume']]};
   function paintSugg(v){$('#sugg').innerHTML=(SUG[v]||[]).map(x=>x[1]?`<button class="chip" data-act="${x[1]}">${x[0]}</button>`:`<button class="chip" data-fill="${x[0]}">${x[0]}</button>`).join('')}
   $('#sugg').addEventListener('click',e=>{const b=e.target.closest('[data-fill]');if(b){$('#ask').value=b.dataset.fill;$('#ask').focus()}});
   acts.fullChart=()=>{const d=$('details.full');if(d){d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'})}};
@@ -2725,11 +3044,11 @@ body.dark .stepbar .step[data-s='07'],body.dark .stepbar .step[data-s='06']+.sep
   }});
   // resizable Loni panel (300px to 1/3 of the screen)
   (()=>{const h=$('#rsz'),m=document.querySelector('.main');let on=false;
-    const set=x=>{const w=Math.max(300,Math.min(window.innerWidth/3,x));m.style.setProperty('--lw',w+'px')};
+    const set=x=>{const w=Math.max(300,Math.min(window.innerWidth*0.45,x));m.style.setProperty('--lw',w+'px')};
     h.addEventListener('mousedown',e=>{on=true;h.classList.add('on');document.body.classList.add('resizing');e.preventDefault()});
     window.addEventListener('mousemove',e=>{if(on)set(e.clientX-m.getBoundingClientRect().left)});
     window.addEventListener('mouseup',()=>{if(on){on=false;h.classList.remove('on');document.body.classList.remove('resizing')}});
-    const dflt=()=>Math.round(Math.max(420,window.innerWidth*0.2));m.style.setProperty('--lw',dflt()+'px');
+    const dflt=()=>Math.round(Math.max(320,window.innerWidth/3));m.style.setProperty('--lw',dflt()+'px');
     h.addEventListener('dblclick',()=>m.style.setProperty('--lw',dflt()+'px'));
     window.addEventListener('resize',()=>{const cur=parseFloat(getComputedStyle(m).getPropertyValue('--lw'))||380;set(cur)});})();
 
@@ -2981,7 +3300,7 @@ $('#helpBtn').addEventListener('click',()=>{$('#helpView').hidden=false;$('#admi
     const lisa=prev==='pB'||SENT.some(m=>m.to.startsWith('Lisa Park'));
     say(`<strong>You changed the plan</strong> to ${HDP[id].t.toLowerCase()}. ${n?`${n} draft to Samir is now outdated and marked <strong>Superseded</strong> in the outbox.`:''} ${id!=='pB'&&lisa?'The exception request sent to Lisa Park on Nov 24 may need a follow-up so Northgate stops working on it.':''}<div class="chips"><button class="chip rec" data-act="hdBorrower">★ Draft the new plan for Samir</button>${id!=='pB'&&lisa?'<button class="chip" data-act="hdLisa">Draft a note to Lisa Park</button>':''}</div>`)}
   acts.hdLisa=()=>say(`A short note so Northgate can pause.<div class="draft"><div class="dh">Draft · email to Lisa Park, Northgate · you send it</div><strong>Subject:</strong> Haddad exception request · on hold<br><br>Hi Lisa, thank you for looking at the Haddad cash-out request. We are going a different way for now (${HDP[hdPath].t.toLowerCase()}), so please put the 80% exception on hold. I'll come back to you if that changes. Thank you! ${USER}<div class="row"><button class="btn" data-act="sent">Open in my email</button></div></div>`);
-  const _paintOB=paintOB;paintOB=function(){_paintOB();const n=OB.filter(m=>!m.sup).length;$('#obC').textContent=n;$('#obBadge').textContent=n;$('#obBadge').style.display=n?'':'none'};paintOB();
+  const _paintOB=paintOB;paintOB=function(){_paintOB();const n=OB.filter(m=>!m.sup).length;{const h=document.getElementById('hOb');if(h)h.textContent=n+' draft'+(n===1?'':'s')}$('#obC').textContent=n;$('#obBadge').textContent=n;$('#obBadge').style.display=n?'':'none'};paintOB();
   document.addEventListener('click',e=>{const b=e.target.closest('[data-ob-sent]');if(!b)return;const m=OB[+b.dataset.obSent];if(m&&/Score exceptions on Pro Earner 12/.test(m.sub)){const en=PB.find(x=>x.stt==='drafted');if(en){en.stt='clar';paintPB()}const c=$('#pbCon');if(c)c.innerHTML='<div class="t" style="color:#5B5470">… Clarification sent · waiting for Harborline · score exception</div><div class="small" style="margin-top:4px">Marked sent by you. When Jordan answers in writing, you review it and it becomes a written clarification within his stated scope.</div>'}},true);
   function paintFilt(){const n=k=>FC.filter(c=>c[7]===k).length;const L={all:'All '+FC.length,me:'Needs me '+n('me'),borrower:'Waiting on borrower '+n('borrower'),lender:'Waiting on lender '+n('lender')};$$('#filt button').forEach(b=>b.textContent=L[b.dataset.f])}
   paintFilt();
@@ -2997,6 +3316,356 @@ $('#helpBtn').addEventListener('click',()=>{$('#helpView').hidden=false;$('#admi
   {const _sv=showView;showView=function(v){_sv(v);if(isM())document.body.classList.remove('loni-open');$$('#mtabs [data-v]').forEach(b=>b.classList.toggle('on',b.dataset.v===v||(v==='file'&&false)));$('#canvas').scrollTop=0;const c=document.querySelector('.stepbar .step.current');const r=document.querySelector('.stepbar .ribbon');if(c&&r)r.scrollLeft=c.offsetLeft-r.offsetLeft-(r.clientWidth-c.offsetWidth)/2}}
   {const _say=say;say=function(h,w){const r=_say(h,w);if(isM()&&!document.body.classList.contains('loni-open')&&w!=='me')$('#mDot').classList.add('on');return r}}
 
+
+  // ---- v0.28: lender finder (catalog search) ----
+  VT.lfind='⌕ Find lenders';
+  const FA=['Bayline','Cedar Point','Coastal Ridge','Northstar','Redwood','Silver Oak','Ironbridge','Lakeshore','Meridian','Granite','Harbor Lights','Sequoia','Bluewater','Copperleaf','Westmark','Juniper','Oakmont','Pinecrest','Sandstone','Tidewater','Evergreen','Highmark','Clearwater','Stonegate','Brightline','Driftwood','Ridgeview','Summit Peak','Sunbelt','Aspen Grove','Kestrel','Lighthouse','Marigold','Fairhaven','Bristlecone','Canyon State','Crescent','Foxglove'];
+  const FB=['Lending','Mortgage','Funding','Capital','Home Loans','Financial','Wholesale','Mortgage Partners'];
+  let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return (seed-1)/2147483646};
+  const PANEL={Crestview:'crestview',Harborline:'harborline','Summit Ridge':'summit','Pacific Arch':'pacific'};
+  const PROGS=['BS12','BS24','PL','1099','DSCR','ASSET','ITIN'];
+  const CAT=[
+    {n:'Crestview Lending',sh:'Crestview',pan:'y',progs:['BS12','BS24','PL','DSCR','ASSET'],minF:660,ltv:{P:85,RT:85,CO:75},inv:75,dscrMin:1.0,min:150000,max:3000000,base:6.95,tt:19},
+    {n:'Harborline Mortgage',sh:'Harborline',pan:'y',progs:['BS12','BS24','DSCR'],minF:660,ltv:{P:85,RT:80,CO:75},inv:75,dscrMin:1.10,min:150000,max:2000000,base:6.75,tt:31,f80:700},
+    {n:'Summit Ridge Capital',sh:'Summit Ridge',pan:'y',progs:['BS12','PL','DSCR','ASSET'],minF:680,ltv:{P:85,RT:80,CO:70},inv:70,dscrMin:1.0,min:200000,max:2500000,base:6.85,tt:25},
+    {n:'Pacific Arch',sh:'Pacific Arch',pan:'y',progs:['BS12','BS24','PL','DSCR'],minF:720,ltv:{P:80,RT:80,CO:65},inv:70,dscrMin:1.20,min:200000,max:850000,base:6.60,tt:22},
+    {n:'Northgate Capital',sh:'Northgate',pan:'n',progs:['BS12','BS24','PL','DSCR','ASSET'],minF:680,ltv:{P:85,RT:80,CO:75},inv:75,dscrMin:1.0,min:100000,max:1500000,base:6.90,tt:24}];
+  FA.forEach((a,i)=>{const p=PROGS.filter(()=>rnd()<.55);if(!p.length)p.push('BS12');const mf=[620,640,660,680,700,720][Math.floor(rnd()*6)];
+    CAT.push({n:a+' '+FB[Math.floor(rnd()*FB.length)],sh:a,pan:'n',progs:p,minF:mf,ltv:{P:[75,80,85,90][Math.floor(rnd()*4)],RT:[70,75,80,85][Math.floor(rnd()*4)],CO:[65,70,75,80][Math.floor(rnd()*4)]},inv:[65,70,75,80][Math.floor(rnd()*4)],dscrMin:[0.75,1.0,1.0,1.1,1.2][Math.floor(rnd()*5)],min:[75000,100000,150000][Math.floor(rnd()*3)],max:[1000000,1500000,2000000,3000000][Math.floor(rnd()*4)],base:6.55+rnd()*0.9,tt:18+Math.floor(rnd()*20),cpa:rnd()<.3})});
+  const SC0={Marquez:{prog:'BS12',tx:'P',occ:'PR',ltv:80,fico:698,amt:680000},Chen:{prog:'DSCR',tx:'RT',occ:'INV',ltv:70,fico:761,amt:512000,dscr:'1.00'},Haddad:{prog:'BS12',tx:'CO',occ:'PR',ltv:80,fico:712,amt:610000},Nguyen:{prog:'1099',tx:'P',occ:'PR',ltv:80,fico:724,amt:455000},Brooks:{prog:'BS24',tx:'P',occ:'PR',ltv:80,fico:742,amt:720000},Patel:{prog:'PL',tx:'P',occ:'PR',ltv:80,fico:748,amt:930000},Okafor:{prog:'ASSET',tx:'P',occ:'PR',ltv:80,fico:781,amt:1200000}};
+  const FPN={BS12:'Bank statement 12',BS24:'Bank statement 24',PL:'P&L','1099':'1099',DSCR:'DSCR',ASSET:'Asset depletion',ITIN:'ITIN'},FTN={P:'Purchase',RT:'Rate & term',CO:'Cash-out'},FON={PR:'Primary',SH:'Second home',INV:'Investment'};
+  let F={...SC0.Marquez,scope:'all'};let fStack=[];const fAdded=new Set();
+  function evalL(L){const r={L,miss:[]};
+    if(!L.progs.includes(F.prog))return null;
+    let mx=F.occ==='INV'?Math.min(L.inv,L.ltv[F.tx]):F.occ==='SH'?L.ltv[F.tx]-5:L.ltv[F.tx];
+    if(L.f80&&F.fico<L.f80)mx=Math.min(mx,75);
+    if(F.fico<760)mx=Math.min(mx,mx-(F.fico<L.minF+20?5:0));
+    r.mx=mx;
+    if(F.fico<L.minF)r.miss.push(['score',`score ${F.fico} vs ${L.minF} min`,L.minF-F.fico<=20]);
+    if(F.ltv>mx)r.miss.push(['ltv',`LTV ${F.ltv}% vs ${mx}% max`,F.ltv-mx<=5]);
+    if(F.amt>L.max)r.miss.push(['amt',`loan above $${(L.max/1e6).toFixed(2)}M max`,F.amt-L.max<=100000]);
+    if(F.amt<L.min)r.miss.push(['amt',`loan below $${L.min/1000}k min`,false]);
+    if(F.prog==='DSCR'&&+F.dscr<L.dscrMin)r.miss.push(['dscr',`DSCR band below ${L.dscrMin.toFixed(2)} min`,L.dscrMin-+F.dscr<=0.1]);
+    const adj=(F.ltv>75?.25:0)+(F.fico<700?.375:F.fico<740?.125:0)+(F.tx==='CO'?.25:0)+(F.occ==='INV'?.375:0)+(F.prog==='DSCR'?.25:0);
+    r.rate=Math.round((L.base+adj)*8)/8;r.head=mx-F.ltv;return r}
+  const fpct=x=>x.toFixed(3).replace(/0$/,'')+'%';
+  function fRun(){const all=CAT.map(evalL).filter(Boolean).filter(r=>F.scope==='all'||r.L.pan==='n');
+    const el=all.filter(r=>!r.miss.length).sort((a,b)=>a.rate-b.rate||b.head-a.head);
+    const nm=all.filter(r=>r.miss.length===1&&r.miss[0][2]).sort((a,b)=>a.rate-b.rate);
+    const out=all.length-el.length-nm.length;
+    $('#vLtv').textContent=F.ltv+'%';$('#vFico').textContent=F.fico;$('#vAmt').textContent='$'+F.amt.toLocaleString();
+    $('#cgDscr').style.display=F.prog==='DSCR'?'':'none';
+    $$('#v-lfind .seg').forEach(g=>g.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.v===String(F[g.dataset.k]))));
+    $('#fSummary').innerHTML=`<b>${el.length}</b> eligible · <b>${nm.length}</b> near misses · ${out} out · of ${CAT.length} lenders offering non-QM in CA in your channel`;
+    $('#fResH').textContent=`Results · ${FPN[F.prog]} · ${FTN[F.tx]} · ${FON[F.occ]} · LTV ${F.ltv}% · score ${F.fico} · $${F.amt.toLocaleString()}`;
+    const row=(r,i,near)=>{const L=r.L,onp=L.pan==='y'||fAdded.has(L.n);const tag=L.pan==='y'?'<span class="pan y">✓ On your panel</span>':fAdded.has(L.n)?'<span class="pan added">◆ Requested · waiting for the owner</span>':'<span class="pan n">Not on your panel</span>';
+      return `<div class="lres"><span class="rk"${near?' style="background:#E09F7D"':''}>${near?'◆':i+1}</span><div class="nm"><b>${L.n}</b><small>${tag}</small></div>
+        <div><span class="k">Indicative rate</span>${fpct(r.rate)}</div><div><span class="k">Max LTV here</span>${r.mx}% <span class="small muted">(${r.head>=0?'+'+r.head:r.head} pts)</span></div>
+        <div><span class="k">Avg. to close</span>${L.tt} days</div>
+        <div class="why small">${near?'Near miss: '+r.miss[0][1]:'<span class="st ok">✓ Fits as published</span>'}${L.cpa&&F.prog==='PL'?' · CPA-reviewed P&L only':''}</div>
+        <div class="acts">${PANEL[L.sh]?`<button class="ghost" data-lc="${PANEL[L.sh]}">Card</button>`:L.sh==='Northgate'?'<button class="ghost" data-lc="northgate">Card</button>':''}${onp?'':`<button class="ghost" data-fadd="${L.n}">Add to panel</button>`}${curFileForF()?`<button class="btn" data-fshort="${L.n}">Shortlist for ${curFileForF()}</button>`:''}</div></div>`};
+    $('#fRes').innerHTML=(el.length?'<div class="fgrp">Eligible as published · lowest indicative rate first</div>'+el.slice(0,12).map((r,i)=>row(r,i,false)).join('')+(el.length>12?`<div class="small muted" style="padding:8px 4px">+ ${el.length-12} more eligible lenders · <a href="#" data-act="fMore">show all</a></div>`:''):'<div class="small muted">No lender fits this scenario as published.</div>')+
+      (nm.length?'<div class="fgrp">Near misses · one criterion off, small gap</div>'+nm.slice(0,6).map((r,i)=>row(r,i,true)).join(''):'')}
+  const curFileForF=()=>$('#fFile').value;
+  function fLoad(f){F={...(SC0[f]||{prog:'BS12',tx:'P',occ:'PR',ltv:75,fico:720,amt:500000}),scope:F.scope||'all'};if(F.prog==='DSCR'&&!F.dscr)F.dscr='1.00';
+    $('#rLtv').value=F.ltv;$('#rFico').value=F.fico;$('#rAmt').value=F.amt;$('#fFileNote').textContent=f?'Filled from the file. Change any criterion to explore; the file itself doesn\'t change.':'Set the criteria; results update as you go.';fRun()}
+  $('#fFile').addEventListener('change',e=>fLoad(e.target.value));
+  $('#v-lfind').addEventListener('click',e=>{const b=e.target.closest('.seg button');if(b){F[b.parentElement.dataset.k]=b.dataset.v;if(F.prog==='DSCR'&&!F.dscr)F.dscr='1.00';if(F.prog==='DSCR'&&F.occ!=='INV'){F.occ='INV'}fRun()}});
+  [['rLtv','ltv'],['rFico','fico'],['rAmt','amt']].forEach(([id,k])=>$('#'+id).addEventListener('input',e=>{F[k]=+e.target.value;fRun()}));
+  acts.fMore=()=>{const all=CAT.map(evalL).filter(Boolean).filter(r=>!r.miss.length).length;toast('Showing the top 12 of '+all+' in the mockup.')};
+  document.addEventListener('click',e=>{let b;
+    if(b=e.target.closest('[data-fadd]')){const n=b.dataset.fadd;fAdded.add(n);fRun();panelRequest(n)}
+    else if(b=e.target.closest('[data-fshort]')){const n=b.dataset.fshort,f=curFileForF();toast(n+' added to the shortlist for '+f);say(`Added <strong>${n}</strong> to the pre-selection for <strong>${f}</strong>${CAT.find(x=>x.n===n).pan==='y'?'':' (not on your panel: it will show as "approval needed" until you are approved)'}. It will be pre-underwritten with the others.`)}});
+  acts.fStack=()=>{if(fStack.length>=3){toast('Compare holds 3 scenarios. Remove one first.');return}
+    const all=CAT.map(evalL).filter(Boolean);const el=all.filter(r=>!r.miss.length).sort((a,b)=>a.rate-b.rate);
+    fStack.push({lbl:`${FPN[F.prog]} · ${FTN[F.tx]} · ${F.ltv}% · ${F.fico}`,amt:F.amt,n:el.length,near:all.filter(r=>r.miss.length===1&&r.miss[0][2]).length,best:el[0]?el[0].L.n+' · '+fpct(el[0].rate):'—',top:el.slice(0,3).map(r=>r.L.sh).join(', ')||'—',onp:el.filter(r=>r.L.pan==='y').length});paintCmp()};
+  function paintCmp(){const c=$('#fCompare');c.hidden=!fStack.length;if(!fStack.length)return;
+    c.innerHTML=`<h2>Compare scenarios · ${fStack.length} of 3</h2><table class="cmpt"><tr><th></th>${fStack.map((x,i)=>`<th>${x.lbl}<br><a href="#" data-frm="${i}" class="small">remove</a></th>`).join('')}</tr>
+      <tr><td>Loan amount</td>${fStack.map(x=>`<td>$${x.amt.toLocaleString()}</td>`).join('')}</tr>
+      <tr><td>Eligible lenders</td>${fStack.map(x=>`<td><strong>${x.n}</strong></td>`).join('')}</tr>
+      <tr><td>On your panel</td>${fStack.map(x=>`<td>${x.onp}</td>`).join('')}</tr>
+      <tr><td>Near misses</td>${fStack.map(x=>`<td>${x.near}</td>`).join('')}</tr>
+      <tr><td>Lowest indicative rate</td>${fStack.map(x=>`<td>${x.best}</td>`).join('')}</tr>
+      <tr><td>Top 3</td>${fStack.map(x=>`<td class="small">${x.top}</td>`).join('')}</tr></table>
+      <div class="small muted" style="margin-top:6px">Tip: stack the same file at 80% and 75% LTV to show the borrower what a bigger down payment opens up.</div>`}
+  document.addEventListener('click',e=>{const r=e.target.closest('[data-frm]');if(r){e.preventDefault();fStack.splice(+r.dataset.frm,1);paintCmp()}});
+  acts.fCard=()=>{const all=CAT.map(evalL).filter(Boolean),el=all.filter(r=>!r.miss.length).sort((a,b)=>a.rate-b.rate);
+    $('#fModalBody').innerHTML=`<div class="small muted" style="margin:4px 0 8px">${new Date(2026,10,25).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})} · Pacific Brokerage · ${USER||'Loan officer'}${curFileForF()?' · file '+curFileForF():''}</div>
+      <div class="chipsx"><span>${FPN[F.prog]}</span><span>${FTN[F.tx]}</span><span>${FON[F.occ]}</span><span>LTV ${F.ltv}%</span><span>Score ${F.fico}</span><span>$${F.amt.toLocaleString()}</span>${F.prog==='DSCR'?`<span>DSCR ${F.dscr}+</span>`:''}</div>
+      <table class="hist"><tr><th>Lender</th><th>Panel</th><th>Indicative rate</th><th>Max LTV</th></tr>${el.slice(0,8).map(r=>`<tr><td>${r.L.n}</td><td>${r.L.pan==='y'?'Yes':'No'}</td><td>${fpct(r.rate)}</td><td>${r.mx}%</td></tr>`).join('')}</table>
+      <div class="small muted" style="margin-top:6px">${el.length} eligible as published. Estimates, not a commitment to lend.</div>`;$('#fNotes').value='';$('#fModal').hidden=false};
+  acts.fClose=()=>{$('#fModal').hidden=true};acts.fPdf=()=>toast('Saves the scenario summary as a PDF.');
+  $('#fModal').addEventListener('click',e=>{if(e.target.id==='fModal')acts.fClose()});
+  acts.lfind=(f)=>{showView('lfind');const want=typeof f==='string'?f:(VFILE[curView]?curFile:'Marquez');$('#fFile').value=SC0[want]?want:'Marquez';fLoad($('#fFile').value);
+    const all=CAT.map(evalL).filter(Boolean),el=all.filter(r=>!r.miss.length),np=el.filter(r=>r.L.pan==='n');
+    say(`Searching Loni's catalog for <strong>${$('#fFile').value}</strong>: <strong>${el.length} lenders</strong> fit as published, ${np.length} of them not on your panel. Lowest indicative rate first. Change any criterion on the right to explore; the file doesn't change.<div class="chips"><button class="chip" data-act="fNew">Only lenders not on my panel</button><button class="chip" data-act="fStack">Add to compare</button></div><div class="why">Eligibility comes from published guidelines only. Your Playbook isn't used here, because you have no history with most of these lenders.</div>`)};
+  acts.fNew=()=>{F.scope='new';fRun()};
+
+
+  // ---- v0.29: import from POS / 1003, feedback mode ----
+  const FB_TO='jean@pacificone.co'; // Jean-François's address for feedback emails (to fill)
+  let CRED=730;
+  const setCred=()=>{$$('.umcred b').forEach(e=>e.textContent=CRED);const b=document.querySelector('#v-billing .bmain .v');if(b)b.textContent=CRED};
+  const OUT=[
+    {n:'Kim',d:'ITIN purchase · $385,000 · condo, Chula Vista',w:'Joon-ho Kim, restaurant manager, ITIN filer since 2015. 20% down from savings.',docs:'1003 + 14 documents',when:'Today 10:42 AM',nw:1},
+    {n:'Alvarez',d:'P&L cash-out refinance · $560,000 · El Cajon',w:'Sofia Alvarez, owner of a cleaning company. CPA-prepared 24-month P&L uploaded.',docs:'1003 + 19 documents',when:'Today 9:15 AM',nw:1},
+    {n:'Delgado',d:'DSCR purchase · $640,000 · 4-unit, National City',w:'Investor buying through an LLC. Rent roll attached; leases for 3 of 4 units.',docs:'1003 + 11 documents',when:'Yesterday 4:30 PM'},
+    {n:'Ramirez',d:'Bank statement refinance · $410,000 · Oceanside',w:'Self-employed contractor. 12 months of business statements; agency declined in October.',docs:'1003 + 15 documents',when:'Nov 22'}];
+  const isel={},iack={};let upFile=null;
+  function impPaint(){
+    $('#impList').innerHTML=OUT.length?OUT.map(f=>`<div class="irow${isel[f.n]?' sel':''}"><input type="checkbox" data-isel="${f.n}" ${isel[f.n]?'checked':''} aria-label="Select ${f.n}">
+      <div><div class="t">${f.n}${f.nw?'<span class="new">NEW</span>':''}</div><div class="d">${f.d}</div><div class="d muted">${f.w}</div></div>
+      <div class="m">${f.docs}<br>Created ${f.when}</div>
+      ${isel[f.n]?`<label class="ack"><input type="checkbox" data-iack="${f.n}" ${iack[f.n]?'checked':''}> I agree to use <b>50 credits</b> to start ${f.n} (charged once; re-imports and reruns are free).</label>`:''}</div>`).join(''):'<div class="small muted">Nothing left to import. New files appear here as soon as they are created in ARIVE.</div>';
+    impFoot()}
+  function impFoot(){const up=!$('#impUp').hidden;
+    const sel=up?(upFile?[upFile.n]:[]):Object.keys(isel).filter(k=>isel[k]);
+    const ok=sel.length&&sel.every(k=>iack[k]);const c=sel.length*50;
+    $('#impSum').innerHTML=sel.length?`<b>${sel.length}</b> file${sel.length>1?'s':''} · <b>${c} credits</b> · balance ${CRED} → ${CRED-c}${ok?'':' · <span class="cfm">confirm the credits for each file</span>'}`:'<span class="muted">Select the files to import.</span>';
+    $('#impGo').disabled=!ok;$('#impGo').textContent=sel.length>1?`Import ${sel.length} files`:'Import'}
+  function impCounts(){const n=OUT.length;['#impN','#impTabN'].forEach(i=>$(i).textContent=i==='#impN'?n+' new':n);$('#impN').style.display=$('#impTabN').style.display=n?'':'none';
+    $('#dockImp').textContent=n;$('#dockImp').style.display=n?'':'none';$('#sinceImp').textContent=n;$('#fmImp').textContent=n?n+' not imported yet':'all imported';
+    $('#impAlert').style.display=n?'':'none';$('#impAN').textContent=n+(n>1?' files':' file')}
+  function itab(t){$$('.itabs button').forEach(b=>b.classList.toggle('on',b.dataset.itab===t));$('#impPos').hidden=t!=='pos';$('#impUp').hidden=t!=='up';impFoot()}
+  acts.impOpen=(pre)=>{Object.keys(isel).forEach(k=>delete isel[k]);Object.keys(iack).forEach(k=>delete iack[k]);if(typeof pre==='string'&&OUT.find(f=>f.n===pre))isel[pre]=1;
+    $('#fileMenu').classList.remove('open');itab('pos');impPaint();$('#impModal').hidden=false};
+  acts.import=acts.impOpen;
+  acts.imp1003=()=>{acts.impOpen();upFile=null;$('#impUpRes').innerHTML='';itab('up')};
+  acts.impClose=()=>{$('#impModal').hidden=true};
+  $('#impModal').addEventListener('click',e=>{if(e.target.id==='impModal')acts.impClose();const t=e.target.closest('[data-itab]');if(t)itab(t.dataset.itab)});
+  $('#impModal').addEventListener('change',e=>{const a=e.target.dataset;
+    if(a.isel){isel[a.isel]=e.target.checked;if(!e.target.checked)delete iack[a.isel];impPaint()}
+    if(a.iack){iack[a.iack]=e.target.checked;impFoot()}});
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-imp]');if(b){e.preventDefault();acts.impOpen(b.dataset.imp)}});
+  function upShow(x){upFile=x;
+    $('#impUpRes').innerHTML=`<div class="card" style="margin-top:12px;box-shadow:none"><h2>${x.file}</h2>
+      <div class="small muted">${x.pdf?'Read from a PDF: Loni filled 212 of 230 fields. 3 values need your confirmation before step 01.':'MISMO 3.4 XML: 241 fields read, 0 unreadable. Nothing to confirm.'}</div>
+      <table class="pfld">${x.f.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}${r[2]?' <span class="cfm">· confirm</span>':''}</td></tr>`).join('')}</table>
+      <div class="why">No documents yet: borrower documents always come through your POS. After import, Loni drafts the document request for ARIVE.</div>
+      <label class="ack" style="display:flex;gap:8px;align-items:center;font-size:12.5px;background:#FFF7EE;border:1px dashed #E6B48F;border-radius:8px;padding:7px 10px;margin-top:10px"><input type="checkbox" data-iack="${x.n}" ${iack[x.n]?'checked':''}> I agree to use <b>50 credits</b> to start ${x.n} (charged once).</label></div>`;impFoot()}
+  acts.impPick=()=>upShow({n:'Reyes',pdf:1,file:'Reyes_1003.pdf · 6 pages',f:[['Borrower','Daniela Reyes'],['Loan','Bank statement purchase · $525,000',0],['Property','Single family, Vista, CA'],['Monthly income (stated)','$18,400',1],['Employer / business','Reyes Interior Design LLC since 2016'],['Declarations','Page 5 partly unreadable',1],['Co-borrower','None listed',1]]});
+  acts.impPickX=()=>upShow({n:'Kowalski',pdf:0,file:'Kowalski_MISMO34.xml',f:[['Borrower','Adam Kowalski'],['Loan','DSCR refinance · $470,000'],['Property','Duplex, Escondido, CA'],['Rent (stated)','$4,300 a month'],['Vesting','Kowalski Rentals LLC']]});
+  acts.impGo=()=>{const up=!$('#impUp').hidden;const done=up?[upFile.n]:Object.keys(isel).filter(k=>isel[k]&&iack[k]);
+    CRED-=done.length*50;setCred();
+    if(!up){done.forEach(n=>{const i=OUT.findIndex(f=>f.n===n);if(i>-1)OUT.splice(i,1)})}
+    impCounts();acts.impClose();toast(`${done.length} file${done.length>1?'s':''} imported · ${done.length*50} credits used`);
+    say(`Importing <strong>${done.join(', ')}</strong>. ${up?'I read the 1003 you uploaded; there are no documents yet, so I drafted the document request for the borrower in ARIVE.':'I am reading the 1003 and the documents from ARIVE now.'} Step 01 takes about a minute per file; they will show in Files when it is done. ${done.length*50} credits used, ${CRED} left.<div class="chips"><button class="chip" data-act="files">Go to Files</button><button class="chip" data-file="Nguyen">See what step 01 looks like (Nguyen)</button></div><div class="why">Mockup: imported files don't open as full files.</div>`)};
+  impCounts();
+  // feedback mode
+  let FBK={};try{FBK=JSON.parse(localStorage.getItem('loniFB')||'{}')}catch(e){}
+  const fbStore=()=>{try{localStorage.setItem('loniFB',JSON.stringify(FBK))}catch(e){}};
+  const RL={1:"Don't like",2:'Like',3:'Love'},RE={1:'👎',2:'👍',3:'❤️'};
+  const fbKey=()=>{const f=VFILE[curView];const t=($('#viewTitle').textContent||curView).trim();return f?f+' · '+t:t};
+  function fbSync(){if($('#fbPanel').hidden)return;const k=fbKey(),r=FBK[k]||{};$('#fbScr').textContent=k;
+    $$('.fbr button').forEach(b=>b.classList.toggle('on',+b.dataset.fbr===r.r));$('#fbTxt').value=r.t||'';
+    $('#fbSaved').textContent=r.at?'Saved '+r.at:'';const n=Object.keys(FBK).length;$('#fbCount').textContent=n?'· '+n+' screen'+(n>1?'s':''):''}
+  function fbSave(){const k=fbKey(),r=FBK[k]||{};r.t=$('#fbTxt').value.trim();if(!r.r&&!r.t){delete FBK[k]}else{r.at=new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});FBK[k]=r}fbStore();fbSync()}
+  new MutationObserver(fbSync).observe($('#viewTitle'),{childList:true,characterData:true,subtree:true});
+  const _sv2=showView;showView=function(v){_sv2(v);fbSync()};
+  $('#fbBtn').addEventListener('click',()=>{const on=$('#fbPanel').hidden;if(!on){acts.fbOff();return}$('#fbPanel').hidden=false;$('#fbBtn').classList.add('on');$('#fbPanel').classList.remove('min');fbSync();toast('Feedback on: rate any screen as you go')});
+  const fbClear=()=>{Object.keys(FBK).forEach(k=>delete FBK[k]);fbStore();fbDone=false};let fbDone=false;
+  const fbHide=()=>{$('#fbPanel').hidden=true;$('#fbBtn').classList.remove('on');$('#fbOffM').hidden=true};
+  acts.fbOff=()=>{const n=fbRows().length;if(!n||fbDone){fbClear();fbHide();return}$('#fbOffN').textContent=n+' screen'+(n>1?'s':'');$('#fbOffM').hidden=false};
+  acts.fbDiscard=()=>{fbClear();fbHide();toast('Feedback discarded and turned off')};acts.fbKeep=()=>{$('#fbOffM').hidden=true};
+  acts.fbMin=()=>$('#fbPanel').classList.toggle('min');
+  $('#fbPanel').addEventListener('click',e=>{const b=e.target.closest('[data-fbr]');if(!b)return;const k=fbKey(),r=FBK[k]||{};r.r=(r.r===+b.dataset.fbr)?0:+b.dataset.fbr;FBK[k]=r;fbSave()});
+  let fbT;$('#fbTxt').addEventListener('input',()=>{clearTimeout(fbT);fbT=setTimeout(fbSave,500)});
+  const esc=t=>String(t).replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'})[c]);
+  const fbRows=()=>Object.entries(FBK).filter(([k,r])=>r.r||r.t);
+  acts.fbReview=()=>{const rows=fbRows();$('#fbRevBody').innerHTML=rows.length?`<div class="small muted">${rows.length} screen${rows.length>1?'s':''} · ${['1','2','3'].map(x=>RE[x]+' '+rows.filter(([k,r])=>r.r==x).length).join(' · ')}</div>`+rows.map(([k,r])=>`<div class="fbrow"><strong>${esc(k)}</strong><span>${r.r?RE[r.r]+' '+RL[r.r]:'<span class="muted">not rated</span>'}</span>${r.t?`<div class="q">${esc(r.t)}</div>`:''}</div>`).join(''):'<div class="small muted">No feedback yet. Rate a screen with the panel at the bottom right.</div>';$('#fbReviewM').hidden=false};
+  acts.fbRevClose=()=>{$('#fbReviewM').hidden=true};
+  acts.fbPdf=()=>{const rows=fbRows();if(!rows.length){toast('Rate at least one screen first.');return}
+    const d=new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    $('#fbPrint').innerHTML=`<div class="ph"><h1>Loni mockup v0.29 · design partner feedback</h1><div>${esc(USER||'Design partner')} · Pacific Brokerage · ${d} · ${rows.length} screens</div></div>
+      <table><tr><th>Screen</th><th>Rating</th><th>Comments</th></tr>${rows.map(([k,r])=>`<tr><td>${esc(k)}</td><td>${r.r?RL[r.r]:'—'}</td><td style="white-space:pre-wrap">${esc(r.t||'')}</td></tr>`).join('')}</table>`;
+    fbDone=true;document.body.classList.add('fbprint');toast('Choose "Save as PDF" in the print window');setTimeout(()=>{try{window.print()}catch(e){}document.body.classList.remove('fbprint')},300)};
+  acts.fbMail=()=>{const rows=fbRows();const sum=rows.map(([k,r])=>`- ${k}: ${r.r?RL[r.r]:'not rated'}${r.t?' / '+r.t.replace(/\n/g,' '):''}`).join('\n');
+    const body=`Hi Loni team,\n\nHere is my feedback on the Loni mockup (PDF attached).\n\n${sum}\n\n${USER||''}`;
+    fbDone=true;location.href=`mailto:${FB_TO}?subject=${encodeURIComponent('Loni mockup feedback · '+(USER||'design partner'))}&body=${encodeURIComponent(body)}`;toast('Opening your email. Attach the PDF you saved.')};
+
+
+  // ---- v0.30 ----
+  // avoid duplicate greeting when Home is clicked again
+  {const _h=acts.home;acts.home=()=>{const last=thread.lastElementChild;if(last&&/What do you want to do today/.test(last.textContent)){showView('home');return}_h()}}
+  // roles (View as)
+  let ROLE='owner';
+  function setRole(r){ROLE=r;document.body.classList.remove('role-lo','role-owner');document.body.classList.add('role-'+r);if(r==='lo'){const m=document.getElementById('adminMenu');if(m)m.classList.remove('open')}
+    $$('.roles button').forEach(b=>b.classList.toggle('on',b.dataset.role===r));
+    let c=document.getElementById('roleChip');if(!c){c=document.createElement('span');c.id='roleChip';c.className='rolechip';const w=$('#umWho');if(w)w.after(c)}
+    c.textContent={lo:'Loan officer',owner:'Owner'}[r];
+    if(r==='lo'&&['adminl','billing'].includes(curView))acts.home();paintReq()}
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-role]');if(!b)return;setRole(b.dataset.role);toast('Viewing as '+b.textContent+' (mockup)')});
+  // panel requests
+  const REQS=[{lender:'Bayline Lending',by:'Kevin Liu, loan officer',when:'Yesterday 4:12 PM',ae:'Priya Shah · priya.shah@bayline.example · (555) 010-4410',why:'Fits 24-month bank statement files like Brooks: 85% LTV from a 700 score, 21 days to close on average.',st:'new'}];
+  function paintReq(){const el=$('#brReq');if(!el)return;const open=REQS.filter(r=>r.st==='new').length;
+    const n=$('#reqN');if(n){n.textContent=open;n.style.display=open?'':'none'}
+    el.innerHTML=`<h2>For you as owner · requests to add to the panel · ${open}</h2>`+(REQS.length?REQS.map((r,i)=>`<div class="req"><div><div class="t">${r.lender}</div><div class="m">Requested by ${r.by} · ${r.when}</div><div class="m"><strong>Account executive:</strong> ${r.ae}</div><div class="m">${r.why}</div></div><div class="a">${r.st==='new'?`<button class="ghost" data-req="${i}" data-rq="no">Decline</button><button class="btn" data-req="${i}" data-rq="ok">Approve</button>`:r.st==='ok'?'<span class="st ok">✓ Approved</span>':'<span class="st no">✕ Declined</span>'}</div></div>`).join(''):'<div class="small muted">No requests.</div>')+
+      '<div class="small muted" style="margin-top:6px">When you approve, set the compensation % in Manage lenders and the lender joins the panel. Broker approval with the lender (license, agreement) follows your usual process.</div>'}
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-req]');if(!b)return;const r=REQS[+b.dataset.req];r.st=b.dataset.rq;paintReq();
+    if(r.st==='ok'){const L=ALX.find(x=>x.n===r.lender);if(!L)ALX.push({n:r.lender,k:'',st:'Approved · comp to set',c:'',mn:'',mx:'',ag:'To sign',ae:r.ae,src:'Second Look catalog · not confirmed'});paintAL();
+      say(`Approved <strong>${r.lender}</strong> for the panel. Next: ${ROLE==='owner'?'set the compensation in Manage lenders.<div class="chips"><button class="chip rec" data-act="adminl">Open Manage lenders</button></div>':'the owner sets the compensation %, then it appears on everyone\'s panel.'} I drafted a note to ${r.by.split(',')[0]} as well.`)}
+    else toast(r.lender+' declined · '+r.by.split(',')[0]+' is told in their briefing')});
+  acts.reqOpen=()=>{acts.brief?acts.brief():showView('brief');setTimeout(()=>{const e=$('#brReq');if(e)e.scrollIntoView({behavior:'smooth',block:'start'})},150)};
+  function panelRequest(n){const ae=['Jordan Lee','Ana Ruiz','Chris Park','Dana Kim','Sam Patel'][n.length%5];
+    REQS.push({lender:n,by:(USER||'You')+', loan officer',when:'Just now',ae:`${ae} · ${ae.split(' ')[0].toLowerCase()}@${n.split(' ')[0].toLowerCase()}.example`,why:'Requested from Find lenders'+($('#fFile')&&$('#fFile').value?' for '+$('#fFile').value:'')+'.',st:'new'});paintReq();
+    toast('Request sent to the owner');
+    say(`I sent <strong>${n}</strong> to the brokerage owner as a request to add it to the panel, with the account executive contact. It shows in their morning briefing. You can still shortlist it for a file; it shows as "approval needed" until it joins the panel.`)}
+  // manage lenders
+  const ALX=[
+    {n:'Crestview Lending',k:'crestview',st:'Active',c:'2.00',mn:'3,000',mx:'25,000',ag:'Renewed Oct 2, 2026',src:'Guide PDF (you) · 41 rules confirmed'},
+    {n:'Harborline Mortgage',k:'harborline',st:'Active',c:'1.75',mn:'2,500',mx:'20,000',ag:'Jun 12, 2024',src:'Bulletin 26-11 + guide v2026.11'},
+    {n:'Summit Ridge Capital',k:'summit',st:'Active',c:'2.25',mn:'3,000',mx:'30,000',ag:'Feb 3, 2025',src:'Flex Guide v2026.11 · 1 rule to review'},
+    {n:'Pacific Arch',k:'pacific',st:'Active',c:'1.50',mn:'2,000',mx:'15,000',ag:'Aug 20, 2025',src:'Catalog guide v2026.10'},
+    {n:'Northgate Capital',k:'northgate',st:'Not on panel',c:'',mn:'',mx:'',ag:'—',src:'Catalog only'}];
+  function paintAL(){const b=$('#alBody');if(!b)return;$('#alCount').textContent=ALX.filter(x=>x.st==='Active').length+' on the panel';
+    b.innerHTML=ALX.map((x,i)=>`<tr><td><strong>${x.k?`<a href="#" data-lc="${x.k}">${x.n}</a>`:x.n}</strong></td><td>${x.st==='Active'?'<span class="st ok">● Active</span>':`<span class="st exc">${x.st}</span>`}</td>
+      <td>${x.st==='Not on panel'?'<span class="muted small">—</span>':`<input data-alc="${i}" value="${x.c}" placeholder="0.00"> %`}</td><td class="small">${x.mn?'$'+x.mn+' · $'+x.mx:'—'}</td><td class="small">${x.ag}</td><td class="small">${x.ae||(x.k&&LD[x.k]?LD[x.k].ae:'—')}</td><td class="small">${x.src}</td></tr>`).join('')}
+  document.addEventListener('change',e=>{const i=e.target.dataset&&e.target.dataset.alc;if(i===undefined)return;const x=ALX[+i],v=parseFloat(e.target.value);if(isNaN(v)||v<0||v>3){toast('Enter a % between 0 and 3');e.target.value=x.c;return}
+    const old=x.c;x.c=v.toFixed(2);if(x.st.startsWith('Approved'))x.st='Active';
+    const t=$('#alLog');const tr=document.createElement('tr');tr.innerHTML=`<td>Just now</td><td>${USER||'You'} (owner)</td><td>${x.n} compensation ${old?old+'% → ':'set to '}${x.c}%</td>`;t.querySelector('tr').after(tr);paintAL()});
+  acts.adminl=()=>{if(ROLE!=='owner'){toast('Manage lenders is for the brokerage owner');return}document.getElementById('adminMenu').classList.remove('open');paintAL();showView('adminl');
+    say('Manage lenders: compensation is one % per lender, from your agreement. It shows on the Lenders panel and here, never on a file ranking. Every change goes to the change log.')};
+  acts.alSave=()=>toast('Saved · logged in the change log');acts.alAdd=()=>{acts.lfind();toast('Find the lender in the catalog, then approve it here')};
+  VT.adminl='⚙ Manage lenders';
+  // lender card: compensation + sources
+  {const _ol=openLender;openLender=function(k,q){_ol(k,q);const x=ALX.find(a=>a.k===k);const top=document.querySelector('#lcBody .lc-top');if(!top||!x)return;
+    const c=document.createElement('div');c.className='card';c.innerHTML=`<div class="hrow"><h2>Compensation and where the rules come from</h2><span class="sp"></span><button class="ghost" data-act="upOpen">⇪ Upload a guideline or rate sheet</button></div>
+      <div class="g2" style="margin-top:8px"><div><div class="small muted">Your compensation</div><div style="font-size:22px;font-weight:800;color:#311847">${x.c?x.c+'%':'Not set'}</div><div class="small muted">${x.mn?'of the loan amount · $'+x.mn+' min · $'+x.mx+' max · '+x.ag:'Not on your panel'}</div><div class="small muted" style="margin-top:4px">Set by the brokerage owner. Never used to rank lenders on a file.</div></div>
+      <div><div class="small muted">Rule sources</div><div class="small" style="margin-top:4px">${x.src}</div><div class="small muted" style="margin-top:4px">Each rule shows its document, page and who confirmed it. Second Look never logs in to ${x.n.split(' ')[0]}'s portal with your password.</div></div></div>`;top.after(c)}}
+  // upload guideline modal
+  acts.upOpen=()=>{$('#upBody').innerHTML=`<div class="small muted" style="margin-bottom:10px">Add the documents you get from lenders: underwriting guides, income worksheets, rate sheets, bulletins. Loni extracts the rules; you confirm each one before it is used on your files. You can also forward lender emails to lenders+mary@inbox.secondlook.example.</div>
+      <div class="fsrc"><label>Lender</label><select id="upL">${ALX.map(x=>`<option>${x.n}</option>`).join('')}</select></div>
+      <div class="drop" data-act="upPick"><div class="ic">⇪</div><div><strong>Drop a guideline or rate sheet</strong> or click to choose<br><span class="small muted">PDF, Excel or email · mockup: click to use Flex_Guide_v2026.12.pdf</span></div></div><div id="upRes"></div>`;$('#upM').hidden=false};
+  acts.upClose=()=>{$('#upM').hidden=true};
+  acts.upPick=()=>{const L=$('#upL').value;const R=[['Reserves for loans above $1M: 12 months','p. 21 §6.4','Changed (was 9 months)'],['Maximum LTV, 2-unit purchase: 80%','p. 9 §3.2','No change'],['Expense factor, service businesses: 30% with CPA letter','p. 14 §4.1','New']];
+    $('#upRes').innerHTML=`<div class="card" style="box-shadow:none;margin-top:12px"><h2>${L} · Flex_Guide_v2026.12.pdf · 3 rules found</h2>${R.map((r,i)=>`<div class="uprule"><div><strong>${r[0]}</strong><div class="small muted">${r[1]} · ${r[2]}</div></div><div><button class="ghost" data-upr="${i}" data-uv="no">Reject</button> <button class="btn sec" data-upr="${i}" data-uv="ok">Confirm</button></div></div>`).join('')}
+      <div class="small muted" style="margin-top:8px">Confirmed rules go live on your files with the source "${L} guide, uploaded by you, confirmed by you". Until then they show as "to review".</div></div>`};
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-upr]');if(!b)return;b.parentElement.innerHTML=b.dataset.uv==='ok'?'<span class="st ok">✓ Confirmed by you</span>':'<span class="st no">✕ Rejected</span>'});
+  // step 03 fit score (Chen)
+  const FIT={ng:[9,'Your first choice for DSCR refinances · 5 funded · inside every limit'],hb:[7,'Good rate · DSCR minimum rises Dec 1 · 31 days to close'],cv:[6,'Inside limits · lease missing on unit B · 27 days'],sr:[5,'LTV 0.1 point over · 1 funded'],nl:[6,'Fits · prices about 0.40% above DSCR Select'],pa:[2,'Below its DSCR minimum (1.20)']};
+  const FITB={};
+  function paintFit(){$$('#v-chen tr[data-row]').forEach(tr=>{const k=tr.dataset.row,f=FIT[k];if(!f)return;let td=tr.querySelector('td.fitc');if(!td){td=document.createElement('td');td.className='fitc';tr.children[1].after(td)}
+    const v=FITB[k]!==undefined?FITB[k]:f[0];td.innerHTML=`<div class="fit"><button data-fit="${k}" data-d="-1" aria-label="Lower">−</button><b>${v}</b><span class="small muted">/10</span><button data-fit="${k}" data-d="1" aria-label="Raise">+</button></div><div class="fitr${v!==f[0]?' adj':''}">${v!==f[0]?'Yours · Loni proposed '+f[0]:f[1]}</div>`})}
+  {const t=document.querySelector('#v-chen .psel');if(t&&!t.parentElement.classList.contains('tscroll')){const w=document.createElement('div');w.className='tscroll';t.before(w);w.appendChild(t)}}
+  paintFit();
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-fit]');if(!b)return;const k=b.dataset.fit,f=FIT[k];const v=Math.max(1,Math.min(10,(FITB[k]!==undefined?FITB[k]:f[0])+ +b.dataset.d));FITB[k]=v;paintFit();
+    if(v!==f[0]&&Math.abs(v-f[0])===1)say(`Noted: you score this ${v}/10 where I proposed ${f[0]}. Tell me why in a few words and I will learn from it.<div class="chips"><button class="chip" data-act="fitWhy">Relationship with the AE</button><button class="chip" data-act="fitWhy">Faster than I think</button><button class="chip" data-act="fitWhy">Other</button></div>`)});
+  acts.fitWhy=()=>toast('Saved to your Playbook as a preference');
+  // step 04 calculation method
+  const CM={crestview:{n:'Crestview Lending · Bank Statement Select',ef:.5,lab:'Business bank statements · 12 months · 50% expense factor',src:'Lender worksheet · Crestview income worksheet (Oct 2026), uploaded by you',gen:false},
+    harborline:{n:'Harborline Mortgage · Pro Earner 12',ef:.3,lab:'Business bank statements · 12 months · 30% expense factor (service business)',src:'Guideline section · Pro Earner guide v2026.11, p. 14 §4.1',gen:false},
+    summit:{n:'Summit Ridge Capital · Flex BS',ef:.5,lab:'Business bank statements · 12 months · 50% expense factor',src:'Generic method (industry standard). Not confirmed for Summit Ridge: upload their worksheet or ask your AE.',gen:true},
+    pacific:{n:'Pacific Arch · Prime BS 12',ef:.5,lab:'Business bank statements · 24 months required · 50% expense factor',src:'Guideline section · Prime BS guide v2026.10 §4.2',gen:false}};
+  function cmPaint(k,ef){const c=CM[k];const big=dep.big?BIG:0,t1=dep.t1?T1:0,t2=dep.t2?T2:0;const sum=BASE_SUM-(dep.big?0:BIG)+t1+t2,avg=sum/12,inc=avg*(1-ef);
+    $('#cmT').textContent=c.n;
+    $('#cmBody').innerHTML=`<div style="margin-bottom:8px"><strong>${c.lab}</strong><br><span class="src ${c.gen?'gen':'pub'}" style="margin-top:4px;display:inline-block">${c.src}</span></div>
+      <table class="cmb" style="width:100%"><tr><td>Business deposits, 12 months (Nov 2025 to Oct 2026)</td><td>${money(BASE_SUM)}</td></tr>
+      <tr><td>Oct 14 wire $46,200 · ${dep.big?'counted':'excluded'}</td><td>${dep.big?'included':'− '+money(BIG)}</td></tr>
+      <tr><td>Transfers between own accounts · excluded</td><td>${t1||t2?'+ '+money(t1+t2):'0'}</td></tr>
+      <tr><td>Eligible deposits</td><td>${money(sum)}</td></tr><tr><td>Monthly average (÷ 12)</td><td>${money(avg)}</td></tr>
+      <tr><td>Expense factor <select id="cmEf">${[.3,.4,.5].map(x=>`<option value="${x}"${x===ef?' selected':''}>${x*100}%${x===c.ef?' (lender)':''}</option>`).join('')}</select></td><td>− ${money(avg*ef)}</td></tr>
+      <tr class="tot"><td>Qualifying income per month</td><td>${money(inc)}</td></tr></table>
+      ${ef!==c.ef?'<div class="why" style="margin-top:8px">Scenario only: the lender\'s method uses '+c.ef*100+'%. The file and the cover letter keep the lender\'s method unless you confirm a CPA letter.</div>':''}
+      <div class="small muted" style="margin-top:8px">Deposit switches on the right panel change this breakdown. The same breakdown goes into the cover letter for this lender, with exhibit pages.</div>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button class="ghost" data-act="cmClose">Close</button><button class="btn" data-act="cmLetter">Use in the cover letter</button></div>`;
+    $('#cmEf').addEventListener('change',e=>cmPaint(k,+e.target.value))}
+  document.addEventListener('click',e=>{const a=e.target.closest('[data-cm]');if(!a)return;e.preventDefault();cmPaint(a.dataset.cm,CM[a.dataset.cm].ef);$('#cmM').hidden=false});
+  acts.cmClose=()=>{$('#cmM').hidden=true};acts.cmLetter=()=>{acts.cmClose();toast('Breakdown attached to the cover letter draft')};
+  // step 06 decision record
+  const DR={patel:{f:'Patel',chosen:'Summit Ridge Capital · Flex P&L 24',cons:[['Summit Ridge Capital','Chosen','Eligible with the CPA-prepared P&L; 7.125% indicative; 22 days to close on your files'],['Crestview Lending','Considered','Eligible; 7.250% indicative; needs 12 months of bank statements on top of the P&L'],['Pacific Arch','Excluded','Loan $930,000 above its $850,000 maximum'],['Northgate Capital','Not on your panel','Not considered']],
+     draft:'Chose Summit Ridge Flex P&L 24 for Ravi Patel because it accepts the CPA-prepared P&L alone, has the lowest indicative rate of the eligible lenders (7.125% vs 7.250%), and meets the Dec 20 closing date. Crestview was also eligible but would need 12 months of bank statements the borrower prefers not to provide. Pacific Arch was excluded (loan above its maximum). Options and rates were explained to the borrower on Nov 24.'},
+   mqpack:{f:'Marquez',chosen:'Crestview Lending · Bank Statement Select',cons:[['Crestview Lending','Chosen','Eligible as is; 7.375% indicative; 19 days to close on your files'],['Harborline Mortgage','Considered','7.125% indicative but needs a credit score exception (698 vs 700)'],['Summit Ridge Capital','Considered','Needs a letter for the Oct 14 deposit'],['Pacific Arch','Excluded','Requires 24 months of statements'],['Northgate Capital','Not on your panel','Better fit noted; requested for the panel']],
+     draft:'Chose Crestview Bank Statement Select for Elena Marquez because it is eligible today without an exception and fits the firm Dec 15 closing date. Harborline priced 0.25% lower but needs a credit score exception (698 vs 700), which puts the date at risk. Summit Ridge needs a letter for the Oct 14 deposit. Pacific Arch requires 24 months of statements. The borrower agreed to the trade-off (certainty over rate) on Nov 25.'}};
+  Object.keys(DR).forEach(id=>{const v=document.getElementById('v-'+id);if(!v)return;const d=DR[id];const c=document.createElement('section');c.className='card drec';c.id='dr-'+id;
+    c.innerHTML=`<div class="hrow"><h2>Decision record · why ${d.chosen.split(' ·')[0]}</h2><span class="sp"></span><span class="small muted">You write it · Loni can draft it</span></div>
+      <table class="hist" style="margin:10px 0"><tr><th>Lender</th><th>Outcome</th><th>Facts at the time</th></tr>${d.cons.map(r=>`<tr><td><strong>${r[0]}</strong></td><td>${r[1]}</td><td class="small">${r[2]}</td></tr>`).join('')}</table>
+      <div class="small muted" style="margin-bottom:6px">Your reasons, in your words. Compensation is not part of the comparison.</div>
+      <div class="drw"><textarea placeholder="Why this lender for this borrower…"></textarea>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px;flex-wrap:wrap"><button class="ghost" data-drd="${id}">✎ Let Loni draft it</button><button class="btn" data-drs="${id}">Save to the file record</button></div></div>`;
+    v.appendChild(c)});
+  document.addEventListener('click',e=>{let b;
+    if(b=e.target.closest('[data-drd]')){const c=$('#dr-'+b.dataset.drd+' textarea');c.value=DR[b.dataset.drd].draft;c.focus();toast('Draft added · edit it before saving')}
+    else if(b=e.target.closest('[data-drs]')){const id=b.dataset.drs,t=$('#dr-'+id+' textarea').value.trim();if(t.length<20){toast('Write at least a sentence first');return}
+      const w=document.querySelector('#dr-'+id+' .drw');w.innerHTML=`<div class="saved">${t.replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'})[c])}</div><div class="small muted" style="margin-top:6px">Saved by ${USER||'you'} · ${new Date().toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})} · locked; a change creates a new version. Part of the file record and the audit trail.</div>`;toast('Decision record saved')}});
+  // credit score check (Equifax)
+  const CC={Marquez:[698,'Elena Marquez'],Chen:[761,'Wei Chen'],Haddad:[712,'Samir Haddad'],Nguyen:[724,'Linh Nguyen'],Brooks:[742,'Daniel Brooks'],Patel:[748,'Ravi Patel'],Okafor:[781,'Grace Okafor']};
+  let ccMode='read';
+  acts.ccOpen=()=>{const f=VFILE[curView]||curFile;const c=CC[f]||[720,f];$('#ccFile').textContent=f;
+    $('#ccBody').innerHTML=`<div class="small muted">Score on the file: <strong>${c[0]}</strong> (from the 1003 in ARIVE). Borrower: ${c[1]}.</div>
+      <div class="ccopt">${[['read','Read the report already pulled in ARIVE','No new inquiry. Uses the Nov 3 tri-merge report.'],['soft','Soft pull · Equifax','No impact on the borrower\'s score. Good for pre-qualifying in step 03.'],['hard','Full report · Equifax','Hard inquiry. Needs the borrower\'s written authorization.']].map(o=>`<label class="${ccMode===o[0]?'on':''}"><input type="radio" name="ccm" value="${o[0]}" ${ccMode===o[0]?'checked':''}><span><strong>${o[1]}</strong><br><span class="small muted">${o[2]}</span></span></label>`).join('')}</div>
+      <label style="display:flex;gap:8px;font-size:13px;align-items:center"><input type="checkbox" id="ccOk"> ${c[1].split(' ')[0]} authorized a credit check (ARIVE e-consent, Nov 3)</label>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button class="ghost" data-act="ccClose">Cancel</button><button class="btn" data-act="ccRun">Check the score</button></div><div id="ccRes"></div>`;
+    $('#ccM').hidden=false};
+  document.addEventListener('change',e=>{if(e.target.name==='ccm'){ccMode=e.target.value;$$('.ccopt label').forEach(l=>l.classList.toggle('on',l.querySelector('input').checked))}});
+  acts.ccClose=()=>{$('#ccM').hidden=true};
+  acts.ccRun=()=>{if(!$('#ccOk').checked){toast('Confirm the borrower authorization first');return}const f=$('#ccFile').textContent,c=CC[f]||[720,f];const eq=c[0]+(f==='Marquez'?4:-2);
+    $('#ccRes').innerHTML=`<div class="card" style="box-shadow:none;margin-top:12px"><h2>Equifax · ${ccMode==='read'?'from the report in ARIVE':ccMode==='soft'?'soft pull':'full report'} · just now</h2>
+      <div class="ccres"><div class="x"><div class="n">${eq}</div><div class="l">Equifax score</div></div><div class="x"><div class="n">${c[0]}</div><div class="l">Score used on the file</div></div><div class="x"><div class="n">18%</div><div class="l">Card utilization</div></div><div class="x"><div class="n">0</div><div class="l">Late payments, 24 months</div></div></div>
+      <div class="small">${eq!==c[0]?`<strong>Score differs from the file by ${eq-c[0]>0?'+':''}${eq-c[0]} points.</strong> ${f==='Marquez'&&eq>=700?'At 700+ Harborline no longer needs a credit score exception: rerun step 04?':'Loni rechecks every lender limit with the new score.'}`:'Same as the file.'}</div>
+      <div class="small muted" style="margin-top:6px">Mockup: illustrative result. ${ccMode==='hard'?'A hard inquiry appears on the borrower report.':'No hard inquiry.'} Equifax fees go through your account.</div></div>`};
+  setRole('owner');paintReq();
+  {const cv=document.querySelector('.canvas');if(cv&&window.ResizeObserver)new ResizeObserver(()=>{const w=cv.clientWidth;cv.classList.toggle('cvn',w<900);cv.classList.toggle('cvx',w<560)}).observe(cv);const dk=document.querySelector('.dock.dockg');if(dk&&window.ResizeObserver)new ResizeObserver(()=>dk.classList.toggle('dn',dk.clientWidth<400)).observe(dk)}
+
+
+  // ---- v0.31: Loni's voice (browser speech; on by default) ----
+  let VOICE=true;try{const v=localStorage.getItem('loniVoice');if(v==='off')VOICE=false}catch(e){}
+  const SS=window.speechSynthesis;let LV=null;
+  const PREF=[/Ava.*(Natural|Online)/i,/Emma.*(Natural|Online)/i,/Jenny.*(Natural|Online)/i,/Aria.*(Natural|Online)/i,/Michelle.*(Natural|Online)/i,/Zoe.*(Premium|Enhanced)/i,/Ava.*(Premium|Enhanced)/i,/Samantha.*(Premium|Enhanced)/i,/Allison.*(Premium|Enhanced)/i,/Susan.*(Premium|Enhanced)/i,/Samantha/i,/Google US English/i,/Google UK English Female/i,/Ava\b/i,/Allison/i,/Zira/i,/Karen/i,/Victoria/i,/female/i];
+  const VDEF={rate:0.94,pitch:1.1};let VS={name:'',rate:VDEF.rate,pitch:VDEF.pitch};try{Object.assign(VS,JSON.parse(localStorage.getItem('loniVoiceSet')||'{}'))}catch(e){}
+  const vSave=()=>{try{localStorage.setItem('loniVoiceSet',JSON.stringify(VS))}catch(e){}};
+  const enVoices=()=>SS?SS.getVoices().filter(v=>/^en[-_]/i.test(v.lang)):[];
+  const vRank=v=>{const k=PREF.findIndex(re=>re.test(v.name));return k<0?99:k};
+  function pickVoice(){if(!SS)return;const vs=enVoices();LV=(VS.name&&vs.find(v=>v.name===VS.name))||vs.slice().sort((a,b)=>vRank(a)-vRank(b))[0]||null;fillSel()}
+  function fillSel(){const sel=document.getElementById('vSel');if(!sel)return;const vs=enVoices().sort((a,b)=>vRank(a)-vRank(b)||a.name.localeCompare(b.name));
+    sel.innerHTML=vs.map(v=>`<option value="${v.name.replace(/"/g,'&quot;')}"${LV&&v.name===LV.name?' selected':''}>${vRank(v)<12?'★ ':''}${v.name.replace(/Microsoft |Online \(Natural\) - |\(Natural\)/g,'').trim()} · ${v.lang}</option>`).join('')||'<option>No English voice found</option>';
+    const best=vs.some(v=>vRank(v)<10);const mac=/Mac/i.test(navigator.platform||navigator.userAgent),edge=/Edg\//.test(navigator.userAgent);
+    const tip=document.getElementById('vTip');if(tip)tip.innerHTML=best?'★ = most natural voices on this computer.':(mac?'For a sweeter, more human voice on a Mac: System Settings › Accessibility › Spoken Content › System voice › Manage Voices, then download <b>Zoe</b> or <b>Ava (Premium)</b>. Restart the browser.':edge?'':'Microsoft Edge has the most natural free voices (Ava, Emma, Jenny). Try the mockup in Edge.')}
+  if(SS){pickVoice();SS.onvoiceschanged=pickVoice}
+  const lhead=document.querySelector('.loni-head'),lav=document.querySelector('.loni-head .loni-lav');
+  if(lhead&&!lhead.querySelector('.vwave')){const w=document.createElement('span');w.className='vwave';w.innerHTML='<i></i><i></i><i></i><i></i>';const t=lhead.querySelector('.t');if(t)t.appendChild(w)}
+  function speakText(t,force){if(!SS||(!VOICE&&!force)||!t)return;SS.cancel();
+    const parts=t.replace(/ · /g,', ').match(/[^.!?]+[.!?]+["')\]]*|[^.!?]+$/g)||[t];let n=parts.length;
+    const on=()=>{lav&&lav.classList.add('speaking');lhead&&lhead.classList.add('speaking')},off=()=>{lav&&lav.classList.remove('speaking');lhead&&lhead.classList.remove('speaking')};
+    parts.map(p=>p.trim()).filter(Boolean).forEach((p,k,arr)=>{const u=new SpeechSynthesisUtterance(p);if(LV)u.voice=LV;u.lang=LV?LV.lang:'en-US';u.rate=VS.rate;u.pitch=VS.pitch;u.volume=1;
+      if(k===0)u.onstart=on;u.onend=()=>{if(k===arr.length-1)off()};u.onerror=off;SS.speak(u)})}
+  function spoken(el){const c=el.cloneNode(true);c.querySelectorAll('.chips,.why,.draft,.ids,.inline-ids,.inli,table,.sp-btn').forEach(x=>x.remove());
+    let t=c.textContent.replace(/\s+/g,' ').replace(/[★◆✓✕…→⇪⌕✎✉☀◔▤▦⌂⚙•]/g,'').trim();
+    t=t.replace(/\bDTI\b/g,'D T I').replace(/\bLTV\b/g,'L T V').replace(/\bDSCR\b/g,'D S C R').replace(/\bAE\b/g,'account executive').replace(/\bP&L\b/g,'P and L').replace(/(\d)%/g,'$1 percent');
+    if(t.length>380){const cut=t.slice(0,380);const i=Math.max(cut.lastIndexOf('. '),cut.lastIndexOf('? '));t=i>120?cut.slice(0,i+1):cut+'…'}return t}
+  {const _s=say;say=function(html,who){const m=_s(html,who);if(who!=='me'&&m){const b=m.querySelector('.b');if(b&&SS){const btn=document.createElement('button');btn.className='sp-btn';btn.title='Read aloud';btn.textContent='🔊';btn.addEventListener('click',()=>speakText(spoken(b),true));b.appendChild(btn)}
+      if(VOICE&&b)setTimeout(()=>speakText(spoken(b)),60)}return m}}
+  function paintV(){const b=$('#vBtn');if(!b)return;b.classList.toggle('on',VOICE);b.setAttribute('aria-pressed',VOICE);b.querySelector('.vi').textContent=VOICE?'🔊':'🔇';b.querySelector('.vl').textContent=VOICE?'Voice on':'Voice off'}
+  $('#vBtn').addEventListener('click',()=>{VOICE=!VOICE;try{localStorage.setItem('loniVoice',VOICE?'on':'off')}catch(e){}paintV();if(!VOICE&&SS)SS.cancel();toast(VOICE?'Loni will speak her replies':'Voice off · Loni writes only');
+    if(VOICE)speakText('Voice is on. You can also talk to me with the microphone.')});
+  paintV();
+  // speech input
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;let rec=null,recOn=false;
+  if(!SR){$('#micHint').textContent='🎙 talk to Loni in Chrome, Edge or Safari'}
+  $('#micBtn').addEventListener('click',()=>{if(SS)SS.cancel();
+    if(!SR){toast('Talking to Loni works in Chrome, Edge and Safari');return}
+    if(recOn&&rec){rec.stop();return}
+    rec=new SR();rec.lang='en-US';rec.interimResults=true;rec.maxAlternatives=1;const box=$('#ask');
+    rec.onstart=()=>{recOn=true;$('#micBtn').classList.add('rec');box.placeholder='Listening… speak to Loni'};
+    rec.onresult=e=>{let t='';for(const r of e.results)t+=r[0].transcript;box.value=t;if(e.results[e.results.length-1].isFinal){rec.stop();setTimeout(()=>{if(box.value.trim())$('#composer').requestSubmit()},150)}};
+    const done=()=>{recOn=false;$('#micBtn').classList.remove('rec');box.placeholder='Ask Loni anything about this file, or tell her what to do…'};
+    rec.onend=done;rec.onerror=ev=>{done();toast(ev.error==='not-allowed'?'Microphone blocked: allow it in the browser to talk to Loni':'Didn\'t catch that, try again')};
+    try{rec.start()}catch(e){done()}});
+  // stop speaking when the broker types or sends
+  $('#ask').addEventListener('keydown',()=>{if(SS&&SS.speaking)SS.cancel()});
+
+
+  // ---- v0.32: voice settings popover ----
+  {const pop=$('#vPop'),R=$('#vRate'),P=$('#vPitch');
+    const show=()=>{R.value=VS.rate;P.value=VS.pitch;$('#vRateV').textContent=VS.rate<0.9?'calm':VS.rate>1.0?'brisk':'natural';$('#vPitchV').textContent=VS.pitch<1.0?'low':VS.pitch>1.18?'bright':'warm'};
+    $('#vSetBtn').addEventListener('click',e=>{e.stopPropagation();if(!pop.hidden){pop.hidden=true;return}fillSel();show();const r=e.currentTarget.getBoundingClientRect();pop.style.top=(r.bottom+8)+'px';pop.style.left=Math.max(8,Math.min(innerWidth-330,r.left-150))+'px';pop.hidden=false});
+    $('#vPopX').addEventListener('click',()=>pop.hidden=true);
+    document.addEventListener('click',e=>{if(!pop.hidden&&!pop.contains(e.target)&&e.target.id!=='vSetBtn')pop.hidden=true});
+    $('#vSel').addEventListener('change',e=>{VS.name=e.target.value;vSave();pickVoice();speakText('Hi, I\'m Loni. Is this voice better?',true)});
+    R.addEventListener('input',()=>{VS.rate=+R.value;vSave();show()});P.addEventListener('input',()=>{VS.pitch=+P.value;vSave();show()});
+    R.addEventListener('change',()=>speakText('This is my speaking speed.',true));P.addEventListener('change',()=>speakText('And this is my tone of voice.',true));
+    $('#vReset').addEventListener('click',()=>{VS={name:'',rate:VDEF.rate,pitch:VDEF.pitch};vSave();pickVoice();show();toast('Voice reset to the best available')});
+    $('#vTry').addEventListener('click',()=>speakText(`Good ${new Date().getHours()<12?'morning':'afternoon'}${USER?', '+USER:''}. Crestview is ready for your review, and I drafted the letter for Elena. Shall we start with Marquez?`,true));}
+
   // ---- v0.3 navigation ----
   const FILES=[["Marquez","Purchase · $680,000 · bank statement","04 Pre-underwrite","Ready: review the Crestview route",true],["Chen","DSCR refinance · $512,000","03 Pre-select","Waiting on: borrower (lease agreements)"],["Patel","P&L purchase · $930,000","06 Package & submit","Cover letter ready for your review"],["Okafor","Asset depletion · $1.2M","07 Close","Rate lock expires in 6 days"],["Haddad","Cash-out refinance · $610,000","05 Solve for yes","No lender fits as is: choose a fix"],["Brooks","Bank statement purchase · $720,000","02 Integrity check","2 flags to review"],["Nguyen","1099 purchase · $455,000","01 Import","New from ARIVE today"]];
   const fm=$('#fileMenu'),fl=$('#fileList'),fs=$('#fileSearch');
@@ -3007,7 +3676,7 @@ $('#helpBtn').addEventListener('click',()=>{$('#helpView').hidden=false;$('#admi
   fm.addEventListener('click',e=>{const f=e.target.closest('[data-file]');if(!f)return;fm.classList.remove('open');switchTo(f.dataset.file)});
   function switchTo(n){
     if(n==='Marquez'){if(curView!=='file'){acts.resume()}else{say('We\'re already on Marquez, step 04.')}return}
-    if(n==='new'){say('Two files are in ARIVE but not in Second Look yet: <strong>Delgado</strong> (DSCR purchase) and <strong>Ramirez</strong> (bank statement refinance). Which one should I import? <span class="muted">(Import screen comes in the full mockup.)</span>');return}
+    if(n==='new'){acts.impOpen();return;say('Two files are in ARIVE but not in Second Look yet: <strong>Delgado</strong> (DSCR purchase) and <strong>Ramirez</strong> (bank statement refinance). Which one should I import? <span class="muted">(Import screen comes in the full mockup.)</span>');return}
     const f=FILES.find(x=>x[0].toLowerCase()===n.toLowerCase());if(!f){say('I couldn\'t find that file. Try the file list.');return}
     if(OPEN[f[0]]){if(curFile===f[0]&&VFILE[curView]){say(`We're already on <strong>${f[0]}</strong>.`);return}if(VFILE[curView]==='Marquez')say('Saved <strong>Marquez</strong> at step 04.');openFile(f[0]);return}
     say(`${VFILE[curView]==='Marquez'?'Saved <strong>Marquez</strong> at step 04: Crestview route ready for your review. ':''}Opening <strong>${f[0]}</strong> at step ${f[2]}. ${f[3]}. <span class="muted">(${f[0]}'s screens come in the full mockup.)</span><div class="chips"><button class="chip" data-act="back">Back to Marquez</button></div><span class="inline-ids">SL-I-136 · SL-I-137</span>`);toast('Marquez saved · resume point kept');
@@ -3034,6 +3703,6 @@ $('#helpBtn').addEventListener('click',()=>{$('#helpView').hidden=false;$('#admi
 })();
 </script>
 <!-- Release banner (added by Release Manager to the published copy only) -->
-<div id="sl-release-banner" aria-label="Release label" style="position:fixed;right:12px;bottom:8px;z-index:2147483647;pointer-events:none;font:500 11px/1.4 Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:#5b3a63;background:rgba(255,255,255,.82);border:1px solid rgba(91,58,99,.18);border-radius:999px;padding:2px 9px;letter-spacing:.01em">v0.27 · Prototype — fictional data</div>
+<div id="sl-release-banner" aria-label="Release label" style="position:fixed;right:12px;bottom:8px;z-index:2147483647;pointer-events:none;font:500 11px/1.4 Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:#5b3a63;background:rgba(255,255,255,.82);border:1px solid rgba(91,58,99,.18);border-radius:999px;padding:2px 9px;letter-spacing:.01em">v0.32 · Prototype — fictional data</div>
 </body>
 </html>
