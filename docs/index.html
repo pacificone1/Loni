@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loni · powered by Second Look · Mockup v0.33</title>
+<title>Loni · powered by Second Look · Mockup v0.34</title>
 <style>
 :root{
   --ink:#311847; --ink2:#4A3E4F; --muted:#6E5E6B; --line:#ECE2E6; --bg:#FBF7F5; --card:#fff;
@@ -3698,12 +3698,12 @@ $('#helpBtn').addEventListener('click',()=>{$('#helpView').hidden=false;$('#admi
   const KV={st:'idle',p:0,mod:null,ac:null,tok:0,src:[],next:0};
   const small=()=>innerWidth<760||(navigator.deviceMemory&&navigator.deviceMemory<4);
   function paintKV(){const el=$('#kvSt'),bar=$('#kvBar');if(!el)return;
-    const t={idle:'',loading:`Loading Loni's own voice (same as the video): <b>${Math.round(KV.p*100)}%</b>. First visit only, about 90 MB. Browser voice until then.`,ready:`<b>Loni's own voice is ready</b> (same as the video).`,error:`Loni's own voice isn't available here. Using a browser voice.`,phone:`On phones Loni uses a browser voice.`}[KV.st];
+    const t={idle:`Want Loni's own voice (same as the video)? Choose <b>Loni · Heart</b> above. About 90 MB the first time, and her replies take a few seconds to start.`,loading:`Loading Loni's own voice (same as the video): <b>${Math.round(KV.p*100)}%</b>. First visit only, about 90 MB. Browser voice until then.`,ready:`<b>Loni's own voice is ready</b> (same as the video). Her replies take a few seconds to start; pick a browser voice for instant replies.`,error:`Loni's own voice isn't available here. Using a browser voice.`,phone:`On phones Loni uses a browser voice.`}[KV.st];
     el.innerHTML=t;bar.style.display=KV.st==='loading'?'':'none';bar.firstChild.style.width=Math.round(KV.p*100)+'%';
     const tip=$('#vTip');if(tip)tip.style.display=(KV.st==='ready'&&useK())?'none':'';const tone=$('#vPitch');if(tone){const k=useK();tone.disabled=k;tone.parentElement.style.opacity=k?.45:1}}
   function loadK(){if(KV.st!=='idle')return;if(small()){KV.st='phone';paintKV();return}KV.st='loading';paintKV();
-    import(VBASE+'vendor/loni-voice.js').then(m=>{KV.mod=m;return m.init(VBASE,p=>{KV.p=p;paintKV()})}).then(()=>{KV.st='ready';paintKV();fillSel()}).catch(e=>{console.warn('Loni voice',e);KV.st='error';paintKV()})}
-  const useK=()=>KV.st==='ready'&&(!VS.name||VS.name==='__kokoro');
+    import(VBASE+'vendor/loni-voice.js?v=0.34').then(m=>{KV.mod=m;return m.init(VBASE,p=>{KV.p=p;paintKV()})}).then(()=>{KV.st='ready';paintKV();fillSel()}).catch(e=>{console.warn('Loni voice',e);KV.st='error';paintKV()})}
+  const useK=()=>KV.st==='ready'&&VS.name==='__kokoro';
   function stopK(){KV.tok++;KV.src.forEach(s=>{try{s.stop()}catch(e){}});KV.src=[];KV.next=0}
   function stopVoice(){if(SS)SS.cancel();stopK();lav&&lav.classList.remove('speaking');lhead&&lhead.classList.remove('speaking')}
   async function speakK(t){stopVoice();const my=KV.tok;
@@ -3715,13 +3715,13 @@ $('#helpBtn').addEventListener('click',()=>{$('#helpView').hidden=false;$('#admi
       const at=Math.max(ac.currentTime+0.03,KV.next);s.start(at);KV.next=at+b.duration+0.12;KV.src.push(s);on();s.onended=()=>{left--;KV.src=KV.src.filter(x=>x!==s);if(left<=0||!KV.src.length&&left<=0)off()}}
   }
   {const _sp=speakText;speakText=function(t,force){if(!t||(!VOICE&&!force))return;if(useK()){speakK(t);return}_sp(t,force)}}
-  {const _fs=fillSel;fillSel=function(){_fs();const sel=$('#vSel');if(!sel)return;if(KV.st==='ready'||KV.st==='loading'){const o=document.createElement('option');o.value='__kokoro';o.textContent=KV.st==='ready'?'★ Loni · Heart (same as the video)':'Loni · Heart (loading…)';o.disabled=KV.st!=='ready';sel.insertBefore(o,sel.firstChild);if(useK())sel.value='__kokoro'}paintKV()}}
-  $('#vSel').addEventListener('change',e=>{if(e.target.value==='__kokoro'){VS.name='__kokoro';vSave();paintKV()}},true);
+  {const _fs=fillSel;fillSel=function(){_fs();const sel=$('#vSel');if(!sel)return;if(KV.st!=='phone'){const o=document.createElement('option');o.value='__kokoro';o.textContent=KV.st==='ready'?'Loni · Heart (same as the video) · starts slower':KV.st==='loading'?'Loni · Heart (loading…)':KV.st==='error'?'Loni · Heart (not available here)':'Loni · Heart (same as the video) · about 90 MB, starts slower';o.disabled=KV.st==='error';sel.appendChild(o);if(VS.name==='__kokoro')sel.value='__kokoro'}paintKV()}}
+  $('#vSel').addEventListener('change',e=>{if(e.target.value==='__kokoro'){e.stopImmediatePropagation();VS.name='__kokoro';vSave();loadK();fillSel()}},true);
   ['#micBtn','#vBtn'].forEach(id=>$(id).addEventListener('click',()=>stopK(),true));
   $('#ask').addEventListener('keydown',()=>stopK());
-  // start loading the voice once the broker signs in (needs a click for audio anyway)
-  document.getElementById('landing').addEventListener('submit',()=>{if(VOICE){loadK();try{KV.ac=KV.ac||new (window.AudioContext||window.webkitAudioContext)();KV.ac.resume()}catch(e){}}},true);
-  $('#vBtn').addEventListener('click',()=>{if(VOICE)loadK()});
+  // v0.34: load Loni's own voice only if the broker chose it (choice remembered in this browser)
+  document.getElementById('landing').addEventListener('submit',()=>{if(VOICE&&VS.name==='__kokoro'){loadK();try{KV.ac=KV.ac||new (window.AudioContext||window.webkitAudioContext)();KV.ac.resume()}catch(e){}}},true);
+  $('#vBtn').addEventListener('click',()=>{if(VOICE&&VS.name==='__kokoro')loadK()});
   paintKV();
 
   // ---- v0.3 navigation ----
@@ -3761,6 +3761,6 @@ $('#helpBtn').addEventListener('click',()=>{$('#helpView').hidden=false;$('#admi
 })();
 </script>
 <!-- Release banner (added by Release Manager to the published copy only) -->
-<div id="sl-release-banner" aria-label="Release label" style="position:fixed;right:12px;bottom:8px;z-index:2147483647;pointer-events:none;font:500 11px/1.4 Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:#5b3a63;background:rgba(255,255,255,.82);border:1px solid rgba(91,58,99,.18);border-radius:999px;padding:2px 9px;letter-spacing:.01em">v0.33 · Prototype — fictional data</div>
+<div id="sl-release-banner" aria-label="Release label" style="position:fixed;right:12px;bottom:8px;z-index:2147483647;pointer-events:none;font:500 11px/1.4 Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:#5b3a63;background:rgba(255,255,255,.82);border:1px solid rgba(91,58,99,.18);border-radius:999px;padding:2px 9px;letter-spacing:.01em">v0.34 · Prototype — fictional data</div>
 </body>
 </html>
